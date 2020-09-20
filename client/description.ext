@@ -1,0 +1,3 @@
+class CfgServer {
+	database_name = "a3rp";
+}
