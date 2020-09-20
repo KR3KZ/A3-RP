@@ -5,6 +5,13 @@
 */
 
 /**
+* If extdb3 is already initialized, exit
+*/
+if (!isNil "SRV_extdb3_protocol_name") exitWith {
+	[format["[extDB3]: SRV_extdb3_protocol_name already initialized [%1]", SRV_extdb3_protocol_name]] call SRV_fnc_log_me;
+};
+
+/**
 * Get the database name param from init.sqf
 */
 private _database_name 	= param [0, ""];

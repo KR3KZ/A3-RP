@@ -4,6 +4,9 @@
 * file: init.sqf
 */
 
+SRV_is_ready = compile("false");
+publicVariable "SRV_is_ready";
+
 SRV_log_me_id = 0;
 ["A3RP Server starting"] call SRV_fnc_log_me;
 
@@ -22,6 +25,8 @@ if (_conn) then {
 	* If connection successfull
 	*/
 	[format ["[extDB3]: Connected to database [%1]", _database_name]] call SRV_fnc_log_me;
+	SRV_is_ready = compileFinal("true");
+	publicVariable "SRV_is_ready";
 } else {
 	/**
 	* If connection failure

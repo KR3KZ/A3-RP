@@ -17,6 +17,7 @@ class CfgFunctions {
 			file = "\server\database";
 			class init_extdb3 {};
 			class select {};
+			class execute {};
 		};
 	};
 	class General {
@@ -25,6 +26,10 @@ class CfgFunctions {
 		{
 			file = "\server\general";
 			class log_me {}; 
+		};
+		class Authentification {
+			file = "\server\auth";
+			class on_ask {};
 		};
 	};
 };

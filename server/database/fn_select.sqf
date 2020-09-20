@@ -51,7 +51,7 @@ if (_queryResult isEqualTo "[3]") then {
 */
 _queryResult = call compile _queryResult;
 if ((_queryResult select 0) isEqualTo 0) exitWith {
-	[format ["[extDB3]: Protocol error [%1]", _queryResult]] call SRV_fnc_log_me;
+	[format ["[extDB3]: [%1]", _queryResult select 1]] call SRV_fnc_log_me;
 };
 private _return = (_queryResult select 1);
 if (!_multiArray && count _return > 0) then {

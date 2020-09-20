@@ -1,3 +1,9 @@
 class CfgServer {
 	database_name = "a3rp";
 }
+
+class CfgFunctions {
+	#include "functions.hpp"
+};
+
+#include "remote.hpp"
