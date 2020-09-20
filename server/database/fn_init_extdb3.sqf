@@ -31,13 +31,18 @@ if (_add_database isEqualTo "[1]") then {
 	* TEXT2 wraps all text datatypes in single quotes '
 	*/
 	_add_database_protocol = "extDB3" callExtension format ["9:ADD_DATABASE_PROTOCOL:%1:SQL:%2:TEXT2", _database_name, _protocol_name];
-	
+
 	if (_add_database_protocol isEqualTo "[1]") then {
 		/**
 		* If protocol is added
 		* Make the _protocol_name definitive with compileFinal
 		*/
 		SRV_extdb3_protocol_name = compileFinal(_protocol_name);
+
+		/**
+		* Lock the database for safety
+		*/
+		"extDB3" callExtension "9:LOCK";
 
 		_return = true;
 	};

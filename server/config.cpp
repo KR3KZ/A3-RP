@@ -16,7 +16,7 @@ class CfgFunctions {
 		{
 			file = "\server\database";
 			class init_extdb3 {};
-			class init_extdb3_protocol_name {};
+			class select {};
 		};
 	};
 	class General {
