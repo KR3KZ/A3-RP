@@ -15,5 +15,5 @@ if (!(_string isEqualType "")) then {
 };
 
 diag_log "=========================== A3RP ===========================";
-diag_log format ["[%1] " + _string, CLI_log_me_id];
-CLI_log_me_id = CLI_log_me_id + 1;
+diag_log format ["[%1] " + _string, client_log_me_id];
+client_log_me_id = client_log_me_id + 1;

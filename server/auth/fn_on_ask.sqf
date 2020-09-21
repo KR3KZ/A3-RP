@@ -7,4 +7,4 @@
 
 private _player = param [0, objNull];
 
-["[fn_on_ask]: Request from client received"] call SRV_fnc_log_me;
+[format["[fn_on_ask]: Request from [%1] received", getPlayerUID _player]] call SRV_fnc_log_me;

@@ -1,5 +1,5 @@
 class Authentification {
-	tag = "AUT";
+	tag = "auth";
 	class Functions {
 		file = "auth";
 		class ask {};
@@ -7,7 +7,7 @@ class Authentification {
 };
 
 class General {
-	tag = "CLI";
+	tag = "client";
 	class Logger {
 		file = "general";
 		class log_me {};

@@ -6,4 +6,12 @@ class CfgFunctions {
 	#include "functions.hpp"
 };
 
-#include "remote.hpp"
+class CfgDebriefing
+{
+	class extdb3_failed
+	{
+		title = "ExtDB3/SQL failure";
+		description = "Server couldn't be started because of an extDB3/SQL failure.";
+		picture = "KIA";
+	};
+};
