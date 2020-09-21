@@ -2,9 +2,10 @@
 * A3-RP
 * Server-side
 * file: execute.sqf
+* desc: Execute given query
 */
 
-private _query = param [0, ""];
+private _query = param [0, "", [""]];
 
 private _execute = "extDB3" callExtension format ["1:%1:%2", call SRV_extdb3_protocol_name, _query];
 

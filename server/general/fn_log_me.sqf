@@ -4,7 +4,7 @@
 * file: log_me.sqf
 */
 
-private _string = param [0, ""];
+private _string = param [0, "", [""]];
 
 /**
 * If _string is not a string, stringify it

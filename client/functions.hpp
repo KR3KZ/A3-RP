@@ -3,6 +3,7 @@ class Authentification {
 	class Functions {
 		file = "auth";
 		class ask {};
+		class on_client_id {};
 	};
 };
 

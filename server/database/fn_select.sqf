@@ -45,14 +45,37 @@ if (_queryResult isEqualTo "[3]") then {
 };
 
 /**
+* (When you call 4: it will return [5] if message is Multi-part) 
+*/
+if (_queryResult isEqualTo "[5]") then {
+	_loop = true;
+	for "_i" from 0 to 1 step 0 do {
+		_queryResult = "";
+		for "_i" from 0 to 1 step 0 do {
+			_pipe = "extDB3" callExtension format ["5:%1", _data];
+			if (_pipe isEqualTo "") exitWith {_loop = false};
+			_queryResult = _queryResult + _pipe;
+		};
+		if (!_loop) exitWith {};
+	};
+};
+
+/**
 * We have our _queryResult like this (example):
 * "[1,[[1,'salutlol'],[2,'sdf'],[3,'sdf'],[4,'ffff'],[5,'6xwc54xcv']]]"
-* So compile it to get an array
+* Compile it to get an array
 */
 _queryResult = call compile _queryResult;
+
+/**
+* If MariaDBQueryException Exception
+*/
 if ((_queryResult select 0) isEqualTo 0) exitWith {
-	[format ["[extDB3]: [%1]", _queryResult select 1]] call SRV_fnc_log_me;
+	[format ["[extDB3]: [%1]", _queryResult]] call SRV_fnc_log_me;
+	//Return [0,"Error MariaDBQueryException Exception"]
+	_queryResult
 };
+
 private _return = (_queryResult select 1);
 if (!_multiArray && count _return > 0) then {
 	_return = (_return select 0);

@@ -30,6 +30,8 @@ class CfgFunctions {
 		class Authentification {
 			file = "\server\auth";
 			class on_ask {};
+			class select_steam_profile {};
+			class insert_steam_profile {};
 		};
 	};
 };
