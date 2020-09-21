@@ -41,5 +41,8 @@ if (_res isEqualTo []) then {
 	*/
 	[format["[fn_on_ask]: [%1] exist in database, id: [%2], send it to the client", _player_uid, _res select 0]] call SRV_fnc_log_me;
 
-	[_res select 0] remoteExec ["auth_fnc_on_client_id", _player];
+	/**
+	* Send the id to the client
+	*/
+	[str(_res select 0)] remoteExec ["auth_fnc_on_client_id", _player];
 };
