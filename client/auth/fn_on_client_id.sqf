@@ -7,6 +7,11 @@
 
 private _client_id = param [0, "", [""]];
 
-[format["[fn_ask]: Client_id received from server [%1]", _client_id]] call client_fnc_log_me;
+[format["[fn_on_client_id]: client_id received from server [%1]", _client_id]] call client_fnc_log_me;
 
-client_id = compileFinal(_client_id);
+/**
+* Setting the client_id var, no one but server can access it
+*/
+player setVariable ["client_id", _client_id, 2];
+
+client_id_received = compileFinal("true");
