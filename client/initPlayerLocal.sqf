@@ -11,7 +11,9 @@
 0 cutText["Chargement...", "BLACK FADED", 99999999];
 
 client_log_me_id = 0;
-client_id_received = compile("false");
+client_account_id_received = compile("false");
+client_players_list_received = compile("false");
+client_ready_to_play = compile("false");
 
 ["Server is loading..."] call client_fnc_log_me;
 
@@ -26,7 +28,7 @@ waitUntil {call SRV_is_ready};
 */
 ["Asking account to the server..."] call client_fnc_log_me;
 [] call auth_fnc_ask_account;
-waitUntil {call client_id_received};
+waitUntil {call client_account_id_received};
 ["The account is ready"] call client_fnc_log_me;
 
 /**
@@ -34,6 +36,11 @@ waitUntil {call client_id_received};
 */
 ["Asking players's account to server..."] call client_fnc_log_me;
 [] call auth_fnc_ask_players;
+waitUntil {call client_players_list_received};
+["Player is ready"] call client_fnc_log_me;
+
+
+//waitUntil {call client_ready_to_play};
 
 /**
 * Remove black screen
