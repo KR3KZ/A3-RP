@@ -2,10 +2,11 @@
 * A3-RP
 * Client-side
 * file: on_client_id.sqf
-* desc: Get the client id from the server and set it
+* desc: Get the client id for this account from the server
 */
 
-private _client_id = param [0, "", [""]];
+private _client_id = param [0, 0, [0]];
+_client_id = format ["%1", _client_id];
 
 [format["[fn_on_client_id]: client_id received from server [%1]", _client_id]] call client_fnc_log_me;
 

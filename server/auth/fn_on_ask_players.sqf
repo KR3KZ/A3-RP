@@ -46,5 +46,5 @@ if (_res isEqualTo []) then {
 	/**
 	* Send player info's to the client
 	*/
-	//[str(_res select 0)] remoteExec ["auth_fnc_on_client_id", _player];
+	[_res] remoteExec ["auth_fnc_on_players_list", _player];
 };

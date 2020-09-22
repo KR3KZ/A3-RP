@@ -5,6 +5,7 @@ class Authentification {
 		class ask_account {};
 		class ask_players {};
 		class on_client_id {};
+		class on_players_list {};
 	};
 };
 
