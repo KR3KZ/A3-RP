@@ -31,10 +31,12 @@ class CfgFunctions {
 			file = "\server\auth";
 			class on_ask_account {};
 			class on_ask_players {};
+			class on_update_player {};
 			class select_account {};
 			class select_players {};
 			class insert_account {};
 			class insert_player {};
+			class update_player {};
 		};
 	};
 };

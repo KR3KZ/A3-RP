@@ -17,6 +17,7 @@ params [
 private _query = format["
 	SELECT player.id,
 	player.cash,
+	player.gear,
 	player.pos_atl_x,
 	player.pos_atl_y,
 	player.pox_atl_z
@@ -27,6 +28,6 @@ private _query = format["
 	AND side.type = '%2'
 ", _player_uid, _player_side];
 
-private _res = [_query] call DB_fnc_select;
+private _res = [_query, true] call DB_fnc_select;
 
 _res

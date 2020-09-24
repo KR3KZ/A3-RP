@@ -34,13 +34,14 @@ waitUntil {call client_account_id_received};
 /**
 * Ask database if account has existing players in database
 */
-["Asking players's account to server..."] call client_fnc_log_me;
+["Asking the list of player of this account to the server..."] call client_fnc_log_me;
 [] call auth_fnc_ask_players;
 waitUntil {call client_players_list_received};
-["Player is ready"] call client_fnc_log_me;
+["Players list received"] call client_fnc_log_me;
 
 
 //waitUntil {call client_ready_to_play};
+[] call client_fnc_init;
 
 /**
 * Remove black screen

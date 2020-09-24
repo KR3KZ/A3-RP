@@ -9,12 +9,13 @@ private _player = param [0, objNull, [objNull]];
 private _player_uid = getPlayerUID _player;
 private _player_side = format["%1", side _player];
 private _player_name = name _player;
+private _player_gear = format ["%1", getUnitLoadout _player];
 
 [format["[fn_on_ask_players]: Request from [%1] [%2] received", _player_side, _player_uid]] call SRV_fnc_log_me;
 
 private _res = [_player_uid, _player_side] call SRV_fnc_select_players;
 
-if (_res select 0 == 0) exitWith {
+if (_res select 0 select 0 == 0) exitWith {
 	/**
 	* If MariaDBQueryException Exception
 	*/
@@ -30,7 +31,7 @@ if (_res isEqualTo []) then {
 	/**
 	* Insert player in database
 	*/
-	private _insert_done = [_player_uid, _player_side, _player_name] call SRV_fnc_insert_player;
+	private _insert_done = [_player_uid, _player_side, _player_name, _player_gear] call SRV_fnc_insert_player;
 
 	/**
 	* Make sure insert was successfull
