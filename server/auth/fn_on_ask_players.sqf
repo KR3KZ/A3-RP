@@ -15,7 +15,7 @@ private _player_gear = format ["%1", getUnitLoadout _player];
 
 private _res = [_player_uid, _player_side] call SRV_fnc_select_players;
 
-if (_res select 0 select 0 == 0) exitWith {
+if (_res isEqualTo [0,"Error MariaDBQueryException Exception"]) exitWith {
 	/**
 	* If MariaDBQueryException Exception
 	*/

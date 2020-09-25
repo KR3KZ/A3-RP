@@ -6,11 +6,11 @@
 */
 
 params [
-	["_player_id", "", [""]],
+	["_player_id", 0, [0]],
 	["_player_side", "", [""]],
 	["_player_cash", 0, [0]],
 	["_player_gear", "", [""]],
-	["_player_pos", 0, [0]]
+	["_player_pos", [], [[]]]
 ];
 
 private _query = format ["
