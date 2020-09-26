@@ -35,9 +35,9 @@ _add_database = call compile(_add_database);
 if (_add_database select 0 == 0) then {
 	while {!_db_added && _conn_count <= 10} do {
 		/**
-		* Try to reconnect every 10s until _db_added is true or _conn_count <= 10
+		* Try to reconnect every 5s until _db_added is true or _conn_count <= 10
 		*/
-		sleep 10;
+		sleep 5;
 		[format["[extDB3]: Database connection error, reconnecting to [%1]", _database_name]] call SRV_fnc_log_me;
 		_add_database = "extDB3" callExtension format ["9:ADD_DATABASE:%1", _database_name];
 		_add_database = call compile(_add_database);
