@@ -16,6 +16,7 @@ params [
 
 private _query = format["
 	SELECT player.id,
+	player.name,
 	player.cash,
 	player.gear,
 	player.pos_atl_x,

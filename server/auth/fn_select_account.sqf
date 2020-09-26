@@ -11,7 +11,7 @@
 private _player_uid = param [0, "", [""]];
 
 private _query = format ["
-	SELECT *
+	SELECT id, steam_id
 	FROM account
 	WHERE steam_id = '%1'
 ", _player_uid];
