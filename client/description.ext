@@ -13,7 +13,9 @@ class CfgDebriefing
 	class extdb3_failed
 	{
 		title = "ExtDB3/SQL failure";
-		description = "Server couldn't be started because of an extDB3/SQL failure.";
+		description = "Server couldn't start because of extDB3/SQL failure.";
 		picture = "KIA";
 	};
 };
+
+#include "dialog\A3RP_dialogs.hpp"
