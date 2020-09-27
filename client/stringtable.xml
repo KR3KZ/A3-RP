@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3RP">
+    <Package name="player_list">
+        <Key ID="STR_player_list_title">
+            <Original>Character selection</Original>
+            <French>Sélection du personnage</French>
+        </Key>
+        <Key ID="STR_player_name">
+            <Original>Name</Original>
+            <French>Nom</French>
+        </Key>
+        <Key ID="STR_player_cash">
+            <Original>Cash</Original>
+            <French>Argent</French>
+        </Key>
+        <Key ID="STR_player_city">
+            <Original>City</Original>
+            <French>Ville</French>
+        </Key>
+        <Key ID="STR_player_play">
+            <Original>Play</Original>
+            <French>Jouer</French>
+        </Key>
+    </Package>
+</Project>

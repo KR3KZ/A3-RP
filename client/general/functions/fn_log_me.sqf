@@ -5,7 +5,7 @@
 * desc: Log every thing and keep the count
 */
 
-private _string = param [0, ""];
+private _string = param [0, "", [""]];
 
 /**
 * If _string is not a string, stringify it

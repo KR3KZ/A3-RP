@@ -40,6 +40,9 @@ class A3RP_frame
 	style = 64;
 	colorBackground[] = {0,0,0,0};
 	colorText[] = {1,1,1,1};
+	text = "";
+	font = "PuristaLight";
+	sizeEx = 0;
 	access = 0;
 	
 };
@@ -187,6 +190,7 @@ class A3RP_text
 	colorText[] = {1,1,1,1};
 	font = "PuristaLight";
 	sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+	access = 0;
 	
 };
 class A3RP_structured_text
@@ -233,6 +237,17 @@ class A3RP_text_little : A3RP_text
 };
 class A3RP_button_bold_text : A3RP_button 
 {
+	font = "PuristaBold";
+	
+};
+class A3RP_text_uppercase : A3RP_text 
+{
+	style = 2+192;
+	
+};
+class A3RP_text_little_uppercase : A3RP_text_little 
+{
+	style = 2+192;
 	font = "PuristaBold";
 	
 };
