@@ -15,6 +15,7 @@ class General {
 	class Functions {
 		file = "general\functions";
 		class log_me {};
+		class cam_intro {};
 	};
 	class Main {
 		file = "general\main";
