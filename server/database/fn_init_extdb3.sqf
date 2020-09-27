@@ -43,7 +43,7 @@ if (_add_database select 0 == 0) then {
 		_add_database = call compile(_add_database);
 		_conn_count = _conn_count + 1;
 		if (_add_database select 0 == 1) then {
-			[format["[extDB3]: Successfully reconnected to [%1] after [%2] tries", _database_name, _conn_count]] call SRV_fnc_log_me;
+			[format["[extDB3]: Successfully connected to [%1] after [%2] tries", _database_name, _conn_count]] call SRV_fnc_log_me;
 			_db_added = true;
 		};
 	};
