@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3RP">
+    <Package name="General">
+        <Key ID="STR_money_sign">
+            <Original>$</Original>
+            <French>€</French>
+        </Key>
+    </Package>
     <Package name="player_list">
         <Key ID="STR_player_list_title">
             <Original>Character selection</Original>

@@ -24,7 +24,8 @@ class General {
 	class player_list {
 		file = "dialog\players_list";
 		class players_list_play {};
-		class players_list_set {};
+		class players_list_set_index {};
+		class players_list_set_ctrl {};
 		class players_list_on_load {};
 	};
 };
