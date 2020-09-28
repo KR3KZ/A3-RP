@@ -19,7 +19,6 @@ class General {
 	};
 	class Main {
 		file = "general\main";
-		class init {};
 	};
 	class player_list {
 		file = "dialog\players_list";

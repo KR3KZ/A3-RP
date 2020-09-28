@@ -10,7 +10,7 @@ private _param = param [0, true, [true]];
 if (client_players_list_index_max == 0) exitWith {};
 
 if (_param) then {
-[	"[fn_players_list_on_set]: Button next pressed"] call client_fnc_log_me;
+	["[fn_players_list_on_set]: Button next pressed"] call client_fnc_log_me;
 	if ((client_players_list_index + 1) > client_players_list_index_max) then {
 		client_players_list_index = 0;
 	} else {

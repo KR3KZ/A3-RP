@@ -5,6 +5,14 @@
             <Original>$</Original>
             <French>€</French>
         </Key>
+        <Key ID="STR_loading">
+            <Original>Loading...</Original>
+            <French>Chargement...</French>
+        </Key>
+        <Key ID="STR_spawn_unknown">
+            <Original>Unknown</Original>
+            <French>Inconnue</French>
+        </Key>
     </Package>
     <Package name="player_list">
         <Key ID="STR_player_list_title">
@@ -26,6 +34,22 @@
         <Key ID="STR_player_play">
             <Original>Play</Original>
             <French>Jouer</French>
+        </Key>
+    </Package>
+    <Package name="spawn_menu">
+        <Key ID="STR_spawn_menu_title">
+            <Original>Choose a spawn</Original>
+            <French>Choisissez votre spawn</French>
+        </Key>
+    </Package>
+    <Package name="EndMission">
+        <Key ID="STR_end_mission_extdb3">
+            <Original>Server couldn't start because of extDB3/SQL failure.</Original>
+            <French>Le serveur n'a pas pu démarrer à cause d'un problème extDB3/SQL.</French>
+        </Key>
+        <Key ID="STR_end_mission_inactivity">
+            <Original>You have been kicked because of inactivity.</Original>
+            <French>Vous avez été kické pour inactivité.</French>
         </Key>
     </Package>
 </Project>

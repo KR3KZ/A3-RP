@@ -20,12 +20,13 @@ class CfgFunctions {
 			class execute {};
 		};
 	};
-	class General {
+	class Serv {
 		tag = "SRV";
-		class Logger
+		class General
 		{
 			file = "\server\general";
-			class log_me {}; 
+			class kick_me {};
+			class log_me {};
 		};
 		class Authentification {
 			file = "\server\auth";

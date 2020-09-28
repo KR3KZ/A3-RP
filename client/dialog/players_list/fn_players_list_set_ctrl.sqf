@@ -24,4 +24,12 @@ private _player_pos = [_player_info select 4, _player_info select 5, _player_inf
 _sub_title ctrlSetText format ["%1 / %2", (_index + 1), (client_players_list_index_max + 1)];
 _name ctrlSetText _player_name;
 _cash ctrlSetText _player_cash;
-_city ctrlSetText (text(nearestLocation [_player_pos, "nameCity"]));
+
+/**
+* If player first spawn or died
+*/
+if (_player_pos isEqualTo [0,0,0]) then {
+	_city ctrlSetText (localize "STR_spawn_unknown");
+} else {
+	_city ctrlSetText (text(nearestLocation [_player_pos, "nameCity"]));
+};

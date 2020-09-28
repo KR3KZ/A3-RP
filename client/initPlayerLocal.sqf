@@ -8,12 +8,13 @@
 /**
 * Black screen
 */
-0 cutText["Chargement...", "BLACK FADED", 99999999];
+0 cutText[localize "STR_loading", "BLACK FADED", 99999999];
 
 client_log_me_id = 0;
 client_account_id_received = compile("false");
 client_players_list_received = compile("false");
 client_ready_to_play = compile("false");
+client_player_is_ready = compile("false");
 
 ["Server is loading..."] call client_fnc_log_me;
 
@@ -37,13 +38,19 @@ waitUntil {call client_account_id_received};
 ["Asking the list of player of this account to the server..."] call client_fnc_log_me;
 [] call auth_fnc_ask_players;
 waitUntil {call client_players_list_received};
-["Players list received"] call client_fnc_log_me;
-
-
-//waitUntil {call client_ready_to_play};
-[] call client_fnc_init;
 
 /**
-* Remove black screen
+* Display character selection dialog and cam sequence
 */
-0 cutText ["", "BLACK IN"];
+waitUntil {!isNull (findDisplay 46)};
+[] call client_fnc_cam_intro;
+
+waitUntil {call client_player_is_ready};
+
+/**
+* If it's first spawn or spawn after death
+*/
+private _player_pos = (call client_player) select 4;
+if (_player_pos isEqualTo [0,0,0]) then {
+
+};
