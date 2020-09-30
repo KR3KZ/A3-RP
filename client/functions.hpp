@@ -20,11 +20,15 @@ class General {
 	class Main {
 		file = "general\main";
 	};
-	class player_list {
+	class Player_list {
 		file = "dialog\players_list";
 		class players_list_play {};
 		class players_list_set_index {};
 		class players_list_set_ctrl {};
 		class players_list_on_load {};
+	};
+	class Spawn_menu {
+		file = "dialog\spawn_menu";
+		class spawn_menu_on_load {};
 	};
 };

@@ -14,6 +14,8 @@ client_log_me_id = 0;
 client_account_id_received = compile("false");
 client_players_list_received = compile("false");
 client_ready_to_play = compile("false");
+client_player_selected = compile("false");
+client_player_spawn_selected = compile("false");
 client_player_is_ready = compile("false");
 
 ["Server is loading..."] call client_fnc_log_me;
@@ -40,17 +42,20 @@ waitUntil {call client_account_id_received};
 waitUntil {call client_players_list_received};
 
 /**
-* Display character selection dialog and cam sequence
+* Display cam sequence, then character selection, spawn
 */
 waitUntil {!isNull (findDisplay 46)};
 [] call client_fnc_cam_intro;
+waitUntil {player getVariable ["client_cam_ready", false]};
+createDialog "A3RP_player_list";
 
-waitUntil {call client_player_is_ready};
-
+waitUntil {call client_player_selected};
 /**
-* If it's first spawn or spawn after death
+* If it's first spawn
 */
-private _player_pos = (call client_player) select 4;
-if (_player_pos isEqualTo [0,0,0]) then {
-
+if (client_player_position isEqualTo [0,0,0]) then {
+	createDialog "A3RP_spawn_menu";
+} else {
+	//TODO : TP player at his pos
 };
+waitUntil {call client_player_is_ready};

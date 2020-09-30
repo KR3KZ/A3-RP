@@ -1,6 +1,7 @@
 class A3RP_spawn_menu
 {
-	idd = 1000;
+	idd = 1100;
+	onLoad = "[] spawn client_fnc_spawn_menu_on_load;";
 	
 	class ControlsBackground
 	{
@@ -33,7 +34,7 @@ class A3RP_spawn_menu
 	{
 		class map : A3RP_RscMapControl 
 		{
-			idc = -1;
+			idc = 1101;
 			x = safeZoneX + safeZoneW * 0.26875;
 			y = safeZoneY + safeZoneH * 0.22444445;
 			w = safeZoneW * 0.4625;

@@ -18,13 +18,7 @@ if (player getVariable ["client_cam_intro_running", false] isEqualTo false) then
 			_iteration = _iteration + 1;
 			_randomPos = (call BIS_fnc_randomPos) vectorAdd [0, 0, 5 + random _max_altitude];
 			waitUntil {preloadCamera _randomPos};
-
-			/**
-			* Wait until camera is ready to show the dialog, we like it clean :)
-			*/
-			if (!dialog) then {
-				createDialog "A3RP_player_list";
-			};
+			player setVariable ["client_cam_ready", true];
 
 			0 cutText ["", "BLACK IN", _speed_fade];
 
@@ -42,18 +36,17 @@ if (player getVariable ["client_cam_intro_running", false] isEqualTo false) then
 			0 cutText ["", "BLACK OUT", _speed_fade];
 
 			if (player getVariable "client_cam_intro_running" isEqualTo false) exitWith {
-				closeDialog 0;
 				_cam cameraEffect ["terminate", "back"];
 				camDestroy _cam;
 			};
 
 			if (_iteration >= _max_iteration && player getVariable ["client_cam_intro_running", false] isEqualTo true) exitWith {
-				closeDialog 0;
 				["inactivity"] spawn BIS_fnc_endMission;
 			};
 		};
 		cameraEffectEnableHUD true;
 		0 cutText ["", "BLACK IN", _speed_fade];
-		client_player_is_ready = compileFinal("true");
+		player setVariable ["client_cam_intro_running", nil];
+		player setVariable ["client_cam_ready", nil];
 	};
 };

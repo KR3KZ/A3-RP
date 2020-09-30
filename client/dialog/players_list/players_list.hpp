@@ -152,7 +152,7 @@ class A3RP_player_list
 		class btn_play : A3RP_button_bold_text 
 		{
 			type = 1;
-			idc = 1005;
+			idc = -1;
 			x = safeZoneX + safeZoneW * 0.44375;
 			y = safeZoneY + safeZoneH * 0.78666667;
 			w = safeZoneW * 0.1125;
@@ -164,7 +164,7 @@ class A3RP_player_list
 		class btn_next : A3RP_button_bold_text 
 		{
 			type = 1;
-			idc = 1007;
+			idc = -1;
 			x = safeZoneX + safeZoneW * 0.56875;
 			y = safeZoneY + safeZoneH * 0.78666667;
 			w = safeZoneW * 0.0625;
@@ -176,7 +176,7 @@ class A3RP_player_list
 		class btn_prev : A3RP_button_bold_text 
 		{
 			type = 1;
-			idc = 1006;
+			idc = -1;
 			x = safeZoneX + safeZoneW * 0.36875;
 			y = safeZoneY + safeZoneH * 0.78666667;
 			w = safeZoneW * 0.0625;
