@@ -8,7 +8,11 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=8;
+		nextID=9;
+	};
+	class MarkerIDProvider
+	{
+		nextID=1;
 	};
 	class Camera
 	{
@@ -24,13 +28,14 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Characters_F_Exp_Civil",
 	"A3_Weapons_F_Items",
-	"A3_Characters_F_Orange"
+	"A3_Characters_F_Orange",
+	"A3_Ui_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=5;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -56,6 +61,13 @@ class AddonsMetaData
 		{
 			className="A3_Characters_F_Orange";
 			name="Arma 3 Orange - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -141,7 +153,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=4;
+		items=5;
 		class Item0
 		{
 			dataType="Group";
@@ -454,6 +466,14 @@ class Mission
 			{
 			};
 			id=6;
+		};
+		class Item4
+		{
+			dataType="Marker";
+			position[]={3617.7114,10.034124,13115.493};
+			name="spawn_kavala";
+			type="Empty";
+			id=8;
 		};
 	};
 };

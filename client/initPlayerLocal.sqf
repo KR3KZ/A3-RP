@@ -5,18 +5,20 @@
 * desc: Handle auth and variables for the player. Executed after initServer.sqf
 */
 
+if (!isMultiplayer) exitWith {};
+
 /**
 * Black screen
 */
 0 cutText[localize "STR_loading", "BLACK FADED", 99999999];
 
 client_log_me_id = 0;
-client_account_id_received = compile("false");
-client_players_list_received = compile("false");
-client_ready_to_play = compile("false");
-client_player_selected = compile("false");
-client_player_spawn_selected = compile("false");
-client_player_is_ready = compile("false");
+client_account_id_received 		= compile("false");
+client_players_list_received 	= compile("false");
+client_ready_to_play 			= compile("false");
+client_player_selected 			= compile("false");
+client_player_spawn_selected 	= compile("false");
+client_player_is_ready 			= compile("false");
 
 ["Server is loading..."] call client_fnc_log_me;
 

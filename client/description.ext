@@ -3,6 +3,8 @@ class CfgServer {
 }
 
 #include "CfgRemoteExec.hpp"
+#include "dialog\A3RP_dialogs.hpp"
+#include "config\spawn.hpp"
 
 class CfgFunctions {
 	#include "functions.hpp"
@@ -23,5 +25,3 @@ class CfgDebriefing
 		picture = "KIA";
 	};
 };
-
-#include "dialog\A3RP_dialogs.hpp"

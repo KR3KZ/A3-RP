@@ -5,9 +5,9 @@
 * desc: Get the players list for this account from the server
 */
 
-private _players_list = param [0, [], [[]]];
+private _players_list 			= param [0, [], [[]]];
 
 [format["[fn_on_players_list]: Players list received from server [%1]", _players_list]] call client_fnc_log_me;
 
-client_players_list = compileFinal(str(_players_list));
-client_players_list_received = compileFinal("true");
+client_players_list 			= compileFinal(str(_players_list));
+client_players_list_received 	= compileFinal("true");

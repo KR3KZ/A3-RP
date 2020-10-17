@@ -15,9 +15,9 @@ if (!isNil "SRV_extdb3_protocol_name") exitWith {
 * Get the database name param from init.sqf
 */
 private _database_name 	= param [0, "", [""]];
-private _return = false;
-private _db_added = false;
-private _conn_count = 1;
+private _return 		= false;
+private _db_added 		= false;
+private _conn_count 	= 1;
 
 /**
 * 9 represent the system mode

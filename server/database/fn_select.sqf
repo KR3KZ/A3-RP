@@ -28,10 +28,10 @@ params [
 *	3 = WAIT 		(WAIT, means extDB3 hasn't got result yet)  
 *	5 = MULTIMSG 	(When you call 4: it will return [5] if message is Multi-part) 
 */
-private _select = "extDB3" callExtension format ["2:%1:%2", call SRV_extdb3_protocol_name, _query];
-_select = call compile format ["%1", _select];
-private _type = _select select 0;
-private _data = _select select 1;
+private _select 	= "extDB3" callExtension format ["2:%1:%2", call SRV_extdb3_protocol_name, _query];
+_select 			= call compile format ["%1", _select];
+private _type 		= _select select 0;
+private _data 		= _select select 1;
 
 /**
 * Query extdb3 until we get all the data we want in _queryResult

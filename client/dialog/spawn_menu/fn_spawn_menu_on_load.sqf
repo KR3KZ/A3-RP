@@ -7,6 +7,7 @@
 
 ["[fn_spawn_menu_on_load]: Dialog created"] call client_fnc_log_me;
 
+private _spawns = [] call client_fnc_get_spawns;
 private _display = findDisplay 1100;
 waitUntil {!isNull _display};
-_display displayAddEventHandler["keyDown", {if (_this # 1 == 1) then {true};}];
+//_display displayAddEventHandler["keyDown", {if (_this # 1 == 1) then {true};}];

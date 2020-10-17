@@ -26,8 +26,8 @@ if (_conn) then {
 	*/
 	[format ["[extDB3]: Connected to database [%1]", _database_name]] call SRV_fnc_log_me;
 	SRV_is_ready = compileFinal("true");
-	["A3RP Server started"] call SRV_fnc_log_me;
 	publicVariable "SRV_is_ready";
+	["A3RP Server started"] call SRV_fnc_log_me;
 } else {
 	/**
 	* If connection failure

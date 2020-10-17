@@ -17,8 +17,9 @@ class General {
 		class log_me {};
 		class cam_intro {};
 	};
-	class Main {
-		file = "general\main";
+	class Spawn {
+		file = "general\spawn";
+		class get_spawns {};
 	};
 	class Player_list {
 		file = "dialog\players_list";

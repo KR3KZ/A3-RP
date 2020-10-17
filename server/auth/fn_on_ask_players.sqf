@@ -5,11 +5,11 @@
 * desc: The client asks if he has players in the database, answer needed
 */
 
-private _player = param [0, objNull, [objNull]];
-private _player_uid = getPlayerUID _player;
-private _player_side = format["%1", side _player];
-private _player_name = name _player;
-private _player_gear = format ["%1", getUnitLoadout _player];
+private _player 		= param [0, objNull, [objNull]];
+private _player_uid 	= getPlayerUID _player;
+private _player_side 	= format["%1", side _player];
+private _player_name 	= name _player;
+private _player_gear 	= format ["%1", getUnitLoadout _player];
 
 [format["[fn_on_ask_players]: Request from [%1] [%2] received", _player_side, _player_uid]] call SRV_fnc_log_me;
 

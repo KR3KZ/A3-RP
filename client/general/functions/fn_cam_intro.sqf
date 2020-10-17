@@ -8,11 +8,11 @@
 if (player getVariable ["client_cam_intro_running", false] isEqualTo false) then {
 	[] spawn {
 		player setVariable ["client_cam_intro_running", true];
-		private _speed_cam = 13;
-		private _speed_fade = 2;
-		private _max_altitude = 50;
-		private _iteration = 0;
-		private _max_iteration = 30;
+		private _speed_cam 		= 13;
+		private _speed_fade 	= 2;
+		private _max_altitude 	= 50;
+		private _iteration 		= 0;
+		private _max_iteration 	= 30;
 
 		while {player getVariable "client_cam_intro_running" isEqualTo true && _iteration < _max_iteration} do {
 			_iteration = _iteration + 1;
