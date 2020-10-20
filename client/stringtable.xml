@@ -35,6 +35,26 @@
             <Original>Play</Original>
             <French>Jouer</French>
         </Key>
+        <Key ID="STR_player_create">
+            <Original>Create</Original>
+            <French>Créer</French>
+        </Key>
+        <Key ID="STR_player_create_title">
+            <Original>Character creation</Original>
+            <French>Création du personnage</French>
+        </Key>
+        <Key ID="STR_player_create_message">
+            <Original>Do you want to create a character named : %1 ?</Original>
+            <French>Voulez-vous créer un personnage nommé : %1 ?</French>
+        </Key>
+        <Key ID="STR_player_already_exists">
+            <Original>A character already has the name : %1 for this side. If you want to create another character, please, change your name.</Original>
+            <French>Un personnage a déjà le nom : %1 pour ce camp. Si vous souhaitez créer un nouveau personnage, changez votre nom svp.</French>
+        </Key>
+        <Key ID="STR_player_change_your_pseudo">
+            <Original>To play with this character, your name must be : %1.</Original>
+            <French>Pour jouer ce personnage, votre nom doit être : %1.</French>
+        </Key>
     </Package>
     <Package name="spawn_menu">
         <Key ID="STR_spawn_menu_title">

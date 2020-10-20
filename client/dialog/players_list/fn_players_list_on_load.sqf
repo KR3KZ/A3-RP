@@ -14,4 +14,4 @@ _display displayAddEventHandler["keyDown", {if (_this # 1 == 1) then {true};}];
 [0] spawn client_fnc_players_list_set_ctrl;
 
 client_players_list_index 		= 0;
-client_players_list_index_max 	= (count(call client_players_list) - 1);
+client_players_list_index_max 	= (count(client_players_list) - 1);

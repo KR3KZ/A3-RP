@@ -6,6 +6,7 @@ class Authentification {
 		class ask_players {};
 		class on_client_account_id {};
 		class on_players_list {};
+		class on_player_created {};
 		class update_player {};
 	};
 };
@@ -27,6 +28,7 @@ class General {
 		class players_list_set_index {};
 		class players_list_set_ctrl {};
 		class players_list_on_load {};
+		class players_list_create {};
 	};
 	class Spawn_menu {
 		file = "dialog\spawn_menu";

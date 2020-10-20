@@ -15,4 +15,4 @@ _client_account_id 			= format ["%1", _client_account_id];
 */
 player setVariable ["client_account_id", _client_account_id, 2];
 
-client_account_id_received 	= compileFinal("true");
+client_account_id_received 	= true;

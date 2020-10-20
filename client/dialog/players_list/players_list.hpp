@@ -152,7 +152,7 @@ class A3RP_player_list
 		class btn_play : A3RP_button_bold_text 
 		{
 			type = 1;
-			idc = -1;
+			idc = 1005;
 			x = safeZoneX + safeZoneW * 0.44375;
 			y = safeZoneY + safeZoneH * 0.78666667;
 			w = safeZoneW * 0.1125;
@@ -164,7 +164,7 @@ class A3RP_player_list
 		class btn_next : A3RP_button_bold_text 
 		{
 			type = 1;
-			idc = -1;
+			idc = 1007;
 			x = safeZoneX + safeZoneW * 0.56875;
 			y = safeZoneY + safeZoneH * 0.78666667;
 			w = safeZoneW * 0.0625;
@@ -176,13 +176,25 @@ class A3RP_player_list
 		class btn_prev : A3RP_button_bold_text 
 		{
 			type = 1;
-			idc = -1;
+			idc = 1006;
 			x = safeZoneX + safeZoneW * 0.36875;
 			y = safeZoneY + safeZoneH * 0.78666667;
 			w = safeZoneW * 0.0625;
 			h = safeZoneH * 0.03666667;
 			text = "<";
 			onButtonClick = "[false] call client_fnc_players_list_set_index;";
+			
+		};
+		class btn_create : A3RP_button_bold_text 
+		{
+			type = 1;
+			idc = 1005;
+			x = safeZoneX + safeZoneW * 0.44375;
+			y = safeZoneY + safeZoneH * 0.83555556;
+			w = safeZoneW * 0.1125;
+			h = safeZoneH * 0.03666667;
+			text = "$STR_player_create";
+			onButtonClick = "[] spawn client_fnc_players_list_create;";
 			
 		};
 		

@@ -1,8 +1,8 @@
 /*
 * A3-RP
 * Server-side
-* file: on_ask_players.sqf
-* desc: The client asks if he has players in the database, answer needed
+* file: create_player.sqf
+* desc: Create a new character in database
 */
 
 private _player 		= param [0, objNull, [objNull]];
@@ -11,22 +11,20 @@ private _player_side 	= format["%1", side _player];
 private _player_name 	= name _player;
 private _player_gear 	= format ["%1", getUnitLoadout _player];
 
-[format["[fn_on_ask_players]: Request from [%1] [%2] [%3] received", _player_uid, _player_side, _player_name]] call SRV_fnc_log_me;
-
-private _res = [_player_uid, _player_side] call SRV_fnc_select_players;
+private _res = [_player_uid, _player_side, _player_name] call SRV_fnc_select_player_by_name;
 
 if (_res isEqualTo [0,"Error MariaDBQueryException Exception"]) exitWith {
 	/**
 	* If MariaDBQueryException Exception
 	*/
-	[format["[fn_on_ask_players]: [%1]", _res]] call SRV_fnc_log_me;
+	[format["[fn_on_create_player]: [%1]", _res]] call SRV_fnc_log_me;
 };
 
 if (_res isEqualTo []) then {
 	/**
 	* The player is not in the database
 	*/
-	[format["[fn_on_ask_players]: [%1] [%2] is not in database", _player_uid, _player_side]] call SRV_fnc_log_me;
+	[format["[fn_create_player]: [%1] [%2] [%3] is not in database", _player_uid, _player_side, _player_name]] call SRV_fnc_log_me;
 
 	/**
 	* Insert player in database
@@ -36,15 +34,15 @@ if (_res isEqualTo []) then {
 	/**
 	* Make sure insert was successfull
 	*/
-	[_player] call SRV_fnc_on_ask_players;
+	[_player] call SRV_fnc_create_player;
 } else {
 	/**
 	* The player exist in the database
 	*/
-	[format["[fn_on_ask_players]: [%1] [%2] exist in database, player info: [%3], send it to the client", _player_side, _player_uid, _res]] call SRV_fnc_log_me;
+	[format["[fn_on_create_player]: [%1] [%2] exist in database, player info: [%3], send it to the client", _player_side, _player_uid, _res]] call SRV_fnc_log_me;
 
 	/**
 	* Send player info's to the client
 	*/
-	[_res] remoteExec ["auth_fnc_on_players_list", _player];
+	[_res] remoteExec ["auth_fnc_on_player_created", _player];
 };
