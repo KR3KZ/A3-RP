@@ -8,9 +8,13 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=12;
+		nextID=14;
 	};
 	class MarkerIDProvider
+	{
+		nextID=1;
+	};
+	class LayerIndexProvider
 	{
 		nextID=1;
 	};
@@ -153,7 +157,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=8;
+		items=5;
 		class Item0
 		{
 			dataType="Group";
@@ -469,37 +473,58 @@ class Mission
 		};
 		class Item4
 		{
-			dataType="Marker";
-			position[]={3617.7114,10.034124,13115.493};
-			name="spawn_kavala";
-			type="Empty";
-			id=8;
-		};
-		class Item5
-		{
-			dataType="Marker";
-			position[]={16831.438,22.087603,12720.601};
-			name="spawn_pyrgos";
-			type="Empty";
-			id=9;
-		};
-		class Item6
-		{
-			dataType="Marker";
-			position[]={18850.666,31.396999,16647.301};
-			name="spawn_rodopoli";
-			type="Empty";
-			id=10;
-			atlOffset=-0.00012016296;
-		};
-		class Item7
-		{
-			dataType="Marker";
-			position[]={10672.492,16.731001,12263.417};
-			name="spawn_therisa";
-			type="Empty";
-			id=11;
-			atlOffset=-0.0002117157;
+			dataType="Layer";
+			name="Spawns";
+			state=1;
+			class Entities
+			{
+				items=5;
+				class Item0
+				{
+					dataType="Marker";
+					position[]={14045.611,27.816,18739.453};
+					name="spawn_athira";
+					type="Empty";
+					id=12;
+					atlOffset=1.7511444;
+				};
+				class Item1
+				{
+					dataType="Marker";
+					position[]={3617.7114,10.034124,13115.493};
+					name="spawn_kavala";
+					type="Empty";
+					id=8;
+				};
+				class Item2
+				{
+					dataType="Marker";
+					position[]={16831.438,22.087603,12720.601};
+					name="spawn_pyrgos";
+					type="Empty";
+					id=9;
+				};
+				class Item3
+				{
+					dataType="Marker";
+					position[]={18850.666,31.396999,16647.301};
+					name="spawn_rodopoli";
+					type="Empty";
+					id=10;
+					atlOffset=-0.00012016296;
+				};
+				class Item4
+				{
+					dataType="Marker";
+					position[]={10672.492,16.731001,12263.417};
+					name="spawn_therisa";
+					type="Empty";
+					id=11;
+					atlOffset=-0.0002117157;
+				};
+			};
+			id=13;
+			atlOffset=42.293732;
 		};
 	};
 };

@@ -21,6 +21,7 @@ class General {
 	class Spawn {
 		file = "general\spawn";
 		class get_spawns {};
+		class get_spawn_position {};
 	};
 	class Player_list {
 		file = "dialog\players_list";
