@@ -17,7 +17,7 @@ if (_param) then {
 		client_players_list_index = client_players_list_index + 1;
 	};
 } else {
-[	"[fn_players_list_on_set]: Button prev pressed"] call client_fnc_log_me;
+	["[fn_players_list_on_set]: Button prev pressed"] call client_fnc_log_me;
 	if ((client_players_list_index - 1) < 0) then {
 		client_players_list_index = client_players_list_index_max;
 	} else {

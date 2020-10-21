@@ -2,13 +2,15 @@
 * A3-RP
 * Client-side
 * file: players_list_on_load
-* desc: Select player from players_list on load
+* desc: Character selection dialog
 */
 
 ["[fn_players_list_on_load]: Dialog created"] call client_fnc_log_me;
 
 private _display 				= findDisplay 1000;
+
 waitUntil {!isNull _display};
+
 _display displayAddEventHandler["keyDown", {if (_this # 1 == 1) then {true};}];
 
 [0] spawn client_fnc_players_list_set_ctrl;

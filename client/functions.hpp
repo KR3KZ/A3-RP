@@ -33,5 +33,7 @@ class General {
 	class Spawn_menu {
 		file = "dialog\spawn_menu";
 		class spawn_menu_on_load {};
+		class spawn_menu_spawn {};
+		class spawn_menu_onLbSelChanged {};
 	};
 };

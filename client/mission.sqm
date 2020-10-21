@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=9;
+		nextID=12;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={10233.571,127.99454,15861.255};
+		pos[]={10229.681,138.85129,15849.891};
 		dir[]={0.27117085,-0.5992977,0.75321114};
 		up[]={0.20300423,0.80052388,0.56387007};
 		aside[]={0.94088805,-2.3865141e-008,-0.33873844};
@@ -153,7 +153,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=5;
+		items=8;
 		class Item0
 		{
 			dataType="Group";
@@ -474,6 +474,32 @@ class Mission
 			name="spawn_kavala";
 			type="Empty";
 			id=8;
+		};
+		class Item5
+		{
+			dataType="Marker";
+			position[]={16831.438,22.087603,12720.601};
+			name="spawn_pyrgos";
+			type="Empty";
+			id=9;
+		};
+		class Item6
+		{
+			dataType="Marker";
+			position[]={18850.666,31.396999,16647.301};
+			name="spawn_rodopoli";
+			type="Empty";
+			id=10;
+			atlOffset=-0.00012016296;
+		};
+		class Item7
+		{
+			dataType="Marker";
+			position[]={10672.492,16.731001,12263.417};
+			name="spawn_therisa";
+			type="Empty";
+			id=11;
+			atlOffset=-0.0002117157;
 		};
 	};
 };

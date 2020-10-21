@@ -10,7 +10,7 @@ class A3RP_player_list
 			type = 0;
 			idc = -1;
 			x = safeZoneX + safeZoneW * 0.36875;
-			y = safeZoneY + safeZoneH * 0.22444445;
+			y = safeZoneY + safeZoneH * 0.17555556;
 			w = safeZoneW * 0.2625;
 			h = safeZoneH * 0.52555556;
 			colorBackground[] = {0.2,0.2,0.2,0.8};
@@ -43,7 +43,7 @@ class A3RP_player_list
 			type = 0;
 			idc = 1001;
 			x = safeZoneX + safeZoneW * 0.39375;
-			y = safeZoneY + safeZoneH * 0.29777778;
+			y = safeZoneY + safeZoneH * 0.24888889;
 			w = safeZoneW * 0.2125;
 			h = safeZoneH * 0.06111112;
 			style = 2;
@@ -56,7 +56,7 @@ class A3RP_player_list
 			type = 0;
 			idc = 1002;
 			x = safeZoneX + safeZoneW * 0.39375;
-			y = safeZoneY + safeZoneH * 0.46888889;
+			y = safeZoneY + safeZoneH * 0.42;
 			w = safeZoneW * 0.2125;
 			h = safeZoneH * 0.06111112;
 			style = 2;
@@ -69,7 +69,7 @@ class A3RP_player_list
 			type = 0;
 			idc = 1003;
 			x = safeZoneX + safeZoneW * 0.39375;
-			y = safeZoneY + safeZoneH * 0.64;
+			y = safeZoneY + safeZoneH * 0.59111112;
 			w = safeZoneW * 0.2125;
 			h = safeZoneH * 0.06111112;
 			text = "";
@@ -81,7 +81,7 @@ class A3RP_player_list
 			type = 0;
 			idc = -1;
 			x = safeZoneX + safeZoneW * 0.39375;
-			y = safeZoneY + safeZoneH * 0.24888889;
+			y = safeZoneY + safeZoneH * 0.2;
 			w = safeZoneW * 0.2125;
 			h = safeZoneH * 0.13444445;
 			colorText[] = {0.7,0.9,0.9,0.5};
@@ -92,7 +92,7 @@ class A3RP_player_list
 			type = 0;
 			idc = -1;
 			x = safeZoneX + safeZoneW * 0.39375;
-			y = safeZoneY + safeZoneH * 0.42;
+			y = safeZoneY + safeZoneH * 0.37111112;
 			w = safeZoneW * 0.2125;
 			h = safeZoneH * 0.13444445;
 			colorText[] = {0.7,0.7,0.9,0.5};
@@ -103,7 +103,7 @@ class A3RP_player_list
 			type = 0;
 			idc = -1;
 			x = safeZoneX + safeZoneW * 0.39375;
-			y = safeZoneY + safeZoneH * 0.59111112;
+			y = safeZoneY + safeZoneH * 0.54222223;
 			w = safeZoneW * 0.2125;
 			h = safeZoneH * 0.13444445;
 			colorText[] = {0.9,0.9,0.9,0.5};
@@ -114,7 +114,7 @@ class A3RP_player_list
 			type = 0;
 			idc = -1;
 			x = safeZoneX + safeZoneW * 0.39375;
-			y = safeZoneY + safeZoneH * 0.24888889;
+			y = safeZoneY + safeZoneH * 0.2;
 			w = safeZoneW * 0.2125;
 			h = safeZoneH * 0.03666667;
 			text = "$STR_player_name";
@@ -126,7 +126,7 @@ class A3RP_player_list
 			type = 0;
 			idc = -1;
 			x = safeZoneX + safeZoneW * 0.39375;
-			y = safeZoneY + safeZoneH * 0.42;
+			y = safeZoneY + safeZoneH * 0.37111112;
 			w = safeZoneW * 0.2125;
 			h = safeZoneH * 0.03666667;
 			text = "$STR_player_cash";
@@ -138,7 +138,7 @@ class A3RP_player_list
 			type = 0;
 			idc = -1;
 			x = safeZoneX + safeZoneW * 0.39375;
-			y = safeZoneY + safeZoneH * 0.59111112;
+			y = safeZoneY + safeZoneH * 0.54222223;
 			w = safeZoneW * 0.2125;
 			h = safeZoneH * 0.03666667;
 			text = "$STR_player_city";
@@ -154,7 +154,7 @@ class A3RP_player_list
 			type = 1;
 			idc = 1005;
 			x = safeZoneX + safeZoneW * 0.44375;
-			y = safeZoneY + safeZoneH * 0.78666667;
+			y = safeZoneY + safeZoneH * 0.72111112;
 			w = safeZoneW * 0.1125;
 			h = safeZoneH * 0.03666667;
 			text = "$STR_player_play";
@@ -166,7 +166,7 @@ class A3RP_player_list
 			type = 1;
 			idc = 1007;
 			x = safeZoneX + safeZoneW * 0.56875;
-			y = safeZoneY + safeZoneH * 0.78666667;
+			y = safeZoneY + safeZoneH * 0.72111112;
 			w = safeZoneW * 0.0625;
 			h = safeZoneH * 0.03666667;
 			text = ">";
@@ -178,7 +178,7 @@ class A3RP_player_list
 			type = 1;
 			idc = 1006;
 			x = safeZoneX + safeZoneW * 0.36875;
-			y = safeZoneY + safeZoneH * 0.78666667;
+			y = safeZoneY + safeZoneH * 0.72111112;
 			w = safeZoneW * 0.0625;
 			h = safeZoneH * 0.03666667;
 			text = "<";
@@ -190,7 +190,7 @@ class A3RP_player_list
 			type = 1;
 			idc = 1005;
 			x = safeZoneX + safeZoneW * 0.44375;
-			y = safeZoneY + safeZoneH * 0.83555556;
+			y = safeZoneY + safeZoneH * 0.77111112;
 			w = safeZoneW * 0.1125;
 			h = safeZoneH * 0.03666667;
 			text = "$STR_player_create";

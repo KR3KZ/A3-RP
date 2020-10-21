@@ -58,8 +58,24 @@
     </Package>
     <Package name="spawn_menu">
         <Key ID="STR_spawn_menu_title">
+            <Original>Spawn selection</Original>
+            <French>Choix du spawn</French>
+        </Key>
+        <Key ID="STR_spawn_menu_select_a_spawn">
             <Original>Choose a spawn</Original>
             <French>Choisissez votre spawn</French>
+        </Key>
+        <Key ID="STR_spawn_menu_selected_spawn">
+            <Original>Selected spawn : %1</Original>
+            <French>Spawn selectionné : %1</French>
+        </Key>
+        <Key ID="STR_spawn_menu_spawn">
+            <Original>Spawn</Original>
+            <French>Spawn</French>
+        </Key>
+        <Key ID="STR_spawn_menu_spawn_at">
+            <Original>Spawn at : %1</Original>
+            <French>Spawn à : %1</French>
         </Key>
     </Package>
     <Package name="EndMission">

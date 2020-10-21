@@ -2,7 +2,7 @@
 * A3-RP
 * Client-side
 * file: players_list_create
-* desc: Create player
+* desc: Executed when create button is pressed
 */
 
 ["[fn_players_list_create]: Button create pressed"] call client_fnc_log_me;

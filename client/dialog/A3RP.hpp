@@ -205,6 +205,7 @@ class A3RP_structured_text
 };
 class A3RP_list_box
 {
+	style = 16;
 	colorBackground[] = {0.164,0.164,0.164,0.7};
 	colorDisabled[] = {0,0,0,0};
 	colorSelect[] = {0.8525,0.3843,0.3843,0.9};

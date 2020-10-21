@@ -31,7 +31,7 @@ _cash ctrlSetText _player_cash;
 */
 if (name player != _player_name) then {
 	_btn_play ctrlEnable false;
-	_btn_play ctrlSetTooltip format[localize "STR_player_already_exists", name player];
+	_btn_play ctrlSetTooltip format[localize "STR_player_change_your_pseudo", _player_name];
 } else {
 	if (!ctrlEnabled _btn_play) then {
 		_btn_play ctrlEnable true;
