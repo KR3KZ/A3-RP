@@ -7,7 +7,7 @@
 
 params ["_control", "_selectedIndex"];
 
-private _spawns 			= [] call client_fnc_get_spawns;
+private _spawns 			= call client_fnc_get_spawns;
 
 /**
 * Get the text and data from selected spawn

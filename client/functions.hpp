@@ -19,6 +19,10 @@ class General {
 		class log_me {};
 		class cam_intro {};
 	};
+	class Gear {
+		file = "general\gear";
+		class load_gear {};
+	};
 	class Spawn {
 		file = "general\spawn";
 		class get_spawns {};

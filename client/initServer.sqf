@@ -5,4 +5,4 @@
 * desc: First file executed. Initialize the server
 */
 
-[] call compile preprocessFileLineNumbers "\server\init.sqf";
+call compile preprocessFileLineNumbers "\server\init.sqf";

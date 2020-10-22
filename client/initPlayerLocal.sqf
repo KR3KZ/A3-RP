@@ -19,6 +19,7 @@ client_ready_to_play 			= false;
 client_player_selected 			= false;
 client_player_spawn_selected 	= false;
 client_player_is_ready 			= false;
+client_player_gear_loaded		= false;
 
 ["Server is loading..."] call client_fnc_log_me;
 
@@ -32,7 +33,7 @@ waitUntil {SRV_is_ready};
 * Ask database if account exist, if not, create it, then send back client ID
 */
 ["Asking account to the server..."] call client_fnc_log_me;
-[] call auth_fnc_ask_account;
+call auth_fnc_ask_account;
 waitUntil {client_account_id_received};
 ["The account is ready"] call client_fnc_log_me;
 
@@ -40,18 +41,28 @@ waitUntil {client_account_id_received};
 * Ask database if account has existing players in database
 */
 ["Asking the list of player of this account to the server..."] call client_fnc_log_me;
-[] call auth_fnc_ask_players;
+call auth_fnc_ask_players;
 waitUntil {client_players_list_received};
 
 /**
 * Display cam sequence, then character selection, spawn
 */
 waitUntil {!isNull (findDisplay 46)};
-[] call client_fnc_cam_intro;
+call client_fnc_cam_intro;
 waitUntil {player getVariable ["client_cam_ready", false]};
-createDialog "A3RP_player_list";
 
+/**
+* Character selection
+*/
+createDialog "A3RP_player_list";
 waitUntil {client_player_selected};
+
+/**
+* Load gear
+*/
+call client_fnc_load_gear;
+waitUntil {client_player_gear_loaded};
+
 /**
 * If it's first spawn
 */
