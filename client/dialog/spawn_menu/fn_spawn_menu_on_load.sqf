@@ -31,3 +31,5 @@ _btn_spawn ctrlEnable false;
 	private _index = _spawns_list lbAdd _spawn_name;
 	_spawns_list lbSetData [_index, str(_forEachIndex)];
 } forEach _spawns;
+
+_spawns_list lbSetCurSel 0;

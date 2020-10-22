@@ -15,6 +15,7 @@ class General {
 	tag = "client";
 	class Functions {
 		file = "general\functions";
+		class bad_name {};
 		class log_me {};
 		class cam_intro {};
 	};

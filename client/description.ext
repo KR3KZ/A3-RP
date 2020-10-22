@@ -4,6 +4,7 @@ class CfgServer {
 
 #include "CfgRemoteExec.hpp"
 #include "dialog\A3RP_dialogs.hpp"
+#include "config\settings.hpp"
 #include "config\spawn.hpp"
 
 class CfgFunctions {
@@ -22,6 +23,12 @@ class CfgDebriefing
 	{
 		title = "AFK";
 		description = "$STR_end_mission_inactivity";
+		picture = "KIA";
+	};
+	class bad_name
+	{
+		title = "$STR_end_mission_bad_name_title";
+		description = "$STR_end_mission_bad_name";
 		picture = "KIA";
 	};
 };

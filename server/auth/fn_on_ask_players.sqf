@@ -13,6 +13,16 @@ private _player_gear 	= format ["%1", getUnitLoadout _player];
 
 [format["[fn_on_ask_players]: Request from [%1] [%2] [%3] received", _player_uid, _player_side, _player_name]] call SRV_fnc_log_me;
 
+/**
+* If the player name is only one word, kick him
+*/
+private _player_name_split = _player_name splitString " ";
+if (count(_player_name_split) <= 1) exitWith {
+	remoteExec ["client_fnc_bad_name", _player];
+};
+
+_player_name = _player_name_split joinString " ";
+
 private _res = [_player_uid, _player_side] call SRV_fnc_select_players;
 
 if (_res isEqualTo [0,"Error MariaDBQueryException Exception"]) exitWith {

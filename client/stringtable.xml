@@ -52,8 +52,8 @@
             <French>Un personnage a déjà le nom : %1 pour ce camp. Si vous souhaitez créer un nouveau personnage, changez votre nom svp.</French>
         </Key>
         <Key ID="STR_player_change_your_pseudo">
-            <Original>To play with this character, your name must be : %1.</Original>
-            <French>Pour jouer ce personnage, votre nom doit être : %1.</French>
+            <Original>To play with this character, your name must be : "%1". Your actual name is : "%2".</Original>
+            <French>Pour jouer ce personnage, votre nom doit être : "%1". Votre nom actuel est : "%2".</French>
         </Key>
     </Package>
     <Package name="spawn_menu">
@@ -86,6 +86,14 @@
         <Key ID="STR_end_mission_inactivity">
             <Original>You have been kicked because of inactivity.</Original>
             <French>Vous avez été kické pour inactivité.</French>
+        </Key>
+        <Key ID="STR_end_mission_bad_name_title">
+            <Original>Bad name</Original>
+            <French>Mauvais nom</French>
+        </Key>
+        <Key ID="STR_end_mission_bad_name">
+            <Original>You have been kicked because your name is not a Rôle Play name.</Original>
+            <French>Vous avez été kické pour car votre nom n'est pas un nom Rôle Play.</French>
         </Key>
     </Package>
 </Project>

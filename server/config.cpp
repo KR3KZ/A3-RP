@@ -26,6 +26,7 @@ class CfgFunctions {
 		{
 			file = "\server\general";
 			class log_me {};
+			class teleport_me {};
 		};
 		class Authentification {
 			file = "\server\auth";

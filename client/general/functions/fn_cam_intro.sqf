@@ -32,7 +32,13 @@ if (player getVariable ["client_cam_intro_running", false] isEqualTo false) then
 
 			_cam camPreparePos _randomPos;
 			_cam camCommitPrepared _speed_cam;
-			waitUntil {camCommitted _cam};
+			waitUntil {
+				if (player getVariable "client_cam_intro_running" isEqualTo false) then {
+					true
+				} else {
+					camCommitted _cam
+				};
+			};
 			0 cutText ["", "BLACK OUT", _speed_fade];
 
 			if (player getVariable "client_cam_intro_running" isEqualTo false) exitWith {
@@ -40,7 +46,7 @@ if (player getVariable ["client_cam_intro_running", false] isEqualTo false) then
 				camDestroy _cam;
 			};
 
-			if (_iteration >= _max_iteration && player getVariable ["client_cam_intro_running", false] isEqualTo true) exitWith {
+			if (_iteration >= _max_iteration && { player getVariable ["client_cam_intro_running", false] isEqualTo true }) exitWith {
 				["inactivity"] spawn BIS_fnc_endMission;
 			};
 		};
