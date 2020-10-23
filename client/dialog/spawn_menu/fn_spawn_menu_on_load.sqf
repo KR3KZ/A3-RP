@@ -33,3 +33,4 @@ _btn_spawn ctrlEnable false;
 } forEach _spawns;
 
 _spawns_list lbSetCurSel 0;
+ctrlSetFocus _btn_spawn;

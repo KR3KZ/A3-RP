@@ -12,13 +12,12 @@ if (!isMultiplayer) exitWith {};
 */
 0 cutText[localize "STR_loading", "BLACK FADED", 99999999];
 
-client_log_me_id = 0;
+client_log_me_id				= 0;
 client_account_id_received 		= false;
 client_players_list_received 	= false;
 client_ready_to_play 			= false;
 client_player_selected 			= false;
 client_player_spawn_selected 	= false;
-client_player_is_ready 			= false;
 client_player_gear_loaded		= false;
 
 ["Server is loading..."] call client_fnc_log_me;
@@ -64,11 +63,11 @@ call client_fnc_load_gear;
 waitUntil {client_player_gear_loaded};
 
 /**
-* If it's first spawn
+* Spawn selection
 */
 if (client_player_position isEqualTo [0,0,0]) then {
 	createDialog "A3RP_spawn_menu";
 } else {
-	//TODO : TP player at his pos
+	[player, client_player_position] remoteExec ["SRV_fnc_teleport_me", 2];
+	player setVariable["client_cam_intro_running", false];
 };
-waitUntil {client_player_is_ready};

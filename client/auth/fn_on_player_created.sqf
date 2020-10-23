@@ -9,7 +9,7 @@ private _player = param [0, [], [[]]];
 
 if (_player isEqualTo []) exitWith {
 	/**
-	* Player already exist in database wxith that name
+	* Player already exist in database with that name
 	*/
 	[format[localize "STR_player_already_exists", name player]] spawn BIS_fnc_guiMessage;
 };
