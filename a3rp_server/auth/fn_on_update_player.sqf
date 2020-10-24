@@ -9,7 +9,8 @@ private _player 		= param [0, objNull, [objNull]];
 private _player_id 		= _player getVariable ["client_player_id", 0];
 if (_player_id == 0) exitWith {};
 private _player_side 	= format["%1", side _player];
-private _player_cash 	= _player getVariable ["client_cash", 0];
+private _player_cash 	= _player getVariable ["client_cash", -1];
+if (_player_cash == -1) exitWith {};
 private _player_gear 	= format ["%1", getUnitLoadout _player];
 private _player_pos 	= getPosATL _player;
 
