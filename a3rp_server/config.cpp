@@ -34,6 +34,16 @@ class CfgFunctions {
 			class log_me {};
 			class teleport_me {};
 		};
+		class Money
+		{
+			file = "\a3rp_server\general\money";
+			class handle_money {};
+		};
+		class Save
+		{
+			file = "\a3rp_server\general\save";
+			class save_players {};
+		};
 		class Authentification {
 			file = "\a3rp_server\auth";
 			class on_ask_account {};
