@@ -11,6 +11,9 @@ private _display 				= findDisplay 1000;
 
 waitUntil {!isNull _display};
 
+/**
+* Prevent dialog from closing with esc key
+*/
 _display displayAddEventHandler["keyDown", {if (_this # 1 == 1) then {true};}];
 
 [0] spawn client_fnc_players_list_set_ctrl;

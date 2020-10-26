@@ -22,12 +22,43 @@ class CfgFunctions {
 	};
 	class Serv {
 		tag = "SRV";
+
+		/**
+		* a3rp_server/
+		*/
+		class Account {
+			file = "\a3rp_server\account";
+			class on_ask_account {};
+			class select_account {};
+			class insert_account {};
+		};
 		class EventHandler
 		{
 			file = "\a3rp_server\eventhandler";
 			class init_eventhandler {};
 			class HandleDisconnect {};
 		};
+		class Player {
+			file = "\a3rp_server\player";
+			class on_ask_players {};
+			class on_create_player {};
+			class on_update_player {};
+			class select_players {};
+			class select_player_by_name {};
+			class insert_player {};
+			class update_player {};
+			class create_player {};
+		};
+		class Vehicle
+		{
+			file = "\a3rp_server\vehicle";
+			class insert_vehicle {};
+			class on_insert_vehicle {};
+		};
+
+		/**
+		* a3rp_server/general/
+		*/
 		class General
 		{
 			file = "\a3rp_server\general";
@@ -44,20 +75,6 @@ class CfgFunctions {
 			file = "\a3rp_server\general\save";
 			class save_players {};
 			class save_world {};
-		};
-		class Authentification {
-			file = "\a3rp_server\auth";
-			class on_ask_account {};
-			class on_ask_players {};
-			class on_create_player {};
-			class on_update_player {};
-			class select_account {};
-			class insert_account {};
-			class select_players {};
-			class select_player_by_name {};
-			class insert_player {};
-			class update_player {};
-			class create_player {};
 		};
 	};
 };

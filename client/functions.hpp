@@ -28,6 +28,10 @@ class General {
 		class get_spawns {};
 		class get_spawn_position {};
 	};
+	class Vehicle {
+		file = "general\vehicle";
+		class insert_vehicle {};
+	};
 	class Player_list {
 		file = "dialog\players_list";
 		class players_list_play {};

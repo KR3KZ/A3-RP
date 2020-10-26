@@ -11,7 +11,10 @@ private _display 		= findDisplay 1100;
 
 waitUntil {!isNull _display};
 
-//_display displayAddEventHandler["keyDown", {if (_this # 1 == 1) then {true};}];
+/**
+* Prevent dialog from closing with esc key
+*/
+_display displayAddEventHandler["keyDown", {if (_this # 1 == 1) then {true};}];
 
 private _spawns = call client_fnc_get_spawns;
 

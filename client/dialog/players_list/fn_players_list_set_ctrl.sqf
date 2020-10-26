@@ -45,5 +45,5 @@ if (name player != _player_name) then {
 if (_player_pos isEqualTo [0,0,0]) then {
 	_city ctrlSetText (localize "STR_spawn_unknown");
 } else {
-	_city ctrlSetText (text(nearestLocation [_player_pos, "nameCity"]));
+	_city ctrlSetText (text(nearestLocation [_player_pos, "NameCityCapital"]));
 };

@@ -4,9 +4,12 @@
 * file: save_world.sqf
 */
 
-["World saving..."] call SRV_fnc_log_me;
+while {true} do {
+	sleep 60;
+	["World saving..."] call SRV_fnc_log_me;
 
-[] call SRV_fnc_save_players;
-//TODO save vehicles
+	[] call SRV_fnc_save_players;
+	//TODO save vehicles
 
-["World saved!"] call SRV_fnc_log_me;
+	["World saved!"] call SRV_fnc_log_me;
+};
