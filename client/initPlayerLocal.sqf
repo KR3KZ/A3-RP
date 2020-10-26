@@ -28,6 +28,8 @@ client_player_gear_loaded		= false;
 waitUntil {SRV_is_ready};
 ["The server is ready"] call client_fnc_log_me;
 
+waitUntil {!isNull player};
+
 /**
 * Ask database if account exist, if not, create it, then send back client ID
 */
@@ -68,6 +70,6 @@ waitUntil {client_player_gear_loaded};
 if (client_player_position isEqualTo [0,0,0]) then {
 	createDialog "A3RP_spawn_menu";
 } else {
-	[player, client_player_position] remoteExec ["SRV_fnc_teleport_me", 2];
+	[player, client_player_position, client_player_dir] remoteExec ["SRV_fnc_teleport_me", 2];
 	player setVariable["client_cam_intro_running", false];
 };

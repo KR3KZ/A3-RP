@@ -16,6 +16,7 @@ if (name player == ctrlText(_name)) then {
 	player setVariable["client_player_id", client_player select 0, 2];
 	player setVariable["client_cash", client_player select 2, 2];
 	client_player_position 	= [client_player select 4, client_player select 5, client_player select 6];
+	client_player_dir		= client_player select 7;
 	client_player_selected 	= true;
 	[format["[fn_players_list_play]: Player selected: [%1]", client_player]] call client_fnc_log_me;
 } else {

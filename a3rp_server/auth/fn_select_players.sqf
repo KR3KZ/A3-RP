@@ -21,7 +21,8 @@ private _query = format["
 	player.gear,
 	player.pos_atl_x,
 	player.pos_atl_y,
-	player.pos_atl_z
+	player.pos_atl_z,
+	player.dir
 	FROM account, player, side
 	WHERE player.account_id = account.id
 	AND player.side_id = side.id

@@ -13,7 +13,8 @@ private _player_cash 	= _player getVariable ["client_cash", -1];
 if (_player_cash == -1) exitWith {};
 private _player_gear 	= format ["%1", getUnitLoadout _player];
 private _player_pos 	= getPosATL _player;
+private _player_dir		= getDir _player;
 
 [format["[fn_on_update_player]: Request from [%1] [%2] received", _player_side, _player_id]] call SRV_fnc_log_me;
 
-[_player_id, _player_side, _player_cash, _player_gear, _player_pos] call SRV_fnc_update_player;
+[_player_id, _player_side, _player_cash, _player_gear, _player_pos, _player_dir] call SRV_fnc_update_player;
