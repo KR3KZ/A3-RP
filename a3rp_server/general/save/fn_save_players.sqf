@@ -7,6 +7,5 @@
 private _all_players = call BIS_fnc_listPlayers;
 
 {
-	private _player = _x;
-	
+	[_x] call SRV_fnc_on_update_player;
 } forEach _all_players;

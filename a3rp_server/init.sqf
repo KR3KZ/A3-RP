@@ -42,3 +42,10 @@ call SRV_fnc_init_eventhandler;
 SRV_is_ready = true;
 publicVariable "SRV_is_ready";
 ["A3RP Server started"] call SRV_fnc_log_me;
+
+[] spawn {
+	while {true} do {
+		sleep 60;
+		[] call SRV_fnc_save_world;
+	};
+};

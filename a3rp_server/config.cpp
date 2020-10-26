@@ -43,6 +43,7 @@ class CfgFunctions {
 		{
 			file = "\a3rp_server\general\save";
 			class save_players {};
+			class save_world {};
 		};
 		class Authentification {
 			file = "\a3rp_server\auth";
