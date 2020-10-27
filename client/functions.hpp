@@ -31,6 +31,7 @@ class General {
 	class Vehicle {
 		file = "general\vehicle";
 		class insert_vehicle {};
+		class update_vehicle {};
 	};
 	class Player_list {
 		file = "dialog\players_list";

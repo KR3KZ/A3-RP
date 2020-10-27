@@ -52,8 +52,11 @@ class CfgFunctions {
 		class Vehicle
 		{
 			file = "\a3rp_server\vehicle";
+			class insert_vehicle_key {};
 			class insert_vehicle {};
 			class on_insert_vehicle {};
+			class on_update_vehicle {};
+			class update_vehicle {};
 		};
 
 		/**
@@ -75,6 +78,7 @@ class CfgFunctions {
 			file = "\a3rp_server\general\save";
 			class save_players {};
 			class save_world {};
+			class save_vehicles {};
 		};
 	};
 };

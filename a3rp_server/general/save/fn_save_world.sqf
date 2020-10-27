@@ -9,7 +9,7 @@ while {true} do {
 	["World saving..."] call SRV_fnc_log_me;
 
 	[] call SRV_fnc_save_players;
-	//TODO save vehicles
+	[] call SRV_fnc_save_vehicles;
 
 	["World saved!"] call SRV_fnc_log_me;
 };
