@@ -29,7 +29,7 @@ if (!_conn) exitWith {
 };
 
 /**
-* If connection successfull
+* Connection successfull
 */
 [format ["[extDB3]: Connected to database [%1]", _database_name]] call SRV_fnc_log_me;
 
@@ -38,9 +38,13 @@ if (!_conn) exitWith {
 */
 ["Setting up Event Handlers"] call SRV_fnc_log_me;
 call SRV_fnc_init_eventhandler;
+call SRV_fnc_load_vehicles;
 
 SRV_is_ready = true;
 publicVariable "SRV_is_ready";
 ["A3RP Server started"] call SRV_fnc_log_me;
 
+/**
+* Spawn save thread
+*/
 [] spawn SRV_fnc_save_world;

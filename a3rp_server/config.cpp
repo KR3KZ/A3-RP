@@ -57,6 +57,11 @@ class CfgFunctions {
 			class on_insert_vehicle {};
 			class on_update_vehicle {};
 			class update_vehicle {};
+			class select_vehicles {};
+			class load_vehicles {};
+			class create_vehicle {};
+			class set_vehicle_damage {};
+			class init_vehicle {};
 		};
 
 		/**

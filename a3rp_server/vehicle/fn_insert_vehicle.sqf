@@ -7,15 +7,18 @@
 
 params [
 	["_vehicle_classname", "", [""]],
-	["_vehicle_damage", "", [""]]
+	["_vehicle_damage", "", [""]],
+	["_vehicle_pos", [], [[]]],
+	["_vehicle_dir", 0, [0]]
 ];
 
 private _query = format ["
 	INSERT INTO vehicle
-	(classname, damage)
+	(classname, damage, pos_atl_x, pos_atl_y, pos_atl_z, dir)
 	VALUES
-	('%1', '%2')
-", _vehicle_classname, _vehicle_damage];
+	('%1', '%2', '%3', '%4', '%5', '%6')
+", _vehicle_classname, _vehicle_damage, _vehicle_pos select 0, _vehicle_pos select 1, _vehicle_pos select 2, _vehicle_dir
+];
 
 [_query] call DB_fnc_execute;
 

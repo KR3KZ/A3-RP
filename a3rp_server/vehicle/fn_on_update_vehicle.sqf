@@ -7,7 +7,7 @@
 
 private _vehicle 		= param [0, objNull, [objNull]];
 private _vehicle_id 	= _vehicle getVariable "vehicle_id";
-private _vehicle_damage = str(getAllHitPointsDamage _vehicle);
+private _vehicle_damage = str(getAllHitPointsDamage _vehicle select 2);
 private _vehicle_pos 	= getPosATL _vehicle;
 private _vehicle_dir 	= getDir _vehicle;
 
