@@ -10,7 +10,7 @@ private _vehicles = call SRV_fnc_select_vehicles;
 {
 	private _vehicle_id = _x select 0;
 	private _vehicle_classname = _x select 1;
-	private _vehicle_damage = _x select 2;
+	private _vehicle_damage = parseSimpleArray(_x select 2);
 	private _vehicle_pos = [_x select 3, _x select 4, _x select 5];
 	private _vehicle_dir = _x select 6;
 	private _vehicle_player_id = _x select 7;

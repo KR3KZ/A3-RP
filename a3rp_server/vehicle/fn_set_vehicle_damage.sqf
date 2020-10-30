@@ -13,5 +13,5 @@ params [
 private _vehicle_hit_point_names = getAllHitPointsDamage _vehicle select 0;
 
 {
-	_vehicle setHitPointDamage [_x, _damage select _forEachIndex];
+	_vehicle setHitPointDamage [_x, _damage select _forEachIndex, false];
 } forEach _vehicle_hit_point_names;
