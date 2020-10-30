@@ -38,6 +38,11 @@ class CfgFunctions {
 			class init_eventhandler {};
 			class HandleDisconnect {};
 		};
+		class Money
+		{
+			file = "\a3rp_server\money";
+			class handle_money {};
+		};
 		class Player {
 			file = "\a3rp_server\player";
 			class on_ask_players {};
@@ -48,6 +53,13 @@ class CfgFunctions {
 			class insert_player {};
 			class update_player {};
 			class create_player {};
+		};
+		class Save
+		{
+			file = "\a3rp_server\save";
+			class save_players {};
+			class save_world {};
+			class save_vehicles {};
 		};
 		class Vehicle
 		{
@@ -72,18 +84,6 @@ class CfgFunctions {
 			file = "\a3rp_server\general";
 			class log_me {};
 			class teleport_me {};
-		};
-		class Money
-		{
-			file = "\a3rp_server\general\money";
-			class handle_money {};
-		};
-		class Save
-		{
-			file = "\a3rp_server\general\save";
-			class save_players {};
-			class save_world {};
-			class save_vehicles {};
 		};
 	};
 };
