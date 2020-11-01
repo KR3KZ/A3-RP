@@ -9,6 +9,7 @@ private _query = format["
 	SELECT vehicle.id,
 	vehicle.classname,
 	vehicle.damage,
+	vehicle.fuel,
 	vehicle.pos_atl_x,
 	vehicle.pos_atl_y,
 	vehicle.pos_atl_z,
