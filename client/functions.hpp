@@ -15,9 +15,10 @@ class General {
 	tag = "client";
 	class EventHandler {
 		file = "eventhandler";
+		class init_eventhandler {};
 		class cameraView {};
 		class FiredNear {};
-		class init_eventhandler {};
+		class InventoryClosed;
 	};
 	class Functions {
 		file = "general\functions";
