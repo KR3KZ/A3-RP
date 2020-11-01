@@ -13,6 +13,12 @@ class Authentification {
 
 class General {
 	tag = "client";
+	class EventHandler {
+		file = "eventhandler";
+		class cameraView {};
+		class FiredNear {};
+		class init_eventhandler {};
+	};
 	class Functions {
 		file = "general\functions";
 		class bad_name {};
@@ -23,15 +29,6 @@ class General {
 		file = "general\gear";
 		class load_gear {};
 	};
-	class Spawn {
-		file = "general\spawn";
-		class get_spawns {};
-		class get_spawn_position {};
-	};
-	class Vehicle {
-		file = "general\vehicle";
-		class init_vehicle {};
-	};
 	class Player_list {
 		file = "dialog\players_list";
 		class players_list_play {};
@@ -40,10 +37,19 @@ class General {
 		class players_list_on_load {};
 		class players_list_create {};
 	};
+	class Spawn {
+		file = "general\spawn";
+		class get_spawns {};
+		class get_spawn_position {};
+	};
 	class Spawn_menu {
 		file = "dialog\spawn_menu";
 		class spawn_menu_on_load {};
 		class spawn_menu_spawn {};
 		class spawn_menu_onLbSelChanged {};
+	};
+	class Vehicle {
+		file = "general\vehicle";
+		class init_vehicle {};
 	};
 };

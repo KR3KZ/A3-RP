@@ -12,11 +12,9 @@ private _query = format["
 	vehicle.pos_atl_x,
 	vehicle.pos_atl_y,
 	vehicle.pos_atl_z,
-	vehicle.dir,
-	vehicle_key.player_id
-	FROM vehicle, vehicle_key
-	WHERE vehicle.id = vehicle_key.vehicle_id
-	AND vehicle.alive = 1
+	vehicle.dir
+	FROM vehicle
+	WHERE vehicle.alive = 1
 	AND vehicle.stored = 0
 "];
 

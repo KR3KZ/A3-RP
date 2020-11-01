@@ -64,6 +64,9 @@ waitUntil {client_player_selected};
 call client_fnc_load_gear;
 waitUntil {client_player_gear_loaded};
 
+["Setting up Event Handlers"] call client_fnc_log_me;
+call client_fnc_init_eventhandler;
+
 /**
 * Spawn selection
 */
@@ -71,5 +74,5 @@ if (client_player_position isEqualTo [0,0,0]) then {
 	createDialog "A3RP_spawn_menu";
 } else {
 	[player, client_player_position, client_player_dir] remoteExec ["SRV_fnc_teleport_me", 2];
-	player setVariable["client_cam_intro_running", false];
+	player setVariable ["client_cam_intro_running", false];
 };

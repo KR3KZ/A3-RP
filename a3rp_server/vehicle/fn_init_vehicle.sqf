@@ -11,8 +11,11 @@ params [
 	["_vehicle_dir", 0, [0]]
 ];
 
-private _client_player_id = _player getVariable "client_player_id";
+private _client_player_id 	= _player getVariable "client_player_id";
 
-private _vehicle = [_vehicle_classname, _vehicle_pos, _vehicle_dir] call SRV_fnc_create_vehicle;
-private _vehicle_id = [_client_player_id, _vehicle] call SRV_fnc_on_insert_vehicle;
+private _vehicle 			= [_vehicle_classname, _vehicle_pos, _vehicle_dir] call SRV_fnc_create_vehicle;
+private _vehicle_id 		= [_client_player_id, _vehicle] call SRV_fnc_on_insert_vehicle;
+private _vehicle_keys 		= [_vehicle_id] call SRV_fnc_select_vehicle_key;
+
 _vehicle setVariable ["vehicle_id", _vehicle_id, true];
+_vehicle setVariable ["vehicle_keys", _vehicle_keys, true];

@@ -64,6 +64,7 @@ class CfgFunctions {
 		class Vehicle
 		{
 			file = "\a3rp_server\vehicle";
+			class select_vehicle_key {};
 			class insert_vehicle_key {};
 			class insert_vehicle {};
 			class on_insert_vehicle {};

@@ -17,4 +17,4 @@ private _spawn_position = [_spawn] call client_fnc_get_spawn_position;
 [player, _spawn_position] remoteExec ["SRV_fnc_teleport_me", 2];
 
 closeDialog 0;
-player setVariable["client_cam_intro_running", false];
+player setVariable ["client_cam_intro_running", false];
