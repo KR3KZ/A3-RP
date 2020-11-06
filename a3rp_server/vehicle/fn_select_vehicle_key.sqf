@@ -15,4 +15,4 @@ private _query = format["
 
 private _res = [_query, true] call DB_fnc_select;
 
-_res select 0
+_res
