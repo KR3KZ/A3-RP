@@ -13,6 +13,7 @@ class CfgRemoteExec
 		class SRV_fnc_teleport_me {allowedTargets = 2;};
 		class SRV_fnc_handle_money {allowedTargets = 2;};
 		class SRV_fnc_init_vehicle {allowedTargets = 2;};
+		class SRV_fnc_on_update_vehicle_inventory {allowedTargets = 2;};
 
 		//CLIENT
 		class auth_fnc_on_client_account_id {allowedTargets = 1;};

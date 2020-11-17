@@ -1,7 +1,7 @@
 /**
 * A3-RP
 * Client-side
-* file: players_list_set
+* file: players_list_set_index
 * desc: Select player from players_list
 */
 
@@ -10,6 +10,9 @@ private _param = param [0, true, [true]];
 if (client_players_list_index_max == 0) exitWith {};
 
 if (_param) then {
+	/**
+	* Button next pressed
+	*/
 	["[fn_players_list_on_set]: Button next pressed"] call client_fnc_log_me;
 	if ((client_players_list_index + 1) > client_players_list_index_max) then {
 		client_players_list_index = 0;
@@ -17,6 +20,9 @@ if (_param) then {
 		client_players_list_index = client_players_list_index + 1;
 	};
 } else {
+	/**
+	* Button previous pressed
+	*/
 	["[fn_players_list_on_set]: Button prev pressed"] call client_fnc_log_me;
 	if ((client_players_list_index - 1) < 0) then {
 		client_players_list_index = client_players_list_index_max;

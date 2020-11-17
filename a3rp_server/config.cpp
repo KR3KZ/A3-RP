@@ -15,9 +15,9 @@ class CfgFunctions {
 		class Database
 		{
 			file = "\a3rp_server\database";
+			class execute {};
 			class init_extdb3 {};
 			class select {};
-			class execute {};
 		};
 	};
 	class Serv {
@@ -28,15 +28,21 @@ class CfgFunctions {
 		*/
 		class Account {
 			file = "\a3rp_server\account";
+			class insert_account {};
 			class on_ask_account {};
 			class select_account {};
-			class insert_account {};
 		};
 		class EventHandler
 		{
 			file = "\a3rp_server\eventhandler";
-			class init_eventhandler {};
 			class HandleDisconnect {};
+			class init_eventhandler {};
+		};
+		class General
+		{
+			file = "\a3rp_server\general";
+			class log_me {};
+			class teleport_me {};
 		};
 		class Money
 		{
@@ -45,46 +51,50 @@ class CfgFunctions {
 		};
 		class Player {
 			file = "\a3rp_server\player";
+			class create_player {};
+			class insert_player {};
 			class on_ask_players {};
 			class on_create_player {};
 			class on_update_player {};
-			class select_players {};
 			class select_player_by_name {};
-			class insert_player {};
+			class select_players {};
 			class update_player {};
-			class create_player {};
 		};
 		class Save
 		{
 			file = "\a3rp_server\save";
 			class save_players {};
-			class save_world {};
 			class save_vehicles {};
+			class save_world {};
 		};
 		class Vehicle
 		{
 			file = "\a3rp_server\vehicle";
-			class select_vehicle_key {};
-			class insert_vehicle_key {};
+			class create_vehicle {};
+			class init_vehicle {};
 			class insert_vehicle {};
+			class load_vehicles {};
 			class on_insert_vehicle {};
 			class on_update_vehicle {};
-			class update_vehicle {};
+			class remove_items_from_vehicle {};
 			class select_vehicles {};
-			class load_vehicles {};
-			class create_vehicle {};
 			class set_vehicle_damage {};
-			class init_vehicle {};
+			class update_vehicle {};
 		};
-
-		/**
-		* a3rp_server/general/
-		*/
-		class General
+		class Vehicle_inventory
 		{
-			file = "\a3rp_server\general";
-			class log_me {};
-			class teleport_me {};
-		};
+			file = "\a3rp_server\vehicle\inventory";
+			class insert_vehicle_inventory {};
+			class on_update_vehicle_inventory {};
+			class select_vehicle_inventory {};
+			class set_vehicle_inventory {};
+			class update_vehicle_inventory {};
+		}
+		class Vehicle_key
+		{
+			file = "\a3rp_server\vehicle\key";
+			class insert_vehicle_key {};
+			class select_vehicle_key {};
+		}
 	};
 };

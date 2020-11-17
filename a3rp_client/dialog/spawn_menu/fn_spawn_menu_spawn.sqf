@@ -14,6 +14,9 @@ private _spawn_position = [_spawn] call client_fnc_get_spawn_position;
 
 [format["[fn_spawn_menu_spawn]: Selected spawn : %1", _spawn select 0]] call client_fnc_log_me;
 
+/**
+* Ask the server to teleport the player
+*/
 [player, _spawn_position] remoteExec ["SRV_fnc_teleport_me", 2];
 
 closeDialog 0;

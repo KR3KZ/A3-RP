@@ -30,17 +30,23 @@ _cash ctrlSetText _player_cash;
 * Check player name
 */
 if (name player != _player_name) then {
+	/**
+	* The name of the player doesn't match with the name in the dialog
+	*/
 	_btn_play ctrlEnable false;
 	_btn_play ctrlSetTooltip format[localize "STR_player_change_your_pseudo", _player_name, name player];
 } else {
 	if (!ctrlEnabled _btn_play) then {
+		/**
+		* If the button play was disabled, enabled it
+		*/
 		_btn_play ctrlEnable true;
 	};
 	_btn_play ctrlSetTooltip "";
 };
 
 /**
-* If player first spawn or died
+* Displays the city name in the dialog if the player position is not equal to [0,0,0]
 */
 if (_player_pos isEqualTo [0,0,0]) then {
 	_city ctrlSetText (localize "STR_spawn_unknown");

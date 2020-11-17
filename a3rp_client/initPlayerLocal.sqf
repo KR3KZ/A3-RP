@@ -59,7 +59,7 @@ createDialog "A3RP_player_list";
 waitUntil {client_player_selected};
 
 /**
-* Load gear
+* Load gear TODO remoteExec server-side ?
 */
 call client_fnc_load_gear;
 waitUntil {client_player_gear_loaded};

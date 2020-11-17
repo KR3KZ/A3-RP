@@ -2,6 +2,7 @@
 * A3-RP
 * Client-side
 * file: FiredNear.sqf
+* desc: If the player is in fight, don't let him use the third view
 */
 
 player addEventHandler ["FiredNear", {

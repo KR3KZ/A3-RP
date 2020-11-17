@@ -16,8 +16,12 @@ private _vehicles = call SRV_fnc_select_vehicles;
 	private _vehicle_dir 		= _x select 7;
 	private _vehicle_player_id 	= _x select 8;
 
-	private _vehicle_keys 		= [_vehicle_id] call SRV_fnc_select_vehicle_key;
 	private _vehicle 			= [_vehicle_classname, _vehicle_pos, _vehicle_dir] call SRV_fnc_create_vehicle;
+	[_vehicle] call SRV_fnc_remove_items_from_vehicle;
+
+	private _vehicle_keys 		= [_vehicle_id] call SRV_fnc_select_vehicle_key;
+	private _vehicle_inventory	= [_vehicle_id] call SRV_fnc_select_vehicle_inventory;
+	[_vehicle, _vehicle_inventory] call SRV_fnc_set_vehicle_inventory;
 
 	_vehicle setVariable ["vehicle_id", _vehicle_id, true];
 	_vehicle setVariable ["vehicle_keys", _vehicle_keys, true];

@@ -3,6 +3,7 @@
 * Client-side
 * file: cameraView.sqf
 * desc: https://cbateam.github.io/CBA_A3/docs/files/events/fnc_addPlayerEventHandler-sqf.html
+* If the player is in fight, don't let him use the third view
 */
 
 ["cameraView", {

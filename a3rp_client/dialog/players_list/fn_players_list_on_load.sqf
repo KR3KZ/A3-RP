@@ -16,6 +16,9 @@ waitUntil {!isNull _display};
 */
 _display displayAddEventHandler["keyDown", {if (_this # 1 == 1) then {true};}];
 
+/**
+* Display the information for the character at client_players_list select 0
+*/
 [0] spawn client_fnc_players_list_set_ctrl;
 
 client_players_list_index 		= 0;
