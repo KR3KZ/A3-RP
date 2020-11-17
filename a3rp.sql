@@ -22,14 +22,15 @@ DROP TABLE IF EXISTS `account`;
 CREATE TABLE IF NOT EXISTS `account` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `steam_id` varchar(17) NOT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `steam_id` (`steam_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 
 -- Listage des données de la table a3rp.account : ~1 rows (environ)
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
-INSERT INTO `account` (`id`, `steam_id`) VALUES
-	(41, '76561198108858505');
+INSERT INTO `account` (`id`, `steam_id`, `creation_date`) VALUES
+	(42, '76561198108858505', '2020-11-14 15:03:56');
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 
 -- Listage de la structure de la table a3rp. bank
@@ -65,12 +66,12 @@ CREATE TABLE IF NOT EXISTS `player` (
   KEY `FK_player_account_id` (`account_id`),
   CONSTRAINT `FK_player_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`),
   CONSTRAINT `FK_player_side_id` FOREIGN KEY (`side_id`) REFERENCES `side` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table a3rp.player : ~2 rows (environ)
+-- Listage des données de la table a3rp.player : ~0 rows (environ)
 /*!40000 ALTER TABLE `player` DISABLE KEYS */;
 INSERT INTO `player` (`id`, `account_id`, `side_id`, `name`, `cash`, `gear`, `pos_atl_x`, `pos_atl_y`, `pos_atl_z`, `dir`, `creation_date`) VALUES
-	(75, 41, 1, 'Joe Clarks', 0, '[["arifle_AKM_F","","","",["30Rnd_762x39_Mag_F",30],[],""],[],[],["U_C_Uniform_Farmer_01_F",[]],[],["B_FieldPack_blk",[["30Rnd_762x39_Mag_F",2,30]]],"H_Cap_blu","",[],["","","","","",""]]', 10669.6, 12269.2, 0.00144386, 126.314, '2020-10-28 21:22:54');
+	(79, 42, 1, 'Joe Clarks', 0, '[["arifle_AKM_F","","","",["30Rnd_762x39_Mag_F",30],[],""],[],[],[],[],[],"","",[],["","","","","",""]]', 14046.7, 18715.2, 0.00150108, 10.6183, '2020-11-14 15:03:56');
 /*!40000 ALTER TABLE `player` ENABLE KEYS */;
 
 -- Listage de la structure de la table a3rp. side
@@ -96,6 +97,7 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `classname` varchar(50) NOT NULL,
   `damage` varchar(5000) NOT NULL,
+  `fuel` float NOT NULL DEFAULT 1,
   `pos_atl_x` float NOT NULL DEFAULT 0,
   `pos_atl_y` float NOT NULL DEFAULT 0,
   `pos_atl_z` float NOT NULL DEFAULT 0,
@@ -103,16 +105,35 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `alive` int(1) NOT NULL DEFAULT 1,
   `stored` int(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table a3rp.vehicle : ~1 rows (environ)
+-- Listage des données de la table a3rp.vehicle : ~0 rows (environ)
 /*!40000 ALTER TABLE `vehicle` DISABLE KEYS */;
-INSERT INTO `vehicle` (`id`, `classname`, `damage`, `pos_atl_x`, `pos_atl_y`, `pos_atl_z`, `dir`, `alive`, `stored`) VALUES
-	(54, 'C_Offroad_01_F', '[0,0,0,0,0,0.0847449,0.388384,0.56715,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]', 3715.88, 12972.7, 0.00930786, 356.853, 1, 0),
-	(55, 'B_G_Offroad_01_F', '[0.0778753,1,0,0,0.0324283,0,0.100965,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]', 3729.62, 12980.9, 0.105398, 177.417, 1, 0),
-	(56, 'B_Truck_01_ammo_F', '[0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]', 3705.21, 13000.1, -0.170521, 111.321, 1, 0),
-	(57, 'B_Heli_Light_01_F', '[0,0,0,0,0.92619,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]', 3714.57, 13004.8, 0.0130405, 12.1619, 1, 0);
+INSERT INTO `vehicle` (`id`, `classname`, `damage`, `fuel`, `pos_atl_x`, `pos_atl_y`, `pos_atl_z`, `dir`, `alive`, `stored`) VALUES
+	(64, 'C_Offroad_01_F', '[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]', 1, 14044.8, 18721.9, 0.0126801, 12.0628, 1, 0),
+	(65, 'C_Offroad_01_F', '[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]', 1, 14049.5, 18714.4, 0.013525, 11.9796, 1, 0);
 /*!40000 ALTER TABLE `vehicle` ENABLE KEYS */;
+
+-- Listage de la structure de la table a3rp. vehicle_inventory
+DROP TABLE IF EXISTS `vehicle_inventory`;
+CREATE TABLE IF NOT EXISTS `vehicle_inventory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `vehicle_id` int(11) NOT NULL,
+  `backpacks` varchar(5000) NOT NULL,
+  `items` varchar(5000) NOT NULL,
+  `magazines` varchar(5000) NOT NULL,
+  `weapons` varchar(5000) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_vehicle_inventory_vehicle_id` (`vehicle_id`),
+  CONSTRAINT `FK_vehicle_inventory_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- Listage des données de la table a3rp.vehicle_inventory : ~0 rows (environ)
+/*!40000 ALTER TABLE `vehicle_inventory` DISABLE KEYS */;
+INSERT INTO `vehicle_inventory` (`id`, `vehicle_id`, `backpacks`, `items`, `magazines`, `weapons`) VALUES
+	(2, 64, '[["B_FieldPack_blk"],[1]]', '[[],[]]', '[["30Rnd_762x39_Mag_F"],[2]]', '[["arifle_AKM_F"],[1]]'),
+	(3, 65, '[[],[]]', '[["H_Cap_blu"],[1]]', '[[],[]]', '[[],[]]');
+/*!40000 ALTER TABLE `vehicle_inventory` ENABLE KEYS */;
 
 -- Listage de la structure de la table a3rp. vehicle_key
 DROP TABLE IF EXISTS `vehicle_key`;
@@ -121,19 +142,17 @@ CREATE TABLE IF NOT EXISTS `vehicle_key` (
   `vehicle_id` int(11) NOT NULL,
   `player_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_vehicle_owner_vehicle_id` (`vehicle_id`),
-  KEY `FK_vehicle_owner_player_id` (`player_id`),
-  CONSTRAINT `FK_vehicle_owner_player_id` FOREIGN KEY (`player_id`) REFERENCES `player` (`id`),
-  CONSTRAINT `FK_vehicle_owner_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `vehicle_id_player_id` (`vehicle_id`,`player_id`),
+  KEY `FK_vehicle_key_player_id` (`player_id`),
+  CONSTRAINT `FK_vehicle_key_player_id` FOREIGN KEY (`player_id`) REFERENCES `player` (`id`),
+  CONSTRAINT `FK_vehicle_key_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table a3rp.vehicle_key : ~1 rows (environ)
+-- Listage des données de la table a3rp.vehicle_key : ~0 rows (environ)
 /*!40000 ALTER TABLE `vehicle_key` DISABLE KEYS */;
 INSERT INTO `vehicle_key` (`id`, `vehicle_id`, `player_id`) VALUES
-	(30, 54, 75),
-	(31, 55, 75),
-	(32, 56, 75),
-	(33, 57, 75);
+	(41, 64, 79),
+	(42, 65, 79);
 /*!40000 ALTER TABLE `vehicle_key` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
