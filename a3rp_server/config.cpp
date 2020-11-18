@@ -38,6 +38,11 @@ class CfgFunctions {
 			class HandleDisconnect {};
 			class init_eventhandler {};
 		};
+		class Gear
+		{
+			file = "\a3rp_server\gear";
+			class load_gear {};
+		};
 		class General
 		{
 			file = "\a3rp_server\general";
