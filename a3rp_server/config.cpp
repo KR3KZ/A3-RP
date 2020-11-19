@@ -49,6 +49,17 @@ class CfgFunctions {
 			class log_me {};
 			class teleport_me {};
 		};
+		class House
+		{
+			file = "\a3rp_server\house";
+			class insert_house {};
+			class on_insert_house {};
+		};
+		class House_key
+		{
+			file = "\a3rp_server\house\key";
+			class insert_house_key {};
+		};
 		class Money
 		{
 			file = "\a3rp_server\money";

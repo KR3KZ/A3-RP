@@ -23,7 +23,7 @@ private _query = format ["
 [_query] call DB_fnc_execute;
 
 /**
-* Get the id of the vehicle and to select and returns it
+* Get the id of the vehicle and returns it
 */
 private _res = ["SELECT LAST_INSERT_ID()"] call DB_fnc_select;
 
