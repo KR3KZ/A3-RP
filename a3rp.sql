@@ -47,6 +47,44 @@ CREATE TABLE IF NOT EXISTS `bank` (
 /*!40000 ALTER TABLE `bank` DISABLE KEYS */;
 /*!40000 ALTER TABLE `bank` ENABLE KEYS */;
 
+-- Listage de la structure de la table a3rp. house
+DROP TABLE IF EXISTS `house`;
+CREATE TABLE IF NOT EXISTS `house` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `classname` varchar(50) NOT NULL,
+  `pos_atl_x` float NOT NULL,
+  `pos_atl_y` float NOT NULL,
+  `pos_atl_z` float NOT NULL,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `classname_pos_atl_x_pos_atl_y_pos_atl_z` (`classname`,`pos_atl_x`,`pos_atl_y`,`pos_atl_z`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- Listage des données de la table a3rp.house : ~0 rows (environ)
+/*!40000 ALTER TABLE `house` DISABLE KEYS */;
+INSERT INTO `house` (`id`, `classname`, `pos_atl_x`, `pos_atl_y`, `pos_atl_z`, `creation_date`) VALUES
+	(2, 'Land_i_House_Big_02_V2_F', 14035.9, 18707.5, -0.0140629, '2020-11-19 22:01:12');
+/*!40000 ALTER TABLE `house` ENABLE KEYS */;
+
+-- Listage de la structure de la table a3rp. house_key
+DROP TABLE IF EXISTS `house_key`;
+CREATE TABLE IF NOT EXISTS `house_key` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `house_id` int(11) NOT NULL,
+  `player_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `house_id_player_id` (`house_id`,`player_id`),
+  KEY `FK_house_key_player_id` (`player_id`),
+  CONSTRAINT `FK_house_key_house_id` FOREIGN KEY (`house_id`) REFERENCES `house` (`id`),
+  CONSTRAINT `FK_house_key_player_id` FOREIGN KEY (`player_id`) REFERENCES `player` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- Listage des données de la table a3rp.house_key : ~0 rows (environ)
+/*!40000 ALTER TABLE `house_key` DISABLE KEYS */;
+INSERT INTO `house_key` (`id`, `house_id`, `player_id`) VALUES
+	(3, 2, 79);
+/*!40000 ALTER TABLE `house_key` ENABLE KEYS */;
+
 -- Listage de la structure de la table a3rp. player
 DROP TABLE IF EXISTS `player`;
 CREATE TABLE IF NOT EXISTS `player` (
@@ -71,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `player` (
 -- Listage des données de la table a3rp.player : ~0 rows (environ)
 /*!40000 ALTER TABLE `player` DISABLE KEYS */;
 INSERT INTO `player` (`id`, `account_id`, `side_id`, `name`, `cash`, `gear`, `pos_atl_x`, `pos_atl_y`, `pos_atl_z`, `dir`, `creation_date`) VALUES
-	(79, 42, 1, 'Joe Clarks', 0, '[["arifle_AKM_F","","","",["30Rnd_762x39_Mag_F",30],[],""],[],[],[],[],[],"","",[],["","","","","",""]]', 14046.7, 18715.2, 0.00150108, 10.6183, '2020-11-14 15:03:56');
+	(79, 42, 1, 'Joe Clarks', 0, '[["arifle_AKM_F","","","",["30Rnd_762x39_Mag_F",0],[],""],[],[],[],[],[],"","",[],["","","","","",""]]', 14039.1, 18717.2, 0.148638, 193.648, '2020-11-14 15:03:56');
 /*!40000 ALTER TABLE `player` ENABLE KEYS */;
 
 -- Listage de la structure de la table a3rp. side
@@ -104,14 +142,15 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `dir` float NOT NULL DEFAULT 0,
   `alive` int(1) NOT NULL DEFAULT 1,
   `stored` int(1) NOT NULL DEFAULT 0,
+  `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table a3rp.vehicle : ~0 rows (environ)
+-- Listage des données de la table a3rp.vehicle : ~2 rows (environ)
 /*!40000 ALTER TABLE `vehicle` DISABLE KEYS */;
-INSERT INTO `vehicle` (`id`, `classname`, `damage`, `fuel`, `pos_atl_x`, `pos_atl_y`, `pos_atl_z`, `dir`, `alive`, `stored`) VALUES
-	(64, 'C_Offroad_01_F', '[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]', 1, 14044.8, 18721.9, 0.0126801, 12.0628, 1, 0),
-	(65, 'C_Offroad_01_F', '[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]', 1, 14049.5, 18714.4, 0.013525, 11.9796, 1, 0);
+INSERT INTO `vehicle` (`id`, `classname`, `damage`, `fuel`, `pos_atl_x`, `pos_atl_y`, `pos_atl_z`, `dir`, `alive`, `stored`, `creation_date`) VALUES
+	(64, 'C_Offroad_01_F', '[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]', 0.82455, 14051.5, 18703.3, 0.0131435, 325.765, 1, 0, '2020-11-19 21:12:07'),
+	(65, 'C_Offroad_01_F', '[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]', 1, 14049.7, 18714.6, 0.0121346, 11.9422, 1, 0, '2020-11-19 21:12:07');
 /*!40000 ALTER TABLE `vehicle` ENABLE KEYS */;
 
 -- Listage de la structure de la table a3rp. vehicle_inventory
@@ -128,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_inventory` (
   CONSTRAINT `FK_vehicle_inventory_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table a3rp.vehicle_inventory : ~0 rows (environ)
+-- Listage des données de la table a3rp.vehicle_inventory : ~2 rows (environ)
 /*!40000 ALTER TABLE `vehicle_inventory` DISABLE KEYS */;
 INSERT INTO `vehicle_inventory` (`id`, `vehicle_id`, `backpacks`, `items`, `magazines`, `weapons`) VALUES
 	(2, 64, '[["B_FieldPack_blk"],[1]]', '[[],[]]', '[["30Rnd_762x39_Mag_F"],[2]]', '[["arifle_AKM_F"],[1]]'),
@@ -148,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_key` (
   CONSTRAINT `FK_vehicle_key_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table a3rp.vehicle_key : ~0 rows (environ)
+-- Listage des données de la table a3rp.vehicle_key : ~1 rows (environ)
 /*!40000 ALTER TABLE `vehicle_key` DISABLE KEYS */;
 INSERT INTO `vehicle_key` (`id`, `vehicle_id`, `player_id`) VALUES
 	(41, 64, 79),
