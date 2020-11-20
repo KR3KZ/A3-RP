@@ -15,11 +15,6 @@ private _vehicle_items 		= parseSimpleArray(_vehicle_inventory select 1);
 private _vehicle_magazines 	= parseSimpleArray(_vehicle_inventory select 2);
 private _vehicle_weapons 	= parseSimpleArray(_vehicle_inventory select 3);
 
-[format["_vehicle_backpacks: %1", _vehicle_backpacks]] call SRV_fnc_log_me;
-[format["_vehicle_items: %1", _vehicle_items]] call SRV_fnc_log_me;
-[format["_vehicle_magazines: %1", _vehicle_magazines]] call SRV_fnc_log_me;
-[format["_vehicle_weapons: %1", _vehicle_weapons]] call SRV_fnc_log_me;
-
 for "_i" from 0 to ((count (_vehicle_backpacks select 0)) - 1) do {
 	_vehicle addBackpackCargoGlobal [((_vehicle_backpacks select 0) select _i), ((_vehicle_backpacks select 1) select _i)];
 };

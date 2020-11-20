@@ -30,9 +30,9 @@ class General {
 		file = "general\gear";
 		class load_gear {};
 	};
-	class House {
-		file = "general\house";
-		class buy_house {};
+	class Building {
+		file = "general\building";
+		class buy_building {};
 	};
 	class Player_list {
 		file = "dialog\players_list";

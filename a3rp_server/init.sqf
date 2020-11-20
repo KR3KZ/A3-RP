@@ -38,8 +38,18 @@ if (!_conn) exitWith {
 */
 ["Setting up Event Handlers"] call SRV_fnc_log_me;
 call SRV_fnc_init_eventhandler;
+
+/**
+* Load vehicles
+*/
 ["Loading vehicles"] call SRV_fnc_log_me;
 call SRV_fnc_load_vehicles;
+
+/**
+* Load buildings
+*/
+["Loading buildings"] call SRV_fnc_log_me;
+call SRV_fnc_load_buildings;
 
 SRV_is_ready = true;
 publicVariable "SRV_is_ready";
