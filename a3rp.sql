@@ -47,9 +47,9 @@ CREATE TABLE IF NOT EXISTS `bank` (
 /*!40000 ALTER TABLE `bank` DISABLE KEYS */;
 /*!40000 ALTER TABLE `bank` ENABLE KEYS */;
 
--- Listage de la structure de la table a3rp. house
-DROP TABLE IF EXISTS `house`;
-CREATE TABLE IF NOT EXISTS `house` (
+-- Listage de la structure de la table a3rp. building
+DROP TABLE IF EXISTS `building`;
+CREATE TABLE IF NOT EXISTS `building` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `classname` varchar(50) NOT NULL,
   `pos_atl_x` float NOT NULL,
@@ -58,32 +58,38 @@ CREATE TABLE IF NOT EXISTS `house` (
   `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `classname_pos_atl_x_pos_atl_y_pos_atl_z` (`classname`,`pos_atl_x`,`pos_atl_y`,`pos_atl_z`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table a3rp.house : ~0 rows (environ)
-/*!40000 ALTER TABLE `house` DISABLE KEYS */;
-INSERT INTO `house` (`id`, `classname`, `pos_atl_x`, `pos_atl_y`, `pos_atl_z`, `creation_date`) VALUES
-	(2, 'Land_i_House_Big_02_V2_F', 14035.9, 18707.5, -0.0140629, '2020-11-19 22:01:12');
-/*!40000 ALTER TABLE `house` ENABLE KEYS */;
+-- Listage des données de la table a3rp.building : ~2 rows (environ)
+/*!40000 ALTER TABLE `building` DISABLE KEYS */;
+INSERT INTO `building` (`id`, `classname`, `pos_atl_x`, `pos_atl_y`, `pos_atl_z`, `creation_date`) VALUES
+	(2, 'Land_i_House_Big_02_V2_F', 14035.9, 18707.5, -0.0140629, '2020-11-19 22:01:12'),
+	(10, 'Land_i_Stone_HouseBig_V1_F', 13194, 15777.4, 0.0297775, '2020-11-20 00:22:23'),
+	(11, 'Land_i_Shed_Ind_F', 13171.7, 15812, 0.128526, '2020-11-20 00:23:16'),
+	(12, 'Land_i_Garage_V2_dam_F', 13203.7, 15785.4, 0.0135822, '2020-11-20 01:14:45');
+/*!40000 ALTER TABLE `building` ENABLE KEYS */;
 
--- Listage de la structure de la table a3rp. house_key
-DROP TABLE IF EXISTS `house_key`;
-CREATE TABLE IF NOT EXISTS `house_key` (
+-- Listage de la structure de la table a3rp. building_key
+DROP TABLE IF EXISTS `building_key`;
+CREATE TABLE IF NOT EXISTS `building_key` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `house_id` int(11) NOT NULL,
+  `building_id` int(11) NOT NULL,
   `player_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `house_id_player_id` (`house_id`,`player_id`),
-  KEY `FK_house_key_player_id` (`player_id`),
-  CONSTRAINT `FK_house_key_house_id` FOREIGN KEY (`house_id`) REFERENCES `house` (`id`),
-  CONSTRAINT `FK_house_key_player_id` FOREIGN KEY (`player_id`) REFERENCES `player` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `house_id_player_id` (`building_id`,`player_id`),
+  KEY `FK_building_key_player_id` (`player_id`),
+  CONSTRAINT `FK_building_key_building_id` FOREIGN KEY (`building_id`) REFERENCES `building` (`id`),
+  CONSTRAINT `FK_building_key_player_id` FOREIGN KEY (`player_id`) REFERENCES `player` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table a3rp.house_key : ~0 rows (environ)
-/*!40000 ALTER TABLE `house_key` DISABLE KEYS */;
-INSERT INTO `house_key` (`id`, `house_id`, `player_id`) VALUES
-	(3, 2, 79);
-/*!40000 ALTER TABLE `house_key` ENABLE KEYS */;
+-- Listage des données de la table a3rp.building_key : ~3 rows (environ)
+/*!40000 ALTER TABLE `building_key` DISABLE KEYS */;
+INSERT INTO `building_key` (`id`, `building_id`, `player_id`) VALUES
+	(3, 2, 79),
+	(9, 10, 79),
+	(10, 11, 79),
+	(11, 12, 79);
+/*!40000 ALTER TABLE `building_key` ENABLE KEYS */;
 
 -- Listage de la structure de la table a3rp. player
 DROP TABLE IF EXISTS `player`;
@@ -109,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `player` (
 -- Listage des données de la table a3rp.player : ~0 rows (environ)
 /*!40000 ALTER TABLE `player` DISABLE KEYS */;
 INSERT INTO `player` (`id`, `account_id`, `side_id`, `name`, `cash`, `gear`, `pos_atl_x`, `pos_atl_y`, `pos_atl_z`, `dir`, `creation_date`) VALUES
-	(79, 42, 1, 'Joe Clarks', 0, '[["arifle_AKM_F","","","",["30Rnd_762x39_Mag_F",0],[],""],[],[],[],[],[],"","",[],["","","","","",""]]', 14039.1, 18717.2, 0.148638, 193.648, '2020-11-14 15:03:56');
+	(79, 42, 1, 'Joe Clarks', 0, '[["arifle_AKM_F","","","",["30Rnd_762x39_Mag_F",0],[],""],[],[],[],[],[],"","",[],["","","","","",""]]', 13184.7, 15810.7, 0.00132656, 144.329, '2020-11-14 15:03:56');
 /*!40000 ALTER TABLE `player` ENABLE KEYS */;
 
 -- Listage de la structure de la table a3rp. side
@@ -149,8 +155,8 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
 -- Listage des données de la table a3rp.vehicle : ~2 rows (environ)
 /*!40000 ALTER TABLE `vehicle` DISABLE KEYS */;
 INSERT INTO `vehicle` (`id`, `classname`, `damage`, `fuel`, `pos_atl_x`, `pos_atl_y`, `pos_atl_z`, `dir`, `alive`, `stored`, `creation_date`) VALUES
-	(64, 'C_Offroad_01_F', '[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]', 0.82455, 14051.5, 18703.3, 0.0131435, 325.765, 1, 0, '2020-11-19 21:12:07'),
-	(65, 'C_Offroad_01_F', '[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]', 1, 14049.7, 18714.6, 0.0121346, 11.9422, 1, 0, '2020-11-19 21:12:07');
+	(64, 'C_Offroad_01_F', '[0.26378,0.00393701,0.26378,0.00393701,0.023622,0.0354331,0.15748,1,0.629921,0,0,0,0,0,0,0,0,0,0,0.11811,0,0,0,0,0,0]', 0.773634, 13181.5, 15826.3, -0.0482588, 199.01, 1, 0, '2020-11-19 21:12:07'),
+	(65, 'C_Offroad_01_F', '[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]', 1, 14050.3, 18715.2, 0.0107231, 11.8028, 1, 0, '2020-11-19 21:12:07');
 /*!40000 ALTER TABLE `vehicle` ENABLE KEYS */;
 
 -- Listage de la structure de la table a3rp. vehicle_inventory
