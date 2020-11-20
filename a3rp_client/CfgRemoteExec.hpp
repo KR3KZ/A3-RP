@@ -16,6 +16,8 @@ class CfgRemoteExec
 		class SRV_fnc_on_update_vehicle_inventory {allowedTargets = 2;};
 		class SRV_fnc_load_gear {allowedTargets = 2;};
 		class SRV_fnc_on_insert_building {allowedTargets = 2;};
+		class SRV_fnc_lock_building {allowedTargets = 2;};
+		class SRV_fnc_unlock_building {allowedTargets = 2;};
 
 		//CLIENT
 		class auth_fnc_on_client_account_id {allowedTargets = 1;};

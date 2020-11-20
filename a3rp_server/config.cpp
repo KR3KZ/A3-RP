@@ -54,8 +54,10 @@ class CfgFunctions {
 			file = "\a3rp_server\building";
 			class insert_building {};
 			class load_buildings {};
+			class lock_building {};
 			class on_insert_building {};
 			class select_buildings {};
+			class unlock_building {};
 		};
 		class Building_key
 		{
