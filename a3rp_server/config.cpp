@@ -95,11 +95,13 @@ class CfgFunctions {
 			class init_vehicle {};
 			class insert_vehicle {};
 			class load_vehicles {};
+			class lock_vehicle {};
 			class on_insert_vehicle {};
 			class on_update_vehicle {};
 			class remove_items_from_vehicle {};
 			class select_vehicles {};
 			class set_vehicle_damage {};
+			class unlock_vehicle {};
 			class update_vehicle {};
 		};
 		class Vehicle_inventory

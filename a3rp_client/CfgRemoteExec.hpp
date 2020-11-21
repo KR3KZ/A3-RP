@@ -18,6 +18,8 @@ class CfgRemoteExec
 		class SRV_fnc_on_insert_building {allowedTargets = 2;};
 		class SRV_fnc_lock_building {allowedTargets = 2;};
 		class SRV_fnc_unlock_building {allowedTargets = 2;};
+		class SRV_fnc_lock_vehicle {allowedTargets = 2;};
+		class SRV_fnc_unlock_vehicle {allowedTargets = 2;};
 
 		//CLIENT
 		class auth_fnc_on_client_account_id {allowedTargets = 1;};
