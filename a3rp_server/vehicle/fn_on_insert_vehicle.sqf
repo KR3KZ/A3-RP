@@ -10,6 +10,8 @@ params [
 	["_vehicle", objNull, [objNull]]
 ];
 
+if (_client_player_id == 0 || { isNull _vehicle }) exitWith {};
+
 private _vehicle_classname 	= typeOf _vehicle;
 private _vehicle_damage 	= str(getAllHitPointsDamage _vehicle select 2);
 private _vehicle_pos		= getPosATL _vehicle;

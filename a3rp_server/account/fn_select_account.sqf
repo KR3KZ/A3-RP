@@ -10,6 +10,8 @@
 */
 private _player_uid = param [0, "", [""]];
 
+if (_player_uid == "") exitWith {};
+
 private _query = format ["
 	SELECT id, steam_id
 	FROM account

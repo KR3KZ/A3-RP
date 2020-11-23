@@ -6,6 +6,9 @@
 */
 
 private _vehicle 	= param [0, objNull, [objNull]];
+
+if (isNull _vehicle) exitWith {};
+
 private _vehicle_id = _vehicle getVariable ["vehicle_id", 0];
 
 if (_vehicle_id != 0) then {

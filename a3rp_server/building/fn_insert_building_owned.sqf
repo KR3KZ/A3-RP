@@ -10,11 +10,13 @@ params [
 	["_building_pos", [], [[]]]
 ];
 
+if (_building_classname == "" || _building_pos isEqualTo []) exitWith {};
+
 private _query = format ["
 	INSERT INTO building_owned
 	(building_id, pos_atl_x, pos_atl_y, pos_atl_z)
 	VALUES
-	(SELECT id FROM building_directory WHERE classname = '%1', '%2', '%3', '%4')
+	((SELECT id FROM building_directory WHERE classname = '%1'), '%2', '%3', '%4')
 ", _building_classname, _building_pos select 0, _building_pos select 1, _building_pos select 2
 ];
 

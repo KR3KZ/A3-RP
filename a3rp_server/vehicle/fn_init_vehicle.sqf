@@ -12,6 +12,8 @@ params [
 	["_vehicle_dir", 0, [0]]
 ];
 
+if (isNull _player || { _vehicle_classname == "" } || { _vehicle_pos isEqualTo [] }) exitWith {};
+
 private _client_player_id 	= _player getVariable "client_player_id";
 
 private _vehicle 			= [_vehicle_classname, _vehicle_pos, _vehicle_dir] call SRV_fnc_create_vehicle;

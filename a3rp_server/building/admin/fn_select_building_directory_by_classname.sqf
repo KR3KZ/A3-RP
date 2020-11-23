@@ -7,6 +7,8 @@
 
 private _classname = param [0, "", [""]];
 
+if (_classname == "") exitWith {};
+
 private _query = format["
 	SELECT building_directory.classname,
 	building_directory.buyable
@@ -15,7 +17,5 @@ private _query = format["
 ", _classname];
 
 private _res = [_query, true] call DB_fnc_select;
-
-[format["%1", _res]] call SRV_fnc_log_me;
 
 _res

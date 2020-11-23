@@ -6,6 +6,9 @@
 */
 
 private _player 		= param [0, objNull, [objNull]];
+
+if (isNull _player) exitWith {};
+
 private _player_id 		= _player getVariable ["client_player_id", 0];
 if (_player_id == 0) exitWith {};
 private _player_side 	= format["%1", side _player];

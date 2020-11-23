@@ -13,6 +13,8 @@ params [
 	["_vehicle_dir", 0, [0]]
 ];
 
+if (_vehicle_id == 0 || { _vehicle_damage == "" } || { _vehicle_pos isEqualTo [] }) exitWith {};
+
 private _query = format ["
 	UPDATE vehicle SET
 	damage = '%1', fuel = '%2', pos_atl_x = '%3', pos_atl_y = '%4', pos_atl_z = '%5', dir = '%6'

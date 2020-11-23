@@ -7,6 +7,8 @@
 
 private _vehicle = param [0, objNull, [objNull]];
 
+if (isNull _vehicle) exitWith {};
+
 clearBackpackCargoGlobal _vehicle;
 clearItemCargoGlobal _vehicle;
 clearMagazineCargoGlobal _vehicle;

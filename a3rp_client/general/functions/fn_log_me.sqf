@@ -7,6 +7,8 @@
 
 private _string = param [0, "", [""]];
 
+if (_string == "") exitWith {};
+
 diag_log "=========================== A3RP ===========================";
 diag_log format ["[%1] [client] " + _string, client_log_me_id];
 systemChat format ["[%1] [client] " + _string, client_log_me_id];

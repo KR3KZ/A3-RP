@@ -13,6 +13,8 @@ params [
 	["_vehicle_weapons", [], [[]]]
 ];
 
+if (_vehicle_id == 0) exitWith {};
+
 private _query = format ["
 	UPDATE vehicle_inventory SET
 	backpacks = '%1', items = '%2', magazines = '%3', weapons = '%4'

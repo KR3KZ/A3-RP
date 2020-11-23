@@ -5,5 +5,7 @@
 */
 
 {
-	[_x] call SRV_fnc_on_update_player;
+	if !(isNull _x) then {
+		[_x] call SRV_fnc_on_update_player;
+	};
 } forEach allPlayers;

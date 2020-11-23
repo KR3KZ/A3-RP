@@ -5,7 +5,9 @@
 * desc: Select player from index
 */
 
-private _index 			= param [0, 0, [0]];
+private _index 			= param [0, -1, [0]];
+
+if (_index == -1) exitWith {};
 
 private _display 		= findDisplay 1000;
 waitUntil {!isNull _display};

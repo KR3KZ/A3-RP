@@ -7,6 +7,8 @@
 
 private _building_id = param [0, 0, [0]];
 
+if (_building_id == 0) exitWith {};
+
 private _query = format["
 	SELECT building_key.player_id
 	FROM building_key

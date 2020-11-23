@@ -14,6 +14,8 @@ params [
 	["_player_dir", 0, [0]]
 ];
 
+if (_player_id == 0 || { _player_side == "" } || { _player_cash == 0 } || { _player_gear == "" } || { _player_pos isEqualTo [] }) exitWith {};
+
 private _query = format ["
 	UPDATE player SET
 	cash = %1, gear = '%2', pos_atl_x = '%3', pos_atl_y = '%4', pos_atl_z = '%5', dir = '%6'

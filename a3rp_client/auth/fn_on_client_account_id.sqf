@@ -6,6 +6,9 @@
 */
 
 private _client_account_id 	= param [0, 0, [0]];
+
+if (_client_account_id == 0) exitWith {};
+
 _client_account_id 			= format ["%1", _client_account_id];
 
 [format["[fn_on_client_account_id]: client_account_id received from server [%1]", _client_account_id]] call client_fnc_log_me;

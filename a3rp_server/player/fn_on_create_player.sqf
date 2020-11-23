@@ -6,6 +6,9 @@
 */
 
 private _player 		= param [0, objNull, [objNull]];
+
+if (isNull _player) exitWith {};
+
 private _player_uid 	= getPlayerUID _player;
 private _player_side 	= format["%1", side _player];
 private _player_name 	= name _player;

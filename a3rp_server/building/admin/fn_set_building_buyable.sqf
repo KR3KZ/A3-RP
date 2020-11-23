@@ -10,13 +10,13 @@ params [
 	["_buyable", 0, [0]]
 ];
 
-if !(isNull _building) then {
-	private _building_classname = typeOf _building;
-	if (_building getVariable ["building_buyable", -1] != -1) then {
-		[_building_classname, _buyable] call SRV_fnc_update_building_directory_buyable;
-	} else {
-		[_building_classname, _buyable] call SRV_fnc_insert_building_directory;
-	};
+if (isNull _building) exitWith {};
 
-	_building setVariable ["building_buyable", _buyable, true];
+private _building_classname = typeOf _building;
+private _building_exist = [_building_classname] call SRV_fnc_select_building_directory_by_classname;
+
+if (count(_building_exist) != 0) then {
+	[_building_classname, _buyable] call SRV_fnc_update_building_directory_buyable;
+} else {
+	[_building_classname, _buyable] call SRV_fnc_insert_building_directory;
 };

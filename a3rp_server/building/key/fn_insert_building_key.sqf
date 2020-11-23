@@ -10,6 +10,8 @@ params [
 	["_client_player_id", 0, [0]]
 ];
 
+if (_building_id == 0 || _client_player_id == 0) exitWith {};
+
 private _query = format ["
 	INSERT INTO building_key
 	(building_id, player_id)

@@ -12,6 +12,8 @@ params [
 	["_player_gear", "", [""]]
 ];
 
+if (_player_uid == "" || _player_side == "" || _player_name == "" || _player_gear == "") exitWith {};
+
 private _query = format ["
 	INSERT INTO player
 	(account_id, side_id, name, cash, gear)

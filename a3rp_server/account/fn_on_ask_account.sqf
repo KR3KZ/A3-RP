@@ -6,6 +6,9 @@
 */
 
 private _player			= param [0, objNull, [objNull]];
+
+if (isNull _player) exitWith {};
+
 private _player_uid 	= getPlayerUID _player;
 
 [format["[fn_on_ask_account]: Request from [%1] received", _player_uid]] call SRV_fnc_log_me;

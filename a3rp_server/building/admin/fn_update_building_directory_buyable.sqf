@@ -10,11 +10,13 @@ params [
 	["_building_buyable", 0, [0]]
 ];
 
+if (_building_classname == "") exitWith {};
+
 private _query = format ["
 	UPDATE building_directory SET
 	buyable = '%1'
 	WHERE classname = '%2'
-", _building_classname, _building_buyable];
+", _building_buyable, _building_classname];
 
 private _res = [_query] call DB_fnc_execute;
 

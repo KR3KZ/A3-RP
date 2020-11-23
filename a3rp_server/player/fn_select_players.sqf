@@ -14,6 +14,8 @@ params [
 	["_player_side", "", [""]]
 ];
 
+if (_player_uid == "" || _player_side == "") exitWith {};
+
 private _query = format["
 	SELECT player.id,
 	player.name,

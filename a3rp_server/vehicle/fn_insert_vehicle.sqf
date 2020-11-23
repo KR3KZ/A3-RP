@@ -12,6 +12,8 @@ params [
 	["_vehicle_dir", 0, [0]]
 ];
 
+if (_vehicle_classname == "" || { _vehicle_damage == "" } || { _vehicle_pos isEqualTo [] }) exitWith {};
+
 private _query = format ["
 	INSERT INTO vehicle
 	(classname, damage, pos_atl_x, pos_atl_y, pos_atl_z, dir)

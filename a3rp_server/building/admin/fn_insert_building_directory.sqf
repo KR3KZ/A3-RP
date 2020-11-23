@@ -10,6 +10,8 @@ params [
 	["_building_buyable", 0, [0]]
 ];
 
+if (_building_classname == "") exitWith {};
+
 private _query = format ["
 	INSERT INTO building_directory
 	(classname, buyable)
@@ -17,8 +19,6 @@ private _query = format ["
 	('%1', '%2')
 ", _building_classname, _building_buyable
 ];
-
-[_query] call SRV_fnc_log_me;
 
 private _res = [_query] call DB_fnc_execute;
 

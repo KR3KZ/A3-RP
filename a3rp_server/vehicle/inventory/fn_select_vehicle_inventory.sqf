@@ -7,6 +7,8 @@
 
 private _vehicle_id = param [0, 0, [0]];
 
+if (_vehicle_id == 0) exitWith {};
+
 private _query = format["
 	SELECT backpacks, items, magazines, weapons
 	FROM vehicle_inventory

@@ -13,6 +13,8 @@ params [
 	["_vehicle_weapons", [], [[]]]
 ];
 
+if (_vehicle_id == 0) exitWith {};
+
 private _query = format ["
 	INSERT INTO vehicle_inventory
 	(vehicle_id, backpacks, items, magazines, weapons)

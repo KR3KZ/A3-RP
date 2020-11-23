@@ -10,6 +10,8 @@ params [
 	["_damage", [], [[]]]
 ];
 
+if (isNull _vehicle || { _damage isEqualTo [] }) exitWith {};
+
 private _vehicle_hit_point_names = getAllHitPointsDamage _vehicle select 0;
 
 {

@@ -10,6 +10,8 @@ params [
 	["_vehicle_inventory", [], [[]]]
 ];
 
+if (isNull _vehicle) exitWith {};
+
 private _vehicle_backpacks 	= parseSimpleArray(_vehicle_inventory select 0);
 private _vehicle_items 		= parseSimpleArray(_vehicle_inventory select 1);
 private _vehicle_magazines 	= parseSimpleArray(_vehicle_inventory select 2);

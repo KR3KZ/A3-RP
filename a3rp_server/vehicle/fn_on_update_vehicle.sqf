@@ -6,6 +6,9 @@
 */
 
 private _vehicle 		= param [0, objNull, [objNull]];
+
+if (isNull _vehicle) exitWith {};
+
 private _vehicle_id 	= _vehicle getVariable "vehicle_id";
 private _vehicle_damage = str(getAllHitPointsDamage _vehicle select 2);
 private _vehicle_fuel	= fuel _vehicle;

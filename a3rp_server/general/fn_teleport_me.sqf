@@ -11,6 +11,8 @@ params [
 	["_dir", 0, [0]]
 ];
 
+if (isNull _object || { _pos isEqualTo [] }) exitWith {};
+
 if (_object isKindOf "Man") then {
 	if (_dir != 0) then {
 		_object setDir _dir;

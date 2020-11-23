@@ -6,6 +6,8 @@
 
 private _building = param [0, objNull, [objNull]];
 
+if (isNull _building) exitWith {};
+
 if (!(_building isKindOf "House_F")) exitWith {
 	[format["[fn_buy_building]: [%1] is not a building", _building]] call client_fnc_log_me;
 };

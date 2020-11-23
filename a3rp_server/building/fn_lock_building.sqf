@@ -7,6 +7,8 @@
 
 private _building = param [0, objNull, [objNull]];
 
+if (isNull _building) exitWith {};
+
 private _doors = getNumber(configFile >> "CfgVehicles" >> (typeOf _building) >> "numberOfDoors");
  
 for "_i" from 1 to _doors do {

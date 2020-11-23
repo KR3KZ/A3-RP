@@ -9,6 +9,8 @@ params [
 	["_multiArray", false, [false]]
 ];
 
+if (_query == "") exitWith {};
+
 /**
 * Send query to SQL server.
 * CALL_TYPE
