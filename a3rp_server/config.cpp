@@ -52,12 +52,20 @@ class CfgFunctions {
 		class Building
 		{
 			file = "\a3rp_server\building";
-			class insert_building {};
-			class load_buildings {};
+			class insert_building_owned {};
+			class load_buildings_owned {};
 			class lock_building {};
-			class on_insert_building {};
-			class select_buildings {};
+			class on_insert_building_owned {};
+			class select_buildings_owned {};
 			class unlock_building {};
+		};
+		class Building_admin
+		{
+			file = "\a3rp_server\building\admin";
+			class insert_building_directory {};
+			class select_building_directory_by_classname {};
+			class set_building_buyable {};
+			class update_building_directory_buyable {};
 		};
 		class Building_key
 		{

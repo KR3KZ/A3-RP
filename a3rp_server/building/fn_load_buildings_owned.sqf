@@ -1,11 +1,11 @@
 /**
 * A3-RP
 * Server-side
-* file: load_buildings.sqf
-* desc: Load buildings from database
+* file: load_buildings_owned.sqf
+* desc: Load owned buildings from database
 */
 
-private _buildings = call SRV_fnc_select_buildings;
+private _buildings = call SRV_fnc_select_buildings_owned;
 
 {
 	private _building_id 			= _x select 0;

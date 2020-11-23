@@ -1,7 +1,7 @@
 /**
 * A3-RP
 * Server-side
-* file: insert_building.sqf
+* file: insert_building_owned.sqf
 * desc: Insert a building in the database
 */
 
@@ -11,10 +11,10 @@ params [
 ];
 
 private _query = format ["
-	INSERT INTO building
-	(classname, pos_atl_x, pos_atl_y, pos_atl_z)
+	INSERT INTO building_owned
+	(building_id, pos_atl_x, pos_atl_y, pos_atl_z)
 	VALUES
-	('%1', '%2', '%3', '%4')
+	(SELECT id FROM building_directory WHERE classname = '%1', '%2', '%3', '%4')
 ", _building_classname, _building_pos select 0, _building_pos select 1, _building_pos select 2
 ];
 

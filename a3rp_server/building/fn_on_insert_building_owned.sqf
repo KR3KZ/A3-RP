@@ -1,7 +1,7 @@
 /**
 * A3-RP
 * Server-side
-* file: on_insert_building.sqf
+* file: on_insert_building_owned.sqf
 * desc: Call insert building in database
 */
 
@@ -19,11 +19,13 @@ if (_building getVariable ["building_id", 0] != 0) exitWith {
 };
 
 private _client_player_id 	= _player getVariable "client_player_id";
-private _building_classname 	= typeOf _building;
-private _building_pos			= getPosATL _building;
+private _building_classname = typeOf _building;
+private _buyable = [_building_classname] call SRV_fnc_select_building_directory_by_classname;
 
-private _res 				= [_building_classname, _building_pos] call SRV_fnc_insert_building;
-private _building_id 			= _res select 0;
+private _building_pos		= getPosATL _building;
+
+private _res 				= [_building_classname, _building_pos] call SRV_fnc_insert_building_owned;
+private _building_id 		= _res select 0;
 [_building_id, _client_player_id] call SRV_fnc_insert_building_key;
 private _building_keys 		= [_building_id] call SRV_fnc_select_building_key;
 

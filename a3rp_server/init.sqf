@@ -48,8 +48,8 @@ call SRV_fnc_load_vehicles;
 /**
 * Load buildings
 */
-["Loading buildings..."] call SRV_fnc_log_me;
-call SRV_fnc_load_buildings;
+["Loading owned buildings..."] call SRV_fnc_log_me;
+call SRV_fnc_load_buildings_owned;
 
 SRV_is_ready = true;
 publicVariable "SRV_is_ready";

@@ -15,11 +15,12 @@ class CfgRemoteExec
 		class SRV_fnc_init_vehicle {allowedTargets = 2;};
 		class SRV_fnc_on_update_vehicle_inventory {allowedTargets = 2;};
 		class SRV_fnc_load_gear {allowedTargets = 2;};
-		class SRV_fnc_on_insert_building {allowedTargets = 2;};
+		class SRV_fnc_on_insert_building_owned {allowedTargets = 2;};
 		class SRV_fnc_lock_building {allowedTargets = 2;};
 		class SRV_fnc_unlock_building {allowedTargets = 2;};
 		class SRV_fnc_lock_vehicle {allowedTargets = 2;};
 		class SRV_fnc_unlock_vehicle {allowedTargets = 2;};
+		class SRV_fnc_set_building_buyable {allowedTargets = 2;};
 
 		//CLIENT
 		class auth_fnc_on_client_account_id {allowedTargets = 1;};
@@ -27,6 +28,7 @@ class CfgRemoteExec
 		class auth_fnc_on_player_created {allowedTargets = 1;};
 		class client_fnc_bad_name {allowedTargets = 1;};
 		
+		//REMOVE ON PROD
 		class bis_fnc_debugconsoleexec {allowedTargets = 0;};
 	};
 
