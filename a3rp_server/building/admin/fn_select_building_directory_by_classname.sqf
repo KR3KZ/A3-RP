@@ -7,7 +7,7 @@
 
 private _classname = param [0, "", [""]];
 
-if (_classname == "") exitWith {};
+if (_classname == "") exitWith {[]};
 
 private _query = format["
 	SELECT building_directory.classname,

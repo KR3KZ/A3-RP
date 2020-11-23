@@ -7,6 +7,8 @@
 
 private _buildings_classname = call SRV_fnc_select_building_directory_by_classname;
 
+if (_buildings_classname isEqualTo []) exitWith {};
+
 {
 	private _building_classname = _x select 0;
 	private _building_buyable 	= _x select 1;
