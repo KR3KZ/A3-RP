@@ -47,7 +47,7 @@ class A3RP_spawn_menu
 			x = safeZoneX + safeZoneW * 0.63125;
 			y = safeZoneY + safeZoneH * 0.2;
 			w = safeZoneW * 0.125;
-			h = safeZoneH * 0.55;
+			h = safeZoneH * 0.25;
 			onLBSelChanged = "call client_fnc_spawn_menu_onLbSelChanged;";
 			class ListScrollBar
 			{
@@ -70,6 +70,26 @@ class A3RP_spawn_menu
 			h = safeZoneH * 0.03666667;
 			text = "$STR_spawn_menu_spawn";
 			onButtonClick = "[] call client_fnc_spawn_menu_spawn;";
+			
+		};
+		class spawns_list_house : A3RP_list_box 
+		{
+			type = 5;
+			idc = 1102;
+			x = safeZoneX + safeZoneW * 0.63125;
+			y = safeZoneY + safeZoneH * 0.5;
+			w = safeZoneW * 0.125;
+			h = safeZoneH * 0.25;
+			onLBSelChanged = "";
+			class ListScrollBar
+			{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+				
+			};
 			
 		};
 		

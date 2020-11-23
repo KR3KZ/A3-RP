@@ -1,7 +1,7 @@
 /**
 * A3-RP
 * Server-side
-* file: set_building_buyable.sqf
+* file: set_building_directory_buyable.sqf
 * desc: Set buyable state of a building in the database
 */
 

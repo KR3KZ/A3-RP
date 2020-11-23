@@ -64,6 +64,9 @@ waitUntil {client_player_selected};
 call client_fnc_load_gear;
 waitUntil {client_player_gear_loaded};
 
+/**
+* Set up EH
+*/
 ["Setting up Event Handlers"] call client_fnc_log_me;
 call client_fnc_init_eventhandler;
 
