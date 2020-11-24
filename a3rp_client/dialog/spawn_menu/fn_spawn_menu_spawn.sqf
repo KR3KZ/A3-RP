@@ -21,3 +21,8 @@ private _spawn_position = [_spawn] call client_fnc_get_spawn_position;
 
 closeDialog 0;
 player setVariable ["client_cam_intro_running", false];
+
+/**
+* This variable is used by the server to not save the player when he hasn't spawn yet
+*/
+player setvariable ["client_spawned", true, true];

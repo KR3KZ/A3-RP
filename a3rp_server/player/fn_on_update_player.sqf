@@ -9,9 +9,18 @@ private _player 		= param [0, objNull, [objNull]];
 
 private _player_id 		= _player getVariable ["client_player_id", 0];
 if (_player_id == 0) exitWith {};
+
+/**
+* This variable is used to not save the player when he hasn't spawn yet
+*/
+private _player_spawned = _player getVariable ["client_spawned", false];
+if (!(_player_spawned)) exitWith {};
+
 private _player_side 	= format["%1", side _player];
+
 private _player_cash 	= _player getVariable ["client_cash", -1];
 if (_player_cash == -1) exitWith {};
+
 private _player_gear 	= format ["%1", getUnitLoadout _player];
 private _player_pos 	= getPosATL _player;
 private _player_dir		= getDir _player;

@@ -77,6 +77,14 @@
             <Original>Spawn at : %1</Original>
             <French>Spawn à : %1</French>
         </Key>
+        <Key ID="STR_spawn_available">
+            <Original>Spawns available</Original>
+            <French>Spawns disponibles</French>
+        </Key>
+        <Key ID="STR_spawn_properties">
+            <Original>Properties</Original>
+            <French>Propriétés</French>
+        </Key>
     </Package>
     <Package name="EndMission">
         <Key ID="STR_end_mission_extdb3">

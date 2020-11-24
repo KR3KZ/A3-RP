@@ -27,6 +27,32 @@ class A3RP_spawn_menu
 			text = "$STR_spawn_menu_select_a_spawn";
 			
 		};
+		class sub_title_spawn_available : A3RP_text 
+		{
+			type = 0;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.63125;
+			y = safeZoneY + safeZoneH * 0.2;
+			w = safeZoneW * 0.125;
+			h = safeZoneH * 0.025;
+			style = 0;
+			text = "$STR_spawn_available";
+			colorBackground[] = {0.164,0.164,0.164,0.8};
+			
+		};
+		class sub_title_properties_list : A3RP_text 
+		{
+			type = 0;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.63125;
+			y = safeZoneY + safeZoneH * 0.475;
+			w = safeZoneW * 0.125;
+			h = safeZoneH * 0.025;
+			style = 0;
+			text = "$STR_spawn_properties";
+			colorBackground[] = {0.164,0.164,0.164,0.8};
+			
+		};
 		
 	};
 	class Controls
@@ -45,7 +71,7 @@ class A3RP_spawn_menu
 			type = 5;
 			idc = 1102;
 			x = safeZoneX + safeZoneW * 0.63125;
-			y = safeZoneY + safeZoneH * 0.2;
+			y = safeZoneY + safeZoneH * 0.225;
 			w = safeZoneW * 0.125;
 			h = safeZoneH * 0.25;
 			onLBSelChanged = "call client_fnc_spawn_menu_onLbSelChanged;";
@@ -80,7 +106,7 @@ class A3RP_spawn_menu
 			y = safeZoneY + safeZoneH * 0.5;
 			w = safeZoneW * 0.125;
 			h = safeZoneH * 0.25;
-			onLBSelChanged = "";
+			onLBSelChanged = "call client_fnc_spawn_menu_onLbSelChanged;";
 			class ListScrollBar
 			{
 				color[] = {1,1,1,1};

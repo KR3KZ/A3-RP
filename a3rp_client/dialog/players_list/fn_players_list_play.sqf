@@ -15,6 +15,7 @@ if (name player == ctrlText(_name)) then {
 	* If the player has the same name as the character displayed in the dialog, he can play
 	*/
 	closeDialog 0;
+
 	/**
 	* client_player contains informations about the selected character
 	*/
