@@ -14,7 +14,7 @@ params [
 	["_player_dir", 0, [0]]
 ];
 
-if (_player_id == 0 || { _player_side == "" } || { _player_cash == 0 } || { _player_gear == "" } || { _player_pos isEqualTo [] }) exitWith {};
+if (_player_id == 0 || { _player_side == "" } || { _player_gear == "" } || { _player_pos isEqualTo [] }) exitWith {};
 
 private _query = format ["
 	UPDATE player SET
