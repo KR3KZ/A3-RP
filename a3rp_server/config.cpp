@@ -52,12 +52,15 @@ class CfgFunctions {
 		class Building
 		{
 			file = "\a3rp_server\building";
+			class get_closest_door_from_player {};
 			class insert_building_owned {};
 			class load_buildings_owned {};
 			class lock_building {};
+			class lock_closest_building_door {};
 			class on_insert_building_owned {};
 			class select_buildings_owned {};
 			class unlock_building {};
+			class unlock_closest_building_door {};
 		};
 		class Building_admin
 		{
