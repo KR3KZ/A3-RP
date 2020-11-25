@@ -12,7 +12,7 @@ private _query = format["
 	building_owned.pos_atl_y,
 	building_owned.pos_atl_z
 	FROM building_directory, building_owned
-	WHERE building_directory.id = building_owned.building_id
+	WHERE building_directory.id = building_owned.building_directory_id
 "];
 
 private _res = [_query, true] call DB_fnc_select;

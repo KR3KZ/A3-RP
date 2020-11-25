@@ -57,7 +57,9 @@ class CfgFunctions {
 			class load_buildings_owned {};
 			class lock_building {};
 			class lock_closest_building_door {};
+			class on_ask_buildings_owned_by_player {};
 			class on_insert_building_owned {};
+			class select_buildings_owned_by_player {};
 			class select_buildings_owned {};
 			class unlock_building {};
 			class unlock_closest_building_door {};

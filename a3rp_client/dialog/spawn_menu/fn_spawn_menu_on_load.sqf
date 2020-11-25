@@ -16,11 +16,19 @@ waitUntil {!isNull _display};
 */
 _display displayAddEventHandler["keyDown", {if (_this # 1 == 1) then {true};}];
 
+/**
+* Get spawns list
+*/
 private _spawns = call client_fnc_get_spawns;
 
 if (count(_spawns) < 1) exitWith {
 	["[fn_spawn_menu_on_load]: No spawns in config."] call client_fnc_log_me;
 };
+
+/**
+* Ask the server the buildings the player owns
+*/
+[player] remoteExec ["SRV_fnc_on_ask_buildings_owned_by_player", 2];
 
 [format["[fn_spawn_menu_on_load]: Spawns list : [%1]", _spawns]] call client_fnc_log_me;
 

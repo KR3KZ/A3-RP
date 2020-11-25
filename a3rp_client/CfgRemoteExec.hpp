@@ -23,12 +23,14 @@ class CfgRemoteExec
 		class SRV_fnc_set_building_buyable {allowedTargets = 2;};
 		class SRV_fnc_lock_closest_building_door {allowedTargets = 2;};
 		class SRV_fnc_unlock_closest_building_door {allowedTargets = 2;};
+		class SRV_fnc_on_ask_buildings_owned_by_player {allowedTargets = 2;};
 
 		//CLIENT
 		class auth_fnc_on_client_account_id {allowedTargets = 1;};
 		class auth_fnc_on_players_list {allowedTargets = 1;};
 		class auth_fnc_on_player_created {allowedTargets = 1;};
 		class client_fnc_bad_name {allowedTargets = 1;};
+		class client_fnc_spawn_menu_set_buildings {allowedTargets = 1;};
 		
 		//REMOVE ON PROD
 		class bis_fnc_debugconsoleexec {allowedTargets = 0;};

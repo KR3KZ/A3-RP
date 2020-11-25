@@ -22,7 +22,7 @@ if (_building getVariable ["building_id", 0] != 0) exitWith {
 };
 
 /**
-* Is it a house ?
+* Is it a building ?
 */
 if (!(_building isKindOf "House_F")) exitWith {
 	[format["[fn_buy_building]: [%1] is not a building", _building]] call SRV_fnc_log_me;
