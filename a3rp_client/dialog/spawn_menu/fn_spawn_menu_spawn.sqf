@@ -27,7 +27,13 @@ if (_spawn_type == "spawn") then {
 	private _spawn_data 	= parseNumber(_spawns_list lbData (lbCurSel _spawns_list));
 	private _spawns			= _display getVariable ["building_list", []];
 	private _spawn 			= _spawns select _spawn_data;
-	_spawn_position 		= [_spawn select 2, _spawn select 3, _spawn select 4];
+	/** Spawn format is 
+	* [id,"classname", x, y, z,"custom name"]
+	* i.e: [25, "Land_i_Shop_02_V3_F", 3914.37, 13864.8, 0.468246, "Mon habitation"]
+	*/
+	
+	private _building		= nearestObject [[_spawn select 2, _spawn select 3, _spawn select 4], _spawn select 1];
+	_spawn_position 		= _building buildingPos 0;
 };
 
 /**
