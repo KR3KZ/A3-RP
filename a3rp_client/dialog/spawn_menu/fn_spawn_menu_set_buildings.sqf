@@ -2,7 +2,7 @@
 * A3-RP
 * Client-side
 * file: spawn_menu_set_buildings.sqf
-* desc: Show building on spawn menu when the server send the building list
+* desc: Display the buildings the player owns in the spawn menu when the server send it
 */
 
 private _buildings 		= param [0, [], [[]]];

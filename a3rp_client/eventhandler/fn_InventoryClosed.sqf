@@ -2,6 +2,7 @@
 * A3-RP
 * Client-side
 * file: InventoryClosed.sqf
+* desc: Executed when the player closed any inventory, used to save items in vehicle
 */
 
 player addEventHandler ["InventoryClosed", {

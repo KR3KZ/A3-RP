@@ -2,7 +2,7 @@
 * A3-RP
 * Client-side
 * file: players_list_on_load
-* desc: Character selection dialog
+* desc: Executed when character selection dialog load
 */
 
 ["[fn_players_list_on_load]: Dialog created"] call client_fnc_log_me;

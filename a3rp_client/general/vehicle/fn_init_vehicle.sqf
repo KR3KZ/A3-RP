@@ -2,6 +2,7 @@
 * A3-RP
 * Client-side
 * file: init_vehicle.sqf
+* desc: Ask the server to create a vehicle in game and in database for a player at a certain position
 */
 
 params [

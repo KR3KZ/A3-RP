@@ -2,7 +2,7 @@
 * A3-RP
 * Client-side
 * file: spawn_menu_on_load
-* desc: Spawn selection dialog
+* desc: Excuted when spawn selection dialog load
 */
 
 ["[fn_spawn_menu_on_load]: Dialog created"] call client_fnc_log_me;

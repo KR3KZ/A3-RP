@@ -2,6 +2,7 @@
 * A3-RP
 * Client-side
 * file: get_spawn_position.sqf
+* desc: Get a random building around the given spawn and return his first buildingPos
 */
 
 private _spawn 				= param [0, [], [[]]];

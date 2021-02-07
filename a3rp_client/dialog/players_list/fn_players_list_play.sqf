@@ -2,7 +2,7 @@
 * A3-RP
 * Client-side
 * file: players_list_play
-* desc: Select player from players_list
+* desc: Select a character from the client_players_list
 */
 
 ["[fn_players_list_play]: Button play pressed"] call client_fnc_log_me;

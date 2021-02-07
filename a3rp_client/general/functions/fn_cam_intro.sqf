@@ -2,7 +2,7 @@
 * A3-RP
 * Client-side
 * file: cam_intro.sqf
-* desc: Handle cam introduction & dialog
+* desc: Handle cam introduction
 */
 
 if (player getVariable ["client_cam_intro_running", false] isEqualTo false) then {

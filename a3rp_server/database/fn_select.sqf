@@ -2,6 +2,7 @@
 * A3-RP
 * Server-side
 * file: select.sqf
+* desc: Handle select query
 */
 
 params [

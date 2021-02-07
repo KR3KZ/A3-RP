@@ -2,6 +2,7 @@
 * A3-RP
 * Client-side
 * file: buy_building.sqf
+* desc: Ask the server to buy a building
 */
 
 private _building = param [0, objNull, [objNull]];

@@ -2,6 +2,7 @@
 * A3-RP
 * Client-side
 * file: get_spawns.sqf
+* desc: Get spawn list from config
 */
 
 private _spawns_config 		= missionConfigFile >> "A3RP_Spawns" >> worldName >> str(side player);

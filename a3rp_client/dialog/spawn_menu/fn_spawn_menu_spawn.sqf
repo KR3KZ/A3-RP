@@ -28,8 +28,8 @@ if (_spawn_type == "spawn") then {
 	private _spawns			= _display getVariable ["building_list", []];
 	private _spawn 			= _spawns select _spawn_data;
 	/** Spawn format is 
-	* [id,"classname", x, y, z,"custom name"]
-	* i.e: [25, "Land_i_Shop_02_V3_F", 3914.37, 13864.8, 0.468246, "Mon habitation"]
+	* [id, "classname", x, y, z, "custom name"]
+	* [25, "Land_i_Shop_02_V3_F", 3914.37, 13864.8, 0.468246, "Mon habitation"]
 	*/
 	
 	private _building		= nearestObject [[_spawn select 2, _spawn select 3, _spawn select 4], _spawn select 1];

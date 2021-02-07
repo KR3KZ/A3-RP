@@ -2,7 +2,7 @@
 * A3-RP
 * Client-side
 * file: players_list_set_index
-* desc: Select player from players_list
+* desc: Update the player index selected
 */
 
 private _param = param [0, true, [true]];

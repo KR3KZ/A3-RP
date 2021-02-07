@@ -2,6 +2,7 @@
 * A3-RP
 * Server-side
 * file: init_extdb3.sqf
+* desc: Init extdb3
 */
 
 /**
