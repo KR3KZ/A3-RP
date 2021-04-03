@@ -1,7 +1,7 @@
 /**
 * A3-RP
 * Server-side
-* file: select_buildings_owned.sqf
+* file: select_buildings_owned_by_player.sqf
 * desc: Select buildings owned by a player in database
 */
 
