@@ -17,6 +17,8 @@ class CfgFunctions {
 			file = "\a3rp_server\database";
 			class execute {};
 			class init_extdb3 {};
+			class prepare_select {};
+			class process_select {};
 			class select {};
 		};
 	};

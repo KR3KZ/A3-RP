@@ -9,13 +9,12 @@ private _classname = param [0, "", [""]];
 
 if (_classname == "") exitWith {[]};
 
-private _query = format["
-	SELECT building_directory.classname,
-	building_directory.buyable
-	FROM building_directory
-	WHERE classname = '%1'
-", _classname];
-
-private _res = [_query, true] call DB_fnc_select;
+private _res = [
+	["building_directory"],
+	["building_directory.classname", "building_directory.buyable"],
+	[format["classname = '%1'", _classname]],
+	"",
+	true
+] call DB_fnc_select;
 
 _res

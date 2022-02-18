@@ -16,22 +16,12 @@ params [
 
 if (_player_uid == "" || _player_side == "") exitWith {};
 
-private _query = format["
-	SELECT player.id,
-	player.name,
-	player.cash,
-	player.gear,
-	player.pos_atl_x,
-	player.pos_atl_y,
-	player.pos_atl_z,
-	player.dir
-	FROM account, player, side
-	WHERE player.account_id = account.id
-	AND player.side_id = side.id
-	AND steam_id = '%1'
-	AND side.type = '%2'
-", _player_uid, _player_side];
-
-private _res = [_query, true] call DB_fnc_select;
+private _res = [
+	["account", "player", "side"],
+	["player.id", "player.name", "player.cash", "player.gear", "player.pos_atl_x", "player.pos_atl_y", "player.pos_atl_z", "player.dir"],
+	["player.account_id = account.id", "player.side_id = side.id", format["steam_id = '%1'", _player_uid], format["side.type = '%1'", _player_side]],
+	"",
+	true
+] call DB_fnc_select;
 
 _res

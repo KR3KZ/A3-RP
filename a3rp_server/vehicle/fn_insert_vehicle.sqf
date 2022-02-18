@@ -27,6 +27,6 @@ private _query = format ["
 /**
 * Get the id of the vehicle and returns it
 */
-private _res = ["SELECT LAST_INSERT_ID()"] call DB_fnc_select;
+private _res = ["SELECT LAST_INSERT_ID()"] call DB_fnc_process_select;
 
 _res

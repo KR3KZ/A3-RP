@@ -12,12 +12,10 @@ private _player_uid = param [0, "", [""]];
 
 if (_player_uid == "") exitWith {};
 
-private _query = format ["
-	SELECT id, steam_id
-	FROM account
-	WHERE steam_id = '%1'
-", _player_uid];
-
-private _res = [_query] call DB_fnc_select;
+private _res = [
+	["account"],
+	["id", "steam_id"],
+	[format["steam_id = '%1'", _player_uid]]
+] call DB_fnc_select;
 
 _res

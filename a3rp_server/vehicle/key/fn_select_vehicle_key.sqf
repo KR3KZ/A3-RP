@@ -9,12 +9,12 @@ private _vehicle_id = param [0, 0, [0]];
 
 if (_vehicle_id == 0) exitWith {};
 
-private _query = format["
-	SELECT vehicle_key.player_id
-	FROM vehicle_key
-	WHERE vehicle_key.vehicle_id = %1
-", _vehicle_id];
-
-private _res = [_query, true] call DB_fnc_select;
+private _res = [
+	["vehicle_key"],
+	["vehicle_key.player_id"],
+	[format["vehicle_key.vehicle_id = %1", _vehicle_id]],
+	"",
+	true
+] call DB_fnc_select;
 
 _res
