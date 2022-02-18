@@ -26,6 +26,11 @@ if (name player == ctrlText(_name)) then {
 	client_player_dir		= client_player select 7;
 	client_player_selected 	= true;
 	[format["[fn_players_list_play]: Player selected: [%1]", client_player]] call client_fnc_log_me;
+
+	/**
+	* This variable is used by the server to not save the player when he hasn't spawn yet
+	*/
+	player setVariable ["client_spawned", true, true];
 } else {
 	/**
 	* If the name of the player doesn't match with the name in the dialog, he can't play, he must modify his name in his Arma profile
