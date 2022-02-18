@@ -12,15 +12,17 @@ params [
 
 if (_building_classname == "" || _building_pos isEqualTo []) exitWith {};
 
-private _query = format ["
-	INSERT INTO building_owned
-	(building_directory_id, pos_atl_x, pos_atl_y, pos_atl_z)
-	VALUES
-	((SELECT id FROM building_directory WHERE classname = '%1'), '%2', '%3', '%4')
-", _building_classname, _building_pos select 0, _building_pos select 1, _building_pos select 2
-];
+[
+	"building_owned",
+	["building_directory_id", "pos_atl_x", "pos_atl_y", "pos_atl_z"],
+	[
+		format["(SELECT id FROM building_directory WHERE classname = '%1')", _building_classname],
+		format["%1", _building_pos select 0],
+		format["%1", _building_pos select 1],
+		format["%1", _building_pos select 2]
+	]
+] call DB_fnc_insert;
 
-[_query] call DB_fnc_execute;
 
 /**
 * Get the id of the building and returns it

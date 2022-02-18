@@ -12,14 +12,13 @@ params [
 
 if (_building_classname == "") exitWith {};
 
-private _query = format ["
-	INSERT INTO building_directory
-	(classname, buyable)
-	VALUES
-	('%1', '%2')
-", _building_classname, _building_buyable
-];
-
-private _res = [_query] call DB_fnc_execute;
+private _res = [
+	"building_directory",
+	["classname", "buyable"],
+	[
+		format["%1", _building_classname],
+		format["%1", _building_buyable]
+	]
+] call DB_fnc_insert;
 
 _res

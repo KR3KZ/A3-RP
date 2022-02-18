@@ -1,7 +1,7 @@
 /**
 * A3-RP
 * Server-side
-* file: process_query.sqf
+* file: process_select.sqf
 * desc: Process a select query
 */
 

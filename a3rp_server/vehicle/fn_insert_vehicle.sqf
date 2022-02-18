@@ -14,15 +14,18 @@ params [
 
 if (_vehicle_classname == "" || { _vehicle_damage == "" } || { _vehicle_pos isEqualTo [] }) exitWith {};
 
-private _query = format ["
-	INSERT INTO vehicle
-	(classname, damage, pos_atl_x, pos_atl_y, pos_atl_z, dir)
-	VALUES
-	('%1', '%2', '%3', '%4', '%5', '%6')
-", _vehicle_classname, _vehicle_damage, _vehicle_pos select 0, _vehicle_pos select 1, _vehicle_pos select 2, _vehicle_dir
-];
-
-[_query] call DB_fnc_execute;
+[
+	"vehicle",
+	["classname", "damage", "pos_atl_x", "pos_atl_y", "pos_atl_z", "dir"],
+	[
+		format["%1", _vehicle_classname],
+		format["%1", _vehicle_damage],
+		format["%1", _vehicle_pos select 0],
+		format["%1", _vehicle_pos select 1],
+		format["%1", _vehicle_pos select 2],
+		format["%1", _vehicle_dir]
+	]
+] call DB_fnc_insert;
 
 /**
 * Get the id of the vehicle and returns it

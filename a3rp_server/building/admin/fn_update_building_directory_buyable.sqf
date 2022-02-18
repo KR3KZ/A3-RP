@@ -12,12 +12,10 @@ params [
 
 if (_building_classname == "") exitWith {};
 
-private _query = format ["
-	UPDATE building_directory SET
-	buyable = '%1'
-	WHERE classname = '%2'
-", _building_buyable, _building_classname];
-
-private _res = [_query] call DB_fnc_execute;
+private _res = [
+	"building_directory",
+	[format["buyable = '%1'", _building_buyable]],
+	[format["classname = '%1'", _building_classname]]
+] call DB_fnc_update;
 
 _res

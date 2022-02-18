@@ -12,13 +12,13 @@ params [
 
 if (_vehicle_id == 0 || { _client_player_id == 0 }) exitWith {};
 
-private _query = format ["
-	INSERT INTO vehicle_key
-	(vehicle_id, player_id)
-	VALUES
-	('%1', '%2')
-", _vehicle_id, _client_player_id];
-
-private _res = [_query] call DB_fnc_execute;
+private _res = [
+	"vehicle_key",
+	["vehicle_id", "player_id"],
+	[
+		format["%1", _vehicle_id],
+		format["%1", _client_player_id]
+	]
+] call DB_fnc_insert;
 
 _res

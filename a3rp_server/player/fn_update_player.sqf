@@ -16,12 +16,20 @@ params [
 
 if (_player_id == 0 || { _player_side == "" } || { _player_gear == "" } || { _player_pos isEqualTo [] }) exitWith {};
 
-private _query = format ["
-	UPDATE player SET
-	cash = %1, gear = '%2', pos_atl_x = '%3', pos_atl_y = '%4', pos_atl_z = '%5', dir = '%6'
-	WHERE id = %7 AND side_id = (SELECT id FROM side WHERE type = '%8')
-", _player_cash, _player_gear, _player_pos select 0, _player_pos select 1, _player_pos select 2, _player_dir, _player_id, _player_side];
-
-private _res = [_query] call DB_fnc_execute;
+private _res = [
+	"player",
+	[
+		format["cash = %1", _player_cash],
+		format["gear = %1", _player_gear],
+		format["pos_atl_x = %1", _player_pos select 0],
+		format["pos_atl_y = %1", _player_pos select 1],
+		format["pos_atl_z = %1", _player_pos select 2],
+		format["dir = %1", _player_dir]
+	],
+	[
+		format["id = %1", _player_id],
+		format["side_id = (SELECT id FROM side WHERE type = '%1')", _player_side]
+	]
+] call DB_fnc_update;
 
 _res

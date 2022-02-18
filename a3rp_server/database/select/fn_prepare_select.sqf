@@ -18,4 +18,6 @@ _tableName 		= _tableName joinString ", ";
 _selectFields 	= _selectFields joinString ", ";
 _conditions 	= _conditions joinString " AND ";
 
-format["SELECT %1 FROM %2 WHERE %3 %4;", _selectFields, _tableName, _conditions, _options];
+private _res = format["SELECT %1 FROM %2 WHERE %3 %4;", _selectFields, _tableName, _conditions, _options];
+
+_res

@@ -15,12 +15,15 @@ params [
 
 if (_vehicle_id == 0) exitWith {};
 
-private _query = format ["
-	UPDATE vehicle_inventory SET
-	backpacks = '%1', items = '%2', magazines = '%3', weapons = '%4'
-	WHERE vehicle_id = %5
-", _vehicle_backpacks, _vehicle_items, _vehicle_magazines, _vehicle_weapons, _vehicle_id];
-
-private _res = [_query] call DB_fnc_execute;
+private _res = [
+	"vehicle_inventory",
+	[
+		format["backpacks = %1", _vehicle_backpacks],
+		format["items = %1", _vehicle_items],
+		format["magazines = %1", _vehicle_magazines],
+		format["weapons = %1", _vehicle_weapons]
+	],
+	[format["vehicle_id = %1", _vehicle_id]]
+] call DB_fnc_update;
 
 _res

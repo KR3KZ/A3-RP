@@ -9,13 +9,10 @@ private _player_uid = param [0, "", [""]];
 
 if (_player_uid == "") exitWith {};
 
-private _query = format ["
-	INSERT INTO account
-	(steam_id)
-	VALUES
-	('%1')
-", _player_uid];
-
-private _res = [_query] call DB_fnc_execute;
+private _res = [
+	"account",
+	["steam_id"],
+	[format["%1", _player_uid]]
+] call DB_fnc_insert;
 
 _res

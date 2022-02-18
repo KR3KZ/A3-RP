@@ -15,13 +15,16 @@ params [
 
 if (_vehicle_id == 0) exitWith {};
 
-private _query = format ["
-	INSERT INTO vehicle_inventory
-	(vehicle_id, backpacks, items, magazines, weapons)
-	VALUES
-	('%1', '%2', '%3', '%4', '%5')
-", _vehicle_id, _vehicle_backpacks, _vehicle_items, _vehicle_magazines, _vehicle_weapons];
-
-private _res = [_query] call DB_fnc_execute;
+private _res = [
+	"vehicle_inventory",
+	["vehicle_id", "backpacks", "items", "magazines", "weapons"],
+	[
+		format["%1", _vehicle_id],
+		format["%1", _vehicle_backpacks],
+		format["%1", _vehicle_items],
+		format["%1", _vehicle_magazines],
+		format["%1", _vehicle_weapons]
+	]
+] call DB_fnc_insert;
 
 _res

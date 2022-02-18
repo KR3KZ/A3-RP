@@ -15,12 +15,17 @@ params [
 
 if (_vehicle_id == 0 || { _vehicle_damage == "" } || { _vehicle_pos isEqualTo [] }) exitWith {};
 
-private _query = format ["
-	UPDATE vehicle SET
-	damage = '%1', fuel = '%2', pos_atl_x = '%3', pos_atl_y = '%4', pos_atl_z = '%5', dir = '%6'
-	WHERE id = %7
-", _vehicle_damage, _vehicle_fuel, _vehicle_pos select 0, _vehicle_pos select 1, _vehicle_pos select 2, _vehicle_dir, _vehicle_id];
-
-private _res = [_query] call DB_fnc_execute;
+private _res = [
+	"vehicle",
+	[
+		format["damage = %1", _vehicle_damage],
+		format["fuel = %1", _vehicle_fuel],
+		format["pos_atl_x = %1", _vehicle_pos select 0],
+		format["pos_atl_y = %1", _vehicle_pos select 1],
+		format["pos_atl_z = %1", _vehicle_pos select 2],
+		format["dir = %1", _vehicle_dir]
+	],
+	[format["id = %1", _vehicle_id]]
+] call DB_fnc_update;
 
 _res
