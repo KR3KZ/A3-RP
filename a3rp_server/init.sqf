@@ -13,7 +13,7 @@ SRV_log_me_id = 0;
 /**
 * Get the database name from description.ext
 */
-private _database_name 	= getText(missionConfigFile >> "CfgServer" >> "database_name");
+private _database_name = getText(missionConfigFile >> "CfgServer" >> "database_name");
 
 /**
 * Initiate the connection to the SQL server
