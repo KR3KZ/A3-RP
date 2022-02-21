@@ -13,7 +13,9 @@ params [
 
 if (_tableName == "" || { _updateFields isEqualTo [] }) exitWith {""};
 
-_updateFields 	= _insertFields joinString ", ";
+_updateFields 	= _updateFields joinString ", ";
 _conditions 	= _conditions joinString " AND ";
 
 private _res = format["UPDATE %1 SET %2 WHERE %3;", _tableName, _updateFields, _conditions];
+
+_res
