@@ -20,8 +20,8 @@ private _res = [
 	[
 		format["(SELECT id FROM ACCOUNT WHERE steam_id = '%1')", _player_uid],
 		format["(SELECT id FROM side WHERE type = '%1')", _player_side],
-		format["%1", _player_name],
-		format["%1", _player_gear]
+		format["'%1'", _player_name],
+		format["'%1'", _player_gear]
 	]
 ] call DB_fnc_insert;
 

@@ -14,7 +14,7 @@ if (_building_classname == "") exitWith {};
 
 private _res = [
 	"building_directory",
-	[format["buyable = '%1'", _building_buyable]],
+	[format["buyable = %1", _building_buyable]],
 	[format["classname = '%1'", _building_classname]]
 ] call DB_fnc_update;
 

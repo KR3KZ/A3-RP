@@ -18,10 +18,10 @@ if (_vehicle_id == 0) exitWith {};
 private _res = [
 	"vehicle_inventory",
 	[
-		format["backpacks = %1", _vehicle_backpacks],
-		format["items = %1", _vehicle_items],
-		format["magazines = %1", _vehicle_magazines],
-		format["weapons = %1", _vehicle_weapons]
+		format["backpacks = '%1'", _vehicle_backpacks],
+		format["items = '%1'", _vehicle_items],
+		format["magazines = '%1'", _vehicle_magazines],
+		format["weapons = '%1'", _vehicle_weapons]
 	],
 	[format["vehicle_id = %1", _vehicle_id]]
 ] call DB_fnc_update;

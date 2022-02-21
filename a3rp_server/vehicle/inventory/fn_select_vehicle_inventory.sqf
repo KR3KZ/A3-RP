@@ -12,7 +12,7 @@ if (_vehicle_id == 0) exitWith {};
 private _res = [
 	["vehicle_inventory"],
 	["backpacks", "items", "magazines", "weapons"],
-	[format["vehicle_id = '%1'", _vehicle_id]],
+	[format["vehicle_id = %1", _vehicle_id]],
 	"",
 	true
 ] call DB_fnc_select;

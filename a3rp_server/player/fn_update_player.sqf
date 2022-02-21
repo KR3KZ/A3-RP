@@ -20,7 +20,7 @@ private _res = [
 	"player",
 	[
 		format["cash = %1", _player_cash],
-		format["gear = %1", _player_gear],
+		format["gear = '%1'", _player_gear],
 		format["pos_atl_x = %1", _player_pos select 0],
 		format["pos_atl_y = %1", _player_pos select 1],
 		format["pos_atl_z = %1", _player_pos select 2],

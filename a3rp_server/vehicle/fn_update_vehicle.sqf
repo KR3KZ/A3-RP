@@ -18,7 +18,7 @@ if (_vehicle_id == 0 || { _vehicle_damage == "" } || { _vehicle_pos isEqualTo []
 private _res = [
 	"vehicle",
 	[
-		format["damage = %1", _vehicle_damage],
+		format["damage = '%1'", _vehicle_damage],
 		format["fuel = %1", _vehicle_fuel],
 		format["pos_atl_x = %1", _vehicle_pos select 0],
 		format["pos_atl_y = %1", _vehicle_pos select 1],

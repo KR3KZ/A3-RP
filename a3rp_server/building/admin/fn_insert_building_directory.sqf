@@ -16,7 +16,7 @@ private _res = [
 	"building_directory",
 	["classname", "buyable"],
 	[
-		format["%1", _building_classname],
+		format["'%1'", _building_classname],
 		format["%1", _building_buyable]
 	]
 ] call DB_fnc_insert;

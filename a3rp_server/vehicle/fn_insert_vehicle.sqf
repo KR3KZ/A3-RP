@@ -18,8 +18,8 @@ if (_vehicle_classname == "" || { _vehicle_damage == "" } || { _vehicle_pos isEq
 	"vehicle",
 	["classname", "damage", "pos_atl_x", "pos_atl_y", "pos_atl_z", "dir"],
 	[
-		format["%1", _vehicle_classname],
-		format["%1", _vehicle_damage],
+		format["'%1'", _vehicle_classname],
+		format["'%1'", _vehicle_damage],
 		format["%1", _vehicle_pos select 0],
 		format["%1", _vehicle_pos select 1],
 		format["%1", _vehicle_pos select 2],
