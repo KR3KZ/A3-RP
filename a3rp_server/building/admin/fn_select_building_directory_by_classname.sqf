@@ -13,8 +13,7 @@ private _res = [
 	["building_directory"],
 	["building_directory.classname", "building_directory.buyable"],
 	[format["classname = '%1'", _classname]],
-	"",
-	true
+	""
 ] call DB_fnc_select;
 
 _res

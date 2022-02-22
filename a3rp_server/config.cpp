@@ -64,6 +64,7 @@ class CfgFunctions {
 		class General
 		{
 			file = "\a3rp_server\general";
+			class hashmap {};
 			class log_me {};
 			class teleport_me {};
 		};

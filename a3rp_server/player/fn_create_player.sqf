@@ -16,14 +16,14 @@ private _player_gear 	= format ["%1", getUnitLoadout _player];
 
 private _res = [_player_uid, _player_side, _player_name] call SRV_fnc_select_player_by_name;
 
-if (_res isEqualTo [0,"Error MariaDBQueryException Exception"]) exitWith {
+if !("player.id" in _res) exitWith {
 	/**
 	* If MariaDBQueryException Exception
 	*/
 	[format["[fn_on_create_player]: [%1]", _res]] call SRV_fnc_log_me;
 };
 
-if (_res isEqualTo []) then {
+if (_res get "player.id" isEqualTo []) then {
 	/**
 	* The player is not in the database
 	*/

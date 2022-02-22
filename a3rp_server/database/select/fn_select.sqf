@@ -13,8 +13,7 @@ params [
 	["_tableName", [], [[]]],
 	["_selectFields", [], [[]]],
 	["_conditions", [], [[]]],
-	["_options", "", [""]],
-	["_multiArray", false, [false]]
+	["_options", "", [""]]
 ];
 
 if (_tableName isEqualTo [] || { _selectFields isEqualTo [] } || { _conditions isEqualTo [] }) exitWith {};
@@ -23,6 +22,8 @@ private _query = [_tableName, _selectFields, _conditions, _options] call DB_fnc_
 
 if (_query == "") exitWith {};
 
-private _res = [_query, _multiArray] call DB_fnc_process_select;
+private _selectResults = [_query] call DB_fnc_process_select;
+
+private _res = [_selectFields, _selectResults] call SRV_fnc_hashmap;
 
 _res

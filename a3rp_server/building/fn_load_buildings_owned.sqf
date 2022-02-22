@@ -7,14 +7,14 @@
 
 private _buildings = call SRV_fnc_select_buildings_owned;
 
-{
-	private _building_id 			= _x select 0;
-	private _building_classname 	= _x select 1;
-	private _building_pos 			= [_x select 2, _x select 3, _x select 4];
-	private _building_keys 			= [_building_id] call SRV_fnc_select_building_key;
+for "_i" from 0 to (count (_buildings get "building_owned.id") - 1) do {
+	private _building_id 			= _buildings get "building_owned.id" select _i;
+	private _building_classname 	= _buildings get "building_directory.classname" select _i;
+	private _building_pos 			= [_buildings get "building_owned.pos_atl_x" select _i, _buildings get "building_owned.pos_atl_y" select _i, _buildings get "building_owned.pos_atl_z" select _i];
+	private _building_keys 			= [_building_id] call SRV_fnc_select_building_key get "building_key.player_id";
 	private _building				= nearestObject [_building_pos, _building_classname];
 	[_building] call SRV_fnc_lock_building;
 
 	_building setVariable ["building_id", _building_id, true];
 	_building setVariable ["building_keys", _building_keys, true];
-} forEach _buildings;
+};

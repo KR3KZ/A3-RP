@@ -35,7 +35,7 @@ private _building_classname 	= typeOf _building;
 */
 private _buildings_classname 	= [_building_classname] call SRV_fnc_select_building_directory_by_classname;
 
-if (count(_buildings_classname) < 1) exitWith {
+if (building_directory get "building_directory.classname" isEqualTo []) exitWith {
 	/**
 	* Building not whitelisted in database (table building_directory)
 	*/
@@ -45,7 +45,7 @@ if (count(_buildings_classname) < 1) exitWith {
 /**
 * Building is whitelisted but buyable is on 0
 */
-if (_buildings_classname select 1 != 1) exitWith {
+if (_buildings_classname get "building_directory.buyable" select 0 != 1) exitWith {
 	[format["[fn_buy_building]: [%1] can't be bought, because it's not whitelisted", _building]] call SRV_fnc_log_me;
 };
 
@@ -65,7 +65,7 @@ private _building_id 		= _res select 0;
 /**
 * Select  the key in database (table building_key)
 */
-private _building_keys 		= [_building_id] call SRV_fnc_select_building_key;
+private _building_keys 		= [_building_id] call SRV_fnc_select_building_key get "building_key.player_id";
 
 _building setVariable ["building_id", _building_id, true];
 _building setVariable ["building_keys", _building_keys, true];

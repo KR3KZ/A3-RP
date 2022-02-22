@@ -15,14 +15,14 @@ private _player_uid 	= getPlayerUID _player;
 
 private _res 			= [_player_uid] call SRV_fnc_select_account;
 
-if (_res select 0 == 0) exitWith {
+if !("id" in _res && "steam_id" in _res) exitWith {
 	/**
 	* If MariaDBQueryException Exception
 	*/
 	[format["[fn_on_ask_account]: [%1]", _res]] call SRV_fnc_log_me;
 };
 
-if (_res isEqualTo []) then {
+if (_res get "id" isEqualTo []) then {
 	/**
 	* The steam_id is not in the database
 	*/
@@ -42,10 +42,10 @@ if (_res isEqualTo []) then {
 	/**
 	* The steam_id exist in the database
 	*/
-	[format["[fn_on_ask_account]: [%1] exist in database, id: [%2], send it to the client", _player_uid, _res select 0]] call SRV_fnc_log_me;
+	[format["[fn_on_ask_account]: [%1] exist in database, id: [%2], send it to the client", _player_uid, _res get "id" select 0]] call SRV_fnc_log_me;
 
 	/**
 	* Send the id to the client
 	*/
-	[_res select 0] remoteExec ["auth_fnc_on_client_account_id", _player];
+	[_res get "id" select 0] remoteExec ["auth_fnc_on_client_account_id", _player];
 };

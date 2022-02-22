@@ -5,9 +5,11 @@
 * desc: Get the player just created for this account from the server
 */
 
-private _player = param [0, [], [[]]];
+private _defaultHashMap = createHashMap;
 
-if (_player isEqualTo []) exitWith {
+private _player 		= param [0, _defaultHashMap, [_defaultHashMap]];
+
+if (!("player.id" in _player) || {_player get "player.id" isEqualTo []}) exitWith {
 	/**
 	* Player already exist in database with that name
 	*/
@@ -17,9 +19,9 @@ if (_player isEqualTo []) exitWith {
 [format["[fn_on_player_created]: Player created received from server [%1]", _player]] call client_fnc_log_me;
 
 /**
-* Add the player we just created in the player list so we can wee it in the dialog
+* Add the player we just created in the player list so we can see it in the dialog
 */
-client_players_list pushBack (_player select 0);
+client_players_list pushBack (_player);
 
 /**
 * Close and open the dialog to refresh it

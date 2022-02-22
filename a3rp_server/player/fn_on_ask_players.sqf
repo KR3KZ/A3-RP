@@ -28,14 +28,14 @@ _player_name = _player_name_split joinString " ";
 
 private _res = [_player_uid, _player_side] call SRV_fnc_select_players;
 
-if (_res isEqualTo [0,"Error MariaDBQueryException Exception"]) exitWith {
+if !("player.id" in _res) exitWith {
 	/**
 	* If MariaDBQueryException Exception
 	*/
 	[format["[fn_on_ask_players]: [%1]", _res]] call SRV_fnc_log_me;
 };
 
-if (_res isEqualTo []) then {
+if (_res get "player.id" isEqualTo []) then {
 	/**
 	* The player is not in the database
 	*/

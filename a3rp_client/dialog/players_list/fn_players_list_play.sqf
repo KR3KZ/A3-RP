@@ -16,16 +16,12 @@ if (name player == ctrlText(_name)) then {
 	*/
 	closeDialog 0;
 
-	/**
-	* client_player contains informations about the selected character
-	*/
-	client_player 			= client_players_list select client_players_list_index;
-	player setVariable ["client_player_id", client_player select 0, 2];
-	player setVariable ["client_cash", client_player select 2, 2];
-	client_player_position 	= [client_player select 4, client_player select 5, client_player select 6];
-	client_player_dir		= client_player select 7;
+	player setVariable ["client_player_id", client_players_list get "player.id" select client_players_list_index, 2];
+	player setVariable ["client_cash", client_players_list get "player.cash" select client_players_list_index, 2];
+	client_player_position 	= [client_players_list get "player.pos_atl_x" select client_players_list_index, client_players_list get "player.pos_atl_y" select client_players_list_index, client_players_list get "player.pos_atl_z" select client_players_list_index];
+	client_player_dir		= client_players_list get "player.dir" select client_players_list_index;
 	client_player_selected 	= true;
-	[format["[fn_players_list_play]: Player selected: [%1]", client_player]] call client_fnc_log_me;
+	[format["[fn_players_list_play]: Player selected: [%1]", client_players_list]] call client_fnc_log_me;
 
 	/**
 	* This variable is used by the server to not save the player when he hasn't spawn yet

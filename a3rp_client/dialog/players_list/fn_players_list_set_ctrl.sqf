@@ -17,12 +17,10 @@ private _city 			= _display displayCtrl 1003;
 private _sub_title 		= _display displayCtrl 1004;
 private _btn_play		= _display displayCtrl 1005;
 
-private _player_info 	= client_players_list select _index;
-
-private _player_name 	= _player_info select 1;
-private _player_cash 	= [_player_info select 2] call BIS_fnc_numberText;
+private _player_name 	= client_players_list get "player.name" select _index;
+private _player_cash 	= [client_players_list get "player.cash" select _index] call BIS_fnc_numberText;
 _player_cash 			= format["%1 %2", _player_cash, localize "STR_money_sign"];
-private _player_pos 	= [_player_info select 4, _player_info select 5, _player_info select 6];
+private _player_pos 	= [client_players_list get "player.pos_atl_x" select _index, client_players_list get "player.pos_atl_y" select _index, client_players_list get "player.pos_atl_z" select _index];
 
 _sub_title ctrlSetText format ["%1 / %2", (_index + 1), (client_players_list_index_max + 1)];
 _name ctrlSetText _player_name;

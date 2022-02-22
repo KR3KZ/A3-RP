@@ -13,8 +13,7 @@ private _res = [
 	["building_key"],
 	["building_key.player_id"],
 	[format["building_key.building_id = %1", _building_id]],
-	"",
-	true
+	""
 ] call DB_fnc_select;
 
 _res

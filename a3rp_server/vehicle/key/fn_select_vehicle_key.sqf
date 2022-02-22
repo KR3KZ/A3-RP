@@ -13,8 +13,7 @@ private _res = [
 	["vehicle_key"],
 	["vehicle_key.player_id"],
 	[format["vehicle_key.vehicle_id = %1", _vehicle_id]],
-	"",
-	true
+	""
 ] call DB_fnc_select;
 
 _res

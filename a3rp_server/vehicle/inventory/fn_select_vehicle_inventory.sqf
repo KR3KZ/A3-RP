@@ -13,8 +13,7 @@ private _res = [
 	["vehicle_inventory"],
 	["backpacks", "items", "magazines", "weapons"],
 	[format["vehicle_id = %1", _vehicle_id]],
-	"",
-	true
+	""
 ] call DB_fnc_select;
 
-_res select 0
+_res

@@ -7,7 +7,7 @@
 
 if (client_player_gear_loaded) exitWith {};
 
-private _gear = parseSimpleArray(client_player select 3);
+private _gear = parseSimpleArray(client_players_list get "player.gear" select client_players_list_index);
 
 [player, _gear] remoteExec ["SRV_fnc_load_gear", 2];
 

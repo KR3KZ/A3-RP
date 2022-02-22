@@ -6,8 +6,7 @@
 */
 
 params [
-	["_query", "", [""]],
-	["_multiArray", false, [false]]
+	["_query", "", [""]]
 ];
 
 if (_query == "") exitWith {};
@@ -80,9 +79,9 @@ if ((_queryResult select 0) isEqualTo 0) exitWith {
 };
 
 private _return = (_queryResult select 1);
-if (!_multiArray && count _return > 0) then {
-	_return = (_return select 0);
-};
+//if (!_multiArray && count _return > 0) then {
+//	_return = (_return select 0);
+//};
 
 [format ["[extDB3]: [%1] >>> [%2]", _query, _return]] call SRV_fnc_log_me;
 

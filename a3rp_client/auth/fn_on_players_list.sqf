@@ -5,9 +5,11 @@
 * desc: Get the players list for this account from the server
 */
 
-private _players_list 			= param [0, [], [[]]];
+private _defaultHashMap = createHashMap;
 
-if (_players_list isEqualTo []) exitWith {};
+private _players_list 	= param [0, _defaultHashMap, [_defaultHashMap]];
+
+if (_players_list get "player.id" isEqualTo []) exitWith {};
 
 [format["[fn_on_players_list]: Players list received from server [%1]", _players_list]] call client_fnc_log_me;
 
