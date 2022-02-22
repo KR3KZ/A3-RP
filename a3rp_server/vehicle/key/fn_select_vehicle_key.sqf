@@ -12,8 +12,7 @@ if (_vehicle_id == 0) exitWith {};
 private _res = [
 	["vehicle_key"],
 	["vehicle_key.player_id"],
-	[format["vehicle_key.vehicle_id = %1", _vehicle_id]],
-	""
+	[format["vehicle_key.vehicle_id = %1", _vehicle_id]]
 ] call DB_fnc_select;
 
 _res
