@@ -18,7 +18,9 @@ class General {
 		class init_eventhandler {};
 		class cameraView {};
 		class FiredNear {};
-		class InventoryClosed;
+		class InventoryClosed{};
+		class Killed{};
+		class Respawn{};
 	};
 	class Functions {
 		file = "general\functions";
