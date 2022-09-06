@@ -32,7 +32,13 @@ if (_res get "player.id" isEqualTo []) then {
 	/**
 	* Insert player in database
 	*/
-	private _insert_done = [_player_uid, _player_side, _player_name, _player_gear] call SRV_fnc_insert_player;
+	private _defaultHashMap = createHashMap;
+	_defaultHashMap set ["client_uid", _player_uid];
+	_defaultHashMap set ["client_side", _player_side];
+	_defaultHashMap set ["client_name", _player_name];
+	_defaultHashMap set ["client_gear", _player_gear];
+
+	private _insert_done = [_defaultHashMap] call SRV_fnc_insert_player;
 
 	/**
 	* Make sure insert was successfull
@@ -47,5 +53,6 @@ if (_res get "player.id" isEqualTo []) then {
 	/**
 	* Send player info's to the client
 	*/
+	_res = [_player_uid, _player_side] call SRV_fnc_select_players;
 	[_res] remoteExec ["auth_fnc_on_player_created", _player];
 };
