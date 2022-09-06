@@ -18,6 +18,12 @@ if (name player == ctrlText(_name)) then {
 
 	player setVariable ["client_player_id", client_players_list get "player.id" select client_players_list_index, 2];
 	player setVariable ["client_cash", client_players_list get "player.cash" select client_players_list_index, 2];
+
+	client_player = createHashMap;
+	{
+		_defaultHashMap set [_x, ((client_players_list get _x) select client_players_list_index)];
+	} forEach client_players_list;
+
 	client_player_position 	= [client_players_list get "player.pos_atl_x" select client_players_list_index, client_players_list get "player.pos_atl_y" select client_players_list_index, client_players_list get "player.pos_atl_z" select client_players_list_index];
 	client_player_dir		= client_players_list get "player.dir" select client_players_list_index;
 	client_player_selected 	= true;

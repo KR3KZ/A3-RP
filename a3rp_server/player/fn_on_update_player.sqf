@@ -10,7 +10,6 @@ private _player 		= param [0, objNull, [objNull]];
 private _player_id 		= _player getVariable ["client_player_id", 0];
 if (_player_id == 0) exitWith {};
 
-private _defaultHashMap = createHashMap;
 
 /**
 * This variable is used to not save the player when he hasn't spawn yet
@@ -28,6 +27,8 @@ private _player_pos 	= getPosATL _player;
 private _player_dir		= getDir _player;
 
 [format["[fn_on_update_player]: Request from [%1] [%2] received", _player_side, _player_id]] call SRV_fnc_log_me;
+
+private _defaultHashMap = createHashMap;
 
 _defaultHashMap set ["client_id", _player_id];
 _defaultHashMap set ["client_side", _player_side];

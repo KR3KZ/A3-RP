@@ -25,6 +25,7 @@ private _res = [
 	[
 		"player.id",
 		"player.name",
+		"player.alive",
 		"player.cash",
 		"player.gear",
 		"player.pos_atl_x",

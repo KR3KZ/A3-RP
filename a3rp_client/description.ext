@@ -2,6 +2,32 @@ class CfgServer {
 	database_name = "a3rp";
 }
 
+author			= "3rK";
+onLoadName		= "A3RP";
+onLoadMission	= "The best RP experience.";
+//loadScreen		= "images\loadScreen.paa";
+disabledAI		= 1;
+
+/**
+	* Respawn in base.
+	* A respawn marker is needed. If no marker is defined, respawn behaviour will be the same as "INSTANT".
+	* Marker role names:
+	* Unit respawn: respawn_SIDE
+	* Vehicle respawn: respawn_vehicle_SIDE
+	* Side can be one of west, east, guerrila (sic), civilian, e.g respawn_west.
+	* Any suffix (eg: respawn_westABC, respawn_west_1, etc) will allow multiple random respawn points.
+*/
+respawn 		= 3;
+respawnButton 	= 0;
+respawnDialog 	= 0;
+
+class Header
+{
+	gameType = RPG;	// Game type
+	minPlayers =  1; // minimum number of players the mission supports
+	maxPlayers = 10; // maximum number of players the mission supports
+};
+
 #include "CfgRemoteExec.hpp"
 #include "dialog\A3RP_dialogs.hpp"
 #include "config\settings.hpp"
