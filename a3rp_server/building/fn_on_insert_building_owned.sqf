@@ -35,7 +35,7 @@ private _building_classname 	= typeOf _building;
 */
 private _buildings_classname 	= [_building_classname] call SRV_fnc_select_building_directory_by_classname;
 
-if (building_directory get "building_directory.classname" isEqualTo []) exitWith {
+if (_buildings_classname get "building_directory.classname" isEqualTo []) exitWith {
 	/**
 	* Building not whitelisted in database (table building_directory)
 	*/
@@ -63,7 +63,7 @@ private _building_id 		= _res select 0;
 [_building_id, _client_player_id] call SRV_fnc_insert_building_key;
 
 /**
-* Select  the key in database (table building_key)
+* Select the key in database (table building_key)
 */
 private _building_keys 		= [_building_id] call SRV_fnc_select_building_key get "building_key.player_id";
 
