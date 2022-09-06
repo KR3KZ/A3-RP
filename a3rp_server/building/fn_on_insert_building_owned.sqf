@@ -15,17 +15,17 @@ if (isNull _player || { isNull _building }) exitWith {};
 private _client_player_id 		= _player getVariable "client_player_id";
 
 /**
-* Building already owned
-*/
-if (_building getVariable ["building_id", 0] != 0) exitWith {
-	[format["[fn_buy_building]: [%1] is already owned", _building]] call SRV_fnc_log_me;
-};
-
-/**
 * Is it a building ?
 */
 if (!(_building isKindOf "House_F")) exitWith {
 	[format["[fn_buy_building]: [%1] is not a building", _building]] call SRV_fnc_log_me;
+};
+
+/**
+* Building already owned
+*/
+if (_building getVariable ["building_id", 0] != 0) exitWith {
+	[format["[fn_buy_building]: [%1] is already owned", _building]] call SRV_fnc_log_me;
 };
 
 private _building_classname 	= typeOf _building;
