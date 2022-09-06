@@ -1,5 +1,10 @@
 class A3RP_Settings {
 	/**
+	* Enable debug logs
+	*/
+	debug_mode = true;
+	
+	/**
 	* Buildings the player can spawn in
 	*/
 	buildings_spawn[] = {
