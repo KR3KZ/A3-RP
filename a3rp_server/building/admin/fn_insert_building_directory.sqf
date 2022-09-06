@@ -14,7 +14,10 @@ if (_building_classname == "") exitWith {};
 
 private _res = [
 	"building_directory",
-	["classname", "buyable"],
+	[
+		"classname",
+		"buyable"
+	],
 	[
 		format["'%1'", _building_classname],
 		format["%1", _building_buyable]

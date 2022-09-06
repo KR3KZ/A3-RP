@@ -17,7 +17,13 @@ if (
 
 private _res = [
 	"player",
-	["account_id", "side_id", "name", "cash", "gear"],
+	[
+		"account_id",
+		"side_id",
+		"name",
+		"cash",
+		"gear"
+	],
 	[
 		format["(SELECT id FROM ACCOUNT WHERE steam_id = '%1')", _players_infos get "client_uid"],
 		format["(SELECT id FROM side WHERE type = '%1')", _players_infos get "client_side"],

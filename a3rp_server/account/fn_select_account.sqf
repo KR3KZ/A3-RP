@@ -14,8 +14,14 @@ if (_player_uid == "") exitWith {};
 
 private _res = [
 	["account"],
-	["id", "steam_id"],
-	[format["steam_id = '%1'", _player_uid]]
+	[
+		"id",
+		"steam_id"
+	],
+	[
+		format["steam_id = '%1'",
+		_player_uid]
+	]
 ] call DB_fnc_select;
 
 _res
