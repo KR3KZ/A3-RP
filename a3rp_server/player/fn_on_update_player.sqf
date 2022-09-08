@@ -10,7 +10,6 @@ private _player 		= param [0, objNull, [objNull]];
 private _player_id 		= _player getVariable ["client_player_id", 0];
 if (_player_id == 0) exitWith {};
 
-
 /**
 * This variable is used to not save the player when he hasn't spawn yet
 */

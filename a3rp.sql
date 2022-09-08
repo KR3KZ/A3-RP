@@ -26,11 +26,9 @@ CREATE TABLE IF NOT EXISTS `account` (
   `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `steam_id` (`steam_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb3;
 
--- Listage des données de la table a3rp.account : ~0 rows (environ)
-/*!40000 ALTER TABLE `account` DISABLE KEYS */;
-/*!40000 ALTER TABLE `account` ENABLE KEYS */;
+-- Les données exportées n'étaient pas sélectionnées.
 
 -- Listage de la structure de la table a3rp. building_directory
 DROP TABLE IF EXISTS `building_directory`;
@@ -42,67 +40,7 @@ CREATE TABLE IF NOT EXISTS `building_directory` (
   UNIQUE KEY `classname` (`classname`)
 ) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb3;
 
--- Listage des données de la table a3rp.building_directory : ~57 rows (environ)
-/*!40000 ALTER TABLE `building_directory` DISABLE KEYS */;
-INSERT INTO `building_directory` (`id`, `classname`, `buyable`) VALUES
-	(4, 'Land_Offices_01_V1_F', 1),
-	(5, 'Land_u_Addon_02_V1_F', 1),
-	(6, 'Land_i_Addon_02_V1_F', 1),
-	(7, 'Land_i_Garage_V1_F', 1),
-	(8, 'Land_i_Garage_V2_F', 1),
-	(9, 'Land_Metal_Shed_F', 1),
-	(10, 'Land_i_House_Big_01_V1_F', 1),
-	(11, 'Land_i_House_Big_01_V2_F', 1),
-	(12, 'Land_i_House_Big_01_V3_F', 1),
-	(13, 'Land_u_House_Big_01_V1_F', 1),
-	(14, 'Land_i_House_Big_02_V1_F', 1),
-	(15, 'Land_i_House_Big_02_V2_F', 1),
-	(16, 'Land_i_House_Big_02_V3_F', 1),
-	(17, 'Land_u_House_Big_02_V1_F', 1),
-	(18, 'Land_i_Shop_01_V1_F', 1),
-	(19, 'Land_i_Shop_01_V2_F', 1),
-	(20, 'Land_i_Shop_01_V3_F', 1),
-	(21, 'Land_u_Shop_01_V1_F', 1),
-	(22, 'Land_i_Shop_02_V1_F', 1),
-	(23, 'Land_i_Shop_02_V2_F', 1),
-	(24, 'Land_i_Shop_02_V3_F', 1),
-	(25, 'Land_u_Shop_02_V1_F', 1),
-	(26, 'Land_i_House_Small_01_V1_F', 1),
-	(27, 'Land_i_House_Small_01_V2_F', 1),
-	(28, 'Land_i_House_Small_01_V3_F', 1),
-	(29, 'Land_u_House_Small_01_V1_F', 1),
-	(30, 'Land_i_House_Small_02_V1_F', 1),
-	(31, 'Land_i_House_Small_02_V2_F', 1),
-	(32, 'Land_i_House_Small_02_V3_F', 1),
-	(33, 'Land_u_House_Small_02_V1_F', 1),
-	(34, 'Land_i_House_Small_03_V1_F', 1),
-	(35, 'Land_Slum_House01_F', 1),
-	(36, 'Land_Slum_House02_F', 1),
-	(37, 'Land_Slum_House03_F', 1),
-	(38, 'Land_i_Stone_HouseBig_V1_F', 1),
-	(39, 'Land_i_Stone_HouseBig_V2_F', 1),
-	(40, 'Land_i_Stone_HouseBig_V3_F', 1),
-	(41, 'Land_d_Stone_HouseBig_V1_F', 1),
-	(42, 'Land_i_Stone_Shed_V1_F', 1),
-	(43, 'Land_i_Stone_Shed_V2_F', 1),
-	(44, 'Land_i_Stone_Shed_V3_F', 1),
-	(45, 'Land_i_Stone_HouseSmall_V1_F', 1),
-	(46, 'Land_i_Stone_HouseSmall_V2_F', 1),
-	(47, 'Land_i_Stone_HouseSmall_V3_F', 1),
-	(48, 'Land_Hangar_F', 1),
-	(49, 'Land_i_Shed_Ind_F', 1),
-	(50, 'Land_i_Barracks_V1_F', 1),
-	(51, 'Land_i_Barracks_V2_F', 1),
-	(52, 'Land_u_Barracks_V2_F', 1),
-	(53, 'Land_Cargo_House_V1_F', 1),
-	(54, 'Land_Cargo_House_V2_F', 1),
-	(55, 'Land_Cargo_House_V3_F', 1),
-	(56, 'Land_MilOffices_V1_F', 1),
-	(57, 'Land_TentHangar_V1_F', 1),
-	(58, 'Land_GH_House_1_F', 1),
-	(59, 'Land_GH_House_2_F', 1),
-	(73, 'Land_Kiosk_redburger_F', 0);
-/*!40000 ALTER TABLE `building_directory` ENABLE KEYS */;
+-- Les données exportées n'étaient pas sélectionnées.
 
 -- Listage de la structure de la table a3rp. building_key
 DROP TABLE IF EXISTS `building_key`;
@@ -115,11 +53,9 @@ CREATE TABLE IF NOT EXISTS `building_key` (
   KEY `FK_building_key_player_id` (`player_id`),
   CONSTRAINT `FK_building_key_building_id` FOREIGN KEY (`building_id`) REFERENCES `building_owned` (`id`),
   CONSTRAINT `FK_building_key_player_id` FOREIGN KEY (`player_id`) REFERENCES `player` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb3;
 
--- Listage des données de la table a3rp.building_key : ~0 rows (environ)
-/*!40000 ALTER TABLE `building_key` DISABLE KEYS */;
-/*!40000 ALTER TABLE `building_key` ENABLE KEYS */;
+-- Les données exportées n'étaient pas sélectionnées.
 
 -- Listage de la structure de la table a3rp. building_owned
 DROP TABLE IF EXISTS `building_owned`;
@@ -134,11 +70,9 @@ CREATE TABLE IF NOT EXISTS `building_owned` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `classname_pos_atl_x_pos_atl_y_pos_atl_z` (`building_directory_id`,`pos_atl_x`,`pos_atl_y`,`pos_atl_z`),
   CONSTRAINT `FK_building_owned_building_id` FOREIGN KEY (`building_directory_id`) REFERENCES `building_directory` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb3;
 
--- Listage des données de la table a3rp.building_owned : ~0 rows (environ)
-/*!40000 ALTER TABLE `building_owned` DISABLE KEYS */;
-/*!40000 ALTER TABLE `building_owned` ENABLE KEYS */;
+-- Les données exportées n'étaient pas sélectionnées.
 
 -- Listage de la structure de la table a3rp. player
 DROP TABLE IF EXISTS `player`;
@@ -147,6 +81,7 @@ CREATE TABLE IF NOT EXISTS `player` (
   `account_id` int(17) NOT NULL,
   `side_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
+  `alive` int(1) NOT NULL DEFAULT 1,
   `cash` int(11) NOT NULL,
   `gear` varchar(5000) NOT NULL,
   `pos_atl_x` float NOT NULL DEFAULT 0,
@@ -159,11 +94,9 @@ CREATE TABLE IF NOT EXISTS `player` (
   KEY `FK_player_account_id` (`account_id`),
   CONSTRAINT `FK_player_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`) ON DELETE CASCADE,
   CONSTRAINT `FK_player_side_id` FOREIGN KEY (`side_id`) REFERENCES `side` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8mb3;
 
--- Listage des données de la table a3rp.player : ~0 rows (environ)
-/*!40000 ALTER TABLE `player` DISABLE KEYS */;
-/*!40000 ALTER TABLE `player` ENABLE KEYS */;
+-- Les données exportées n'étaient pas sélectionnées.
 
 -- Listage de la structure de la table a3rp. side
 DROP TABLE IF EXISTS `side`;
@@ -173,14 +106,7 @@ CREATE TABLE IF NOT EXISTS `side` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 
--- Listage des données de la table a3rp.side : ~4 rows (environ)
-/*!40000 ALTER TABLE `side` DISABLE KEYS */;
-INSERT INTO `side` (`id`, `type`) VALUES
-	(1, 'CIV'),
-	(2, 'WEST'),
-	(3, 'GUER'),
-	(4, 'EAST');
-/*!40000 ALTER TABLE `side` ENABLE KEYS */;
+-- Les données exportées n'étaient pas sélectionnées.
 
 -- Listage de la structure de la table a3rp. vehicle
 DROP TABLE IF EXISTS `vehicle`;
@@ -197,11 +123,9 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `stored` int(1) NOT NULL DEFAULT 0,
   `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb3;
 
--- Listage des données de la table a3rp.vehicle : ~0 rows (environ)
-/*!40000 ALTER TABLE `vehicle` DISABLE KEYS */;
-/*!40000 ALTER TABLE `vehicle` ENABLE KEYS */;
+-- Les données exportées n'étaient pas sélectionnées.
 
 -- Listage de la structure de la table a3rp. vehicle_inventory
 DROP TABLE IF EXISTS `vehicle_inventory`;
@@ -215,11 +139,9 @@ CREATE TABLE IF NOT EXISTS `vehicle_inventory` (
   PRIMARY KEY (`id`),
   KEY `FK_vehicle_inventory_vehicle_id` (`vehicle_id`),
   CONSTRAINT `FK_vehicle_inventory_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 
--- Listage des données de la table a3rp.vehicle_inventory : ~0 rows (environ)
-/*!40000 ALTER TABLE `vehicle_inventory` DISABLE KEYS */;
-/*!40000 ALTER TABLE `vehicle_inventory` ENABLE KEYS */;
+-- Les données exportées n'étaient pas sélectionnées.
 
 -- Listage de la structure de la table a3rp. vehicle_key
 DROP TABLE IF EXISTS `vehicle_key`;
@@ -232,11 +154,9 @@ CREATE TABLE IF NOT EXISTS `vehicle_key` (
   KEY `FK_vehicle_key_player_id` (`player_id`),
   CONSTRAINT `FK_vehicle_key_player_id` FOREIGN KEY (`player_id`) REFERENCES `player` (`id`) ON DELETE CASCADE,
   CONSTRAINT `FK_vehicle_key_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb3;
 
--- Listage des données de la table a3rp.vehicle_key : ~0 rows (environ)
-/*!40000 ALTER TABLE `vehicle_key` DISABLE KEYS */;
-/*!40000 ALTER TABLE `vehicle_key` ENABLE KEYS */;
+-- Les données exportées n'étaient pas sélectionnées.
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;

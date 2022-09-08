@@ -32,7 +32,7 @@ if (name player == ctrlText(_name)) then {
 	/**
 	* This variable is used by the server to not save the player when he hasn't spawn yet
 	*/
-	player setVariable ["client_spawned", true, true];
+	player setVariable ["client_spawned", true, 2];
 } else {
 	/**
 	* If the name of the player doesn't match with the name in the dialog, he can't play, he must modify his name in his Arma profile

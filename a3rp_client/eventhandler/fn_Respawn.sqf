@@ -5,7 +5,7 @@
 * desc: Triggered when a unit respawns.
 */
 
-player addEventHandler ["Killed", {
+player addEventHandler ["Respawn", {
 	params ["_unit", "_corpse"];
 	
 }];

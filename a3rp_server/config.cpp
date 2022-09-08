@@ -108,9 +108,11 @@ class CfgFunctions {
 			class insert_player {};
 			class on_ask_players {};
 			class on_create_player {};
+			class on_player_killed {};
 			class on_update_player {};
 			class select_player_by_name {};
 			class select_players {};
+			class set_player_alive {};
 			class update_player {};
 		};
 		class Save

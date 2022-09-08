@@ -41,6 +41,11 @@ if (_spawn_type == "spawn") then {
 */
 [player, _spawn_position] remoteExec ["SRV_fnc_teleport_me", 2];
 
+/**
+* Update 'alive' field in database to 1
+*/
+[player] remoteExec ["SRV_fnc_on_player_killed", 2];
+
 closeDialog 0;
 
 player setVariable ["client_cam_intro_running", false];
@@ -48,4 +53,4 @@ player setVariable ["client_cam_intro_running", false];
 /**
 * This variable is used by the server to not save the player when he hasn't spawn yet
 */
-player setVariable ["client_spawned", true, true];
+player setVariable ["client_spawned", true, 2];
