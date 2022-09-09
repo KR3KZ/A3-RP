@@ -82,6 +82,7 @@ CREATE TABLE IF NOT EXISTS `player` (
   `side_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `alive` int(1) NOT NULL DEFAULT 1,
+  `state` varchar(5000) NOT NULL DEFAULT '{}',
   `cash` int(11) NOT NULL,
   `gear` varchar(5000) NOT NULL,
   `pos_atl_x` float NOT NULL DEFAULT 0,
@@ -94,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `player` (
   KEY `FK_player_account_id` (`account_id`),
   CONSTRAINT `FK_player_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`) ON DELETE CASCADE,
   CONSTRAINT `FK_player_side_id` FOREIGN KEY (`side_id`) REFERENCES `side` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb3;
 
 -- Les données exportées n'étaient pas sélectionnées.
 
