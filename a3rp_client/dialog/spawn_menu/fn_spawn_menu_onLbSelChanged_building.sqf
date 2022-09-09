@@ -23,14 +23,14 @@ private _spawn_data 		= parseNumber(_control lbData (lbCurSel _control));
 */
 private _spawns				= _display getVariable ["building_list", []];
 
-if (_spawns isEqualTo []) exitWith {};
+if (_spawns get "building_owned.id" isEqualTo []) exitWith {};
 
-private _spawn 				= _spawns select _spawn_data;
+private _spawn 				= _spawns get "building_owned.name" select _spawn_data;
 
-private _spawn_name = if (_spawn select 5 == "") then {
-	getText (configFile >> "CfgVehicles" >> (_spawn select 1) >> "displayName");
+private _spawn_name = if (_spawn == "") then {
+	getText (configFile >> "CfgVehicles" >> (_spawns get "building_directory.classname" select _spawn_data) >> "displayName");
 } else {
-	_spawn select 5;
+	_spawn;
 };
 
 private _map 				= _display displayCtrl 1101;
@@ -47,5 +47,5 @@ if (!ctrlEnabled _btn_spawn) then {
 	_btn_spawn ctrlEnable true;
 };
 
-_map ctrlMapAnimAdd [0, 0.008, [_spawn select 2, _spawn select 3, _spawn select 4]];
+_map ctrlMapAnimAdd [0, 0.008, [_spawns get "building_owned.pos_atl_x" select _spawn_data, _spawns get "building_owned.pos_atl_y" select _spawn_data, _spawns get "building_owned.pos_atl_z" select _spawn_data]];
 ctrlMapAnimCommit _map;

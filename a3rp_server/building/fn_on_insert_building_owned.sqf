@@ -55,7 +55,7 @@ private _building_pos		= getPosATL _building;
 * Insert the building in database (table building_owned)
 */
 private _res 				= [_building_classname, _building_pos] call SRV_fnc_insert_building_owned;
-private _building_id 		= _res select 0;
+private _building_id 		= _res select 0 select 0;
 
 /**
 * Insert the key in database (table building_key)
