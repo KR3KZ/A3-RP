@@ -73,9 +73,10 @@ call client_fnc_init_eventhandler;
 /**
 * Spawn selection
 */
-if (client_player_position isEqualTo [0,0,0]) then {
+
+if ([client_player get "player.pos_atl_x", client_player get "player.pos_atl_y", client_player get "player.pos_atl_z"] isEqualTo [0,0,0]) then {
 	createDialog "A3RP_spawn_menu";
 } else {
-	[player, client_player_position, client_player_dir] remoteExec ["SRV_fnc_teleport_me", 2];
+	[player, [client_player get "player.pos_atl_x", client_player get "player.pos_atl_y", client_player get "player.pos_atl_z"], client_player get "player.dir"] remoteExec ["SRV_fnc_teleport_me", 2];
 	player setVariable ["client_cam_intro_running", false];
 };

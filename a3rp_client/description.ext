@@ -2,6 +2,17 @@ class CfgServer {
 	database_name = "a3rp";
 }
 
+/*This is for filePatching, remove on prod
+class CfgSettings {
+    class CBA {
+        class Caching {
+            compile = 0;
+            xeh = 0;
+            functions = 0;
+        };
+    };
+};*/
+
 author			= "3rK";
 onLoadName		= "A3RP";
 onLoadMission	= "The best RP experience.";

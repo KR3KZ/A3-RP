@@ -18,6 +18,7 @@ class General {
 		class init_eventhandler {};
 		class cameraView {};
 		class FiredNear {};
+		class HandleRating {};
 		class InventoryClosed{};
 		class Killed{};
 		class Respawn{};

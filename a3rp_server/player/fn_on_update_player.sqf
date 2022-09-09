@@ -24,6 +24,7 @@ if (_player_cash == -1) exitWith {};
 private _player_gear 	= format ["%1", getUnitLoadout _player];
 private _player_pos 	= getPosATL _player;
 private _player_dir		= getDir _player;
+private _player_state	= [_player] call ace_medical_fnc_serializeState;
 
 [format["[fn_on_update_player]: Request from [%1] [%2] received", _player_side, _player_id]] call SRV_fnc_log_me;
 
@@ -35,5 +36,6 @@ _defaultHashMap set ["client_cash", _player_cash];
 _defaultHashMap set ["client_gear", _player_gear];
 _defaultHashMap set ["client_pos", _player_pos];
 _defaultHashMap set ["client_dir", _player_dir];
+_defaultHashMap set ["client_state", _player_state];
 
 [_defaultHashMap] call SRV_fnc_update_player;
