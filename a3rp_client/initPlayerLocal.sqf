@@ -31,6 +31,12 @@ waitUntil {SRV_is_ready};
 waitUntil {!isNull player};
 
 /**
+* Set up EH
+*/
+["Setting up Event Handlers"] call client_fnc_log_me;
+call client_fnc_init_eventhandler;
+
+/**
 * Ask database if account exist, if not, create it, then send back client ID
 */
 ["Asking account to the server..."] call client_fnc_log_me;
@@ -59,24 +65,48 @@ createDialog "A3RP_player_list";
 waitUntil {client_player_selected};
 
 /**
-* Load gear
+* Variables used by server
 */
-call client_fnc_load_gear;
-waitUntil {client_player_gear_loaded};
+player setVariable ["client_player_id", client_players_list get "player.id" select client_players_list_index, 2];
 
-/**
-* Set up EH
-*/
-["Setting up Event Handlers"] call client_fnc_log_me;
-call client_fnc_init_eventhandler;
+if (client_player get "player.alive" == 1) then {
+	/**
+	* Load gear
+	*/
+	call client_fnc_load_gear;
+	waitUntil {client_player_gear_loaded};
 
-/**
-* Spawn selection
-*/
+	/**
+	* Apply ace medical state
+	*/
+	[player, client_player get "player.state"] call ace_medical_fnc_deserializeState;
 
-if ([client_player get "player.pos_atl_x", client_player get "player.pos_atl_y", client_player get "player.pos_atl_z"] isEqualTo [0,0,0]) then {
-	createDialog "A3RP_spawn_menu";
-} else {
+	/**
+	* Set player cash
+	*/
+	player setVariable ["client_cash", client_players_list get "player.cash" select client_players_list_index, 2];
+
+	/**
+	* Teleport player at his position
+	*/
 	[player, [client_player get "player.pos_atl_x", client_player get "player.pos_atl_y", client_player get "player.pos_atl_z"], client_player get "player.dir"] remoteExec ["SRV_fnc_teleport_me", 2];
-	player setVariable ["client_cam_intro_running", false];
+} else {
+	/**
+	* Set player cash
+	*/
+	player setVariable ["client_cash", 0, 2];
+
+	/**
+	* Spawn selection
+	*/
+	createDialog "A3RP_spawn_menu";
+	waitUntil {client_player_spawn_selected};
+
+	/**
+	* Update 'alive' field in database to 1
+	*/
+	[player] remoteExec ["SRV_fnc_on_player_alive", 2];
 };
+
+player setVariable ["client_cam_intro_running", false];
+player setVariable ["client_spawned", true, true];

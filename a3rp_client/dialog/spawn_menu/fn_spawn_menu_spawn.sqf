@@ -26,31 +26,16 @@ if (_spawn_type == "spawn") then {
 	private _spawns_list 	= _display displayCtrl 1105;
 	private _spawn_data 	= parseNumber(_spawns_list lbData (lbCurSel _spawns_list));
 	private _spawns			= _display getVariable ["building_list", []];
-	private _spawn 			= _spawns select _spawn_data;
-	/** Spawn format is 
-	* [id, "classname", x, y, z, "custom name"]
-	* [25, "Land_i_Shop_02_V3_F", 3914.37, 13864.8, 0.468246, "Mon habitation"]
-	*/
 	
-	private _building		= nearestObject [[_spawn select 2, _spawn select 3, _spawn select 4], _spawn select 1];
+	private _building		= nearestObject [[_spawns get "building_owned.pos_atl_x" select _spawn_data, _spawns get "building_owned.pos_atl_y" select _spawn_data, _spawns get "building_owned.pos_atl_z" select _spawn_data], _spawns get "building_directory.classname" select _spawn_data];
 	_spawn_position 		= _building buildingPos 0;
 };
+
+client_player_spawn_selected = true;
 
 /**
 * Ask the server to teleport the player
 */
 [player, _spawn_position] remoteExec ["SRV_fnc_teleport_me", 2];
 
-/**
-* Update 'alive' field in database to 1
-*/
-[player] remoteExec ["SRV_fnc_on_player_killed", 2];
-
 closeDialog 0;
-
-player setVariable ["client_cam_intro_running", false];
-
-/**
-* This variable is used by the server to not save the player when he hasn't spawn yet
-*/
-player setVariable ["client_spawned", true, 2];
