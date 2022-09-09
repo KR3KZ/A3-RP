@@ -1,0 +1,3 @@
+Startup parameters for copy/paste:
+
+ -port=2302 "-config=A:\Steam\steamapps\common\Arma 3\TADST\A3-RP\TADST_config.cfg" "-cfg=A:\Steam\steamapps\common\Arma 3\TADST\A3-RP\TADST_basic.cfg" "-profiles=A:\Steam\steamapps\common\Arma 3\TADST\A3-RP" -name=A3-RP -filePatching -autoInit -serverMod=@a3rp_server;@extDB3 -mod=@CBA_A3;z\ace;
