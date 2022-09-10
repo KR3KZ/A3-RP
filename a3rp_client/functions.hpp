@@ -33,6 +33,10 @@ class General {
 		file = "general\gear";
 		class load_gear {};
 	};
+	class Player {
+		file = "general\player";
+		class init_player {};
+	};
 	class Building {
 		file = "general\building";
 		class buy_building {};
