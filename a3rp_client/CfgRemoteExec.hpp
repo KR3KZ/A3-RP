@@ -32,6 +32,7 @@ class CfgRemoteExec
 		class auth_fnc_on_players_list {allowedTargets = 1;};
 		class auth_fnc_on_player_created {allowedTargets = 1;};
 		class client_fnc_bad_name {allowedTargets = 1;};
+		class client_fnc_bad_side {allowedTargets = 1;};
 		class client_fnc_spawn_menu_set_buildings {allowedTargets = 1;};
 		
 		//REMOVE ON PROD

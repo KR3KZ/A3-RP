@@ -15,6 +15,14 @@ private _player_uid 	= getPlayerUID _player;
 
 private _res 			= [_player_uid] call SRV_fnc_select_account;
 
+/**
+* Check if player allowed to play this side
+*/
+private _player_side = format["%1", side _player];
+if ((_res get _player_side select 0) != 1) exitWith {
+	remoteExec ["client_fnc_bad_side", _player];
+};
+
 if !("id" in _res && "steam_id" in _res) exitWith {
 	/**
 	* If MariaDBQueryException Exception

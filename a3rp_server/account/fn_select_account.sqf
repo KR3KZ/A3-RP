@@ -16,7 +16,11 @@ private _res = [
 	["account"],
 	[
 		"id",
-		"steam_id"
+		"steam_id",
+		"CIV",
+		"WEST",
+		"GUER",
+		"EAST"
 	],
 	[
 		format["steam_id = '%1'",

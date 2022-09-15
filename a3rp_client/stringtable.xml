@@ -51,7 +51,7 @@
             <Original>A character already has the name : %1 for this side. If you want to create another character, please, change your name.</Original>
             <French>Un personnage a déjà le nom : %1 pour ce camp. Si vous souhaitez créer un nouveau personnage, changez votre nom svp.</French>
         </Key>
-        <Key ID="STR_player_change_your_pseudo">
+        <Key ID="STR_player_change_your_name">
             <Original>To play with this character, your name must be : "%1". Your actual name is : "%2".</Original>
             <French>Pour jouer ce personnage, votre nom doit être : "%1". Votre nom actuel est : "%2".</French>
         </Key>
@@ -102,6 +102,14 @@
         <Key ID="STR_end_mission_bad_name">
             <Original>You have been kicked because your name is not a Rôle Play name.</Original>
             <French>Vous avez été kické pour car votre nom n'est pas un nom Rôle Play.</French>
+        </Key>
+        <Key ID="STR_end_mission_bad_side_title">
+            <Original>Bad side</Original>
+            <French>Mauvais side</French>
+        </Key>
+        <Key ID="STR_end_mission_bad_side">
+            <Original>You have been kicked because you're not allowed to play this side.</Original>
+            <French>Vous avez été kické pour car vous n'êtes pas autorisé à jouer ce side.</French>
         </Key>
     </Package>
 </Project>

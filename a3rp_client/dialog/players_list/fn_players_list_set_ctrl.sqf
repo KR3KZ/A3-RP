@@ -34,7 +34,7 @@ if (name player != _player_name) then {
 	* The name of the player doesn't match with the name in the dialog
 	*/
 	_btn_play ctrlEnable false;
-	_btn_play ctrlSetTooltip format[localize "STR_player_change_your_pseudo", _player_name, name player];
+	_btn_play ctrlSetTooltip format[localize "STR_player_change_your_name", _player_name, name player];
 } else {
 	if (!ctrlEnabled _btn_play) then {
 		/**

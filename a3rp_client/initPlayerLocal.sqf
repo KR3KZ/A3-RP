@@ -30,12 +30,6 @@ waitUntil {SRV_is_ready};
 waitUntil {!isNull player};
 
 /**
-* Set up EH
-*/
-["Setting up Event Handlers"] call client_fnc_log_me;
-call client_fnc_init_eventhandler;
-
-/**
 * Ask database if account exist, if not, create it, then send back client ID
 */
 ["Asking account to the server..."] call client_fnc_log_me;
@@ -56,6 +50,12 @@ waitUntil {client_players_list_received};
 waitUntil {!isNull (findDisplay 46)};
 call client_fnc_cam_intro;
 waitUntil {player getVariable ["client_cam_ready", false]};
+
+/**
+* Set up EH
+*/
+["Setting up Event Handlers"] call client_fnc_log_me;
+call client_fnc_init_eventhandler;
 
 /**
 * Character selection
