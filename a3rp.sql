@@ -106,6 +106,10 @@ CREATE TABLE IF NOT EXISTS `side` (
   `type` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+INSERT INTO `a3rp`.`side` (`type`) VALUES ('CIV');
+INSERT INTO `a3rp`.`side` (`type`) VALUES ('WEST');
+INSERT INTO `a3rp`.`side` (`type`) VALUES ('EAST');
+INSERT INTO `a3rp`.`side` (`type`) VALUES ('GUER');
 
 -- Les données exportées n'étaient pas sélectionnées.
 
