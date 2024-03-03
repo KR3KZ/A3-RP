@@ -71,5 +71,6 @@ _building setVariable ["building_id", _building_id, true];
 _building setVariable ["building_keys", _building_keys, true];
 
 [_building] call SRV_fnc_lock_building;
+"building bought!" remoteExec ["hint", owner _player];
 
 _building_id

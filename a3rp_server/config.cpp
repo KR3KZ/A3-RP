@@ -80,6 +80,7 @@ class CfgFunctions {
 			class on_insert_building_owned {};
 			class select_buildings_owned_by_player {};
 			class select_buildings_owned {};
+			class transfer_building {};
 			class unlock_building {};
 			class unlock_closest_building_door {};
 		};
