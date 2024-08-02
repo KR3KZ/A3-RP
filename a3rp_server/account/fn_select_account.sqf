@@ -16,7 +16,8 @@ private _res = [
 	["account"],
 	[
 		"id",
-		"steam_id"
+		"steam_id",
+		"admin_level"
 	],
 	[
 		format["steam_id = '%1'",
