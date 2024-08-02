@@ -20,7 +20,7 @@ if (client_player get "player.alive" == 1) then {
 	/**
 	* Apply ace medical state
 	*/
-	[player, client_player get "player.state"] call ace_medical_fnc_deserializeState;
+	//[player, client_player get "player.state"] call ace_medical_fnc_deserializeState;
 
 	/**
 	* Set player cash
