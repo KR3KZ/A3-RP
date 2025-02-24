@@ -32,9 +32,9 @@ if (_building_id == 0) exitWith {
 [
 	"building_key",
 	[
-		format["player_id = %1", _client_player_id],
+		format["player_id = %1", _client_player_id]
 	],
 	[
-		format["building_id = %1", _building_id];
+		format["building_id = %1", _building_id]
 	]
 ] call DB_fnc_update;
