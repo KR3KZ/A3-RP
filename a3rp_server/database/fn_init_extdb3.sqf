@@ -24,8 +24,10 @@ private _conn_count 	= 1;
 * 9 represent the system mode
 * ADD_DATABASE is a command telling extDB3 to connect to a new database
 * _database_name relates to the section in the extdb3-conf.ini
-* Return [1] if successfull
-* Return [0,""Database Connection Error""] if failure
+* Return [1] 									if successfull
+* Return [0,""Database Connection Error""] 		if failure
+* Return [0,""Already Connected to Database""] 	if already connected
+* Return [0,""Database Config Error""] 			if database config error
 */
 private _add_database = "extDB3" callExtension format ["9:ADD_DATABASE:%1", _database_name];
 _add_database = call compile(_add_database);
@@ -50,6 +52,7 @@ if (_add_database select 0 == 0) then {
 	};
 
 	if (_conn_count > 10) then {
+		[format["[extDB3]: Failed to connect to [%1] after [%2] tries", _database_name, _conn_count]] call SRV_fnc_log_me;
 		"extdb3_failed" call BIS_fnc_endMissionServer;
 	};
 };
@@ -66,6 +69,9 @@ if (_add_database select 0 == 1) then {
 	* _database_name specifies the database you want to use the protocol for
 	* _protocol_name can be chosen freely
 	* TEXT2 wraps all text datatypes in single quotes '
+	* Return [1] 										if successfull
+	* Return [0,""Error Protocol Name Already Taken""] 	if protocol name already taken
+	* Return [0,""Failed to Load Protocol""] 			if failed to load protocol (wrong db name / protocol name)
 	*/
 	_add_database_protocol = "extDB3" callExtension format ["9:ADD_DATABASE_PROTOCOL:%1:SQL:%2:TEXT2", _database_name, _protocol_name];
 

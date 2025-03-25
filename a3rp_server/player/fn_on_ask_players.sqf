@@ -9,10 +9,10 @@ private _player 		= param [0, objNull, [objNull]];
 
 if (isNull _player) exitWith {};
 
-private _player_uid 	= getPlayerUID _player;
-private _player_side 	= format["%1", side _player];
-private _player_name 	= name _player;
-private _player_gear 	= format ["%1", getUnitLoadout _player];
+private _player_uid 	= getPlayerUID _player; // Steam ID "76561198108858505"
+private _player_side 	= format["%1", side _player]; // Side "CIV"
+private _player_name 	= name _player; // Name 'Joe Clarks'
+private _player_gear 	= format ["%1", getUnitLoadout _player]; // Gear '[[],[],[],[],[],[],"","",[],["","","","","",""]]'
 
 [format["[fn_on_ask_players]: Request from [%1] [%2] [%3] received", _player_uid, _player_side, _player_name]] call SRV_fnc_log_me;
 
