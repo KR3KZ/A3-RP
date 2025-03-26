@@ -12,7 +12,6 @@ if (isNull _player) exitWith {};
 private _player_uid 	= getPlayerUID _player;
 private _player_side 	= format["%1", side _player];
 private _player_name 	= name _player;
-private _player_gear 	= format ["%1", getUnitLoadout _player];
 
 private _res = [_player_uid, _player_side, _player_name] call SRV_fnc_select_player_by_name;
 
@@ -36,23 +35,15 @@ if (_res get "player.id" isEqualTo []) then {
 	_defaultHashMap set ["client_uid", _player_uid];
 	_defaultHashMap set ["client_side", _player_side];
 	_defaultHashMap set ["client_name", _player_name];
-	_defaultHashMap set ["client_gear", _player_gear];
 
-	private _insert_done = [_defaultHashMap] call SRV_fnc_insert_player;
+	private _insert = [_defaultHashMap] call SRV_fnc_insert_player;
+	_insert = call compile(_insert);
 
-	/**
-	* Make sure insert was successfull
-	*/
-	[_player] call SRV_fnc_create_player;
-} else {
-	/**
-	* The player exist in the database
-	*/
-	[format["[fn_on_create_player]: [%1] [%2] exist in database, player info: [%3], send it to the client", _player_side, _player_uid, _res]] call SRV_fnc_log_me;
+	if (_insert select 0 == 1) then {
+		private _players_list = [_player_uid, _player_side] call SRV_fnc_select_players;
+		[_players_list] remoteExec ["auth_fnc_on_player_created", _player];
+	} else {
+		remoteExec ["client_fnc_something_went_wrong", _player];
+	};
 
-	/**
-	* Send player info's to the client
-	*/
-	_res = [_player_uid, _player_side] call SRV_fnc_select_players;
-	[_res] remoteExec ["auth_fnc_on_player_created", _player];
 };

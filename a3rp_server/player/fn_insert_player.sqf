@@ -11,8 +11,7 @@ private _players_infos 	= param [0, _defaultHashMap, [_defaultHashMap]];
 if (
 	_players_infos get "client_uid" == "" ||
 	{ _players_infos get "client_side" == "" } ||
-	{ _players_infos get "client_name" == "" } ||
-	{ _players_infos get "client_gear" == "" }
+	{ _players_infos get "client_name" == "" }
 ) exitWith {};
 
 private _res = [
@@ -20,16 +19,12 @@ private _res = [
 	[
 		"account_id",
 		"side_id",
-		"name",
-		"cash",
-		"gear"
+		"name"
 	],
 	[
 		format["(SELECT id FROM ACCOUNT WHERE steam_id = '%1')", _players_infos get "client_uid"],
 		format["(SELECT id FROM side WHERE type = '%1')", _players_infos get "client_side"],
-		format["'%1'", _players_infos get "client_name"],
-		0,
-		format["'%1'", _players_infos get "client_gear"]
+		format["'%1'", _players_infos get "client_name"]
 	]
 ] call DB_fnc_insert;
 

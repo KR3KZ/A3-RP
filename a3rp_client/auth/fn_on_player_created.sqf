@@ -9,13 +9,6 @@ private _defaultHashMap = createHashMap;
 
 private _players 		= param [0, _defaultHashMap, [_defaultHashMap]];
 
-if (!("player.id" in _players) || {_players get "player.id" isEqualTo []}) exitWith {
-	/**
-	* Player already exist in database with that name
-	*/
-	[format[localize "STR_player_already_exists", name player]] spawn BIS_fnc_guiMessage;
-};
-
 [format["[fn_on_player_created]: Player created received from server [%1]", _players]] call client_fnc_log_me;
 
 /**

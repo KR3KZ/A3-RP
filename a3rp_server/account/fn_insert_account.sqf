@@ -13,8 +13,7 @@ private _res = [
 	"account",
 	["steam_id"],
 	[
-		format["'%1'",
-		_player_uid]
+		format["'%1'", _player_uid]
 	]
 ] call DB_fnc_insert;
 

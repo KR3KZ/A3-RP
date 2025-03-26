@@ -3,11 +3,9 @@
 * Server-side
 * file: select_account.sqf
 * desc: Select account in database and return result
+* usage: [_player_uid] call SRV_fnc_select_account;
 */
 
-/**
-* Getting player UID from on_ask_account
-*/
 private _player_uid = param [0, "", [""]];
 
 if (_player_uid == "") exitWith {};

@@ -12,7 +12,6 @@ if (isNull _player) exitWith {};
 private _player_uid 	= getPlayerUID _player;
 private _player_side 	= format["%1", side _player];
 private _player_name 	= name _player;
-private _player_gear 	= format ["%1", getUnitLoadout _player];
 
 [format["[fn_on_create_player]: Request from [%1] [%2] [%3] received", _player_uid, _player_side, _player_name]] call SRV_fnc_log_me;
 
@@ -28,13 +27,5 @@ if !("player.id" in _res) exitWith {
 if (_res get "player.id" isEqualTo []) then {
 	[_player] call SRV_fnc_create_player;
 } else {
-	/**
-	* The player exist in the database
-	*/
-	[format["[fn_on_create_player]: [%1] [%2] exist in database, player info: [%3], send it to the client", _player_side, _player_uid, _res]] call SRV_fnc_log_me;
-
-	/**
-	* Send player info's to the client
-	*/
-	[createHashMap] remoteExec ["auth_fnc_on_player_created", _player];
+	[format[localize "STR_player_already_exists", name _player]] remoteExec ["BIS_fnc_guiMessage", _player];
 };

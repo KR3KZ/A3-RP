@@ -3,10 +3,7 @@
 * Server-side
 * file: select_players.sqf
 * desc: Select players in database and return result
-*/
-
-/**
-* Getting player UID and side from on_ask_players
+* usage: [_player_uid, _player_side] call SRV_fnc_select_players;
 */
 
 params [
