@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Hôte:                         127.0.0.1
--- Version du serveur:           10.11.5-MariaDB - mariadb.org binary distribution
+-- Version du serveur:           11.6.2-MariaDB - mariadb.org binary distribution
 -- SE du serveur:                Win64
--- HeidiSQL Version:             12.3.0.6589
+-- HeidiSQL Version:             12.8.0.6908
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `account` (
   `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `steam_id` (`steam_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Listage des données de la table a3rp.account : ~0 rows (environ)
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `building_directory` (
   `buyable` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `classname` (`classname`)
-) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Listage des données de la table a3rp.building_directory : ~57 rows (environ)
 INSERT INTO `building_directory` (`id`, `classname`, `buyable`) VALUES
@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `building_key` (
   KEY `FK_building_key_player_id` (`player_id`),
   CONSTRAINT `FK_building_key_building_id` FOREIGN KEY (`building_id`) REFERENCES `building_owned` (`id`),
   CONSTRAINT `FK_building_key_player_id` FOREIGN KEY (`player_id`) REFERENCES `player` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Listage des données de la table a3rp.building_key : ~0 rows (environ)
 
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `building_owned` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `classname_pos_atl_x_pos_atl_y_pos_atl_z` (`building_directory_id`,`pos_atl_x`,`pos_atl_y`,`pos_atl_z`),
   CONSTRAINT `FK_building_owned_building_id` FOREIGN KEY (`building_directory_id`) REFERENCES `building_directory` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Listage des données de la table a3rp.building_owned : ~0 rows (environ)
 
@@ -141,22 +141,23 @@ CREATE TABLE IF NOT EXISTS `player` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `account_id` int(17) NOT NULL,
   `side_id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL DEFAULT '0',
   `alive` int(1) NOT NULL DEFAULT 1,
   `state` varchar(5000) NOT NULL DEFAULT '{}',
-  `cash` int(11) NOT NULL,
-  `gear` varchar(5000) NOT NULL,
+  `cash` int(11) NOT NULL DEFAULT 0,
+  `gear` varchar(5000) NOT NULL DEFAULT '[[],[],[],[],[],[],"","",[],["","","","","",""]]',
   `pos_atl_x` float NOT NULL DEFAULT 0,
   `pos_atl_y` float NOT NULL DEFAULT 0,
   `pos_atl_z` float NOT NULL DEFAULT 0,
   `dir` float NOT NULL DEFAULT 0,
+  `first_login` int(1) NOT NULL DEFAULT 1,
   `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
-  UNIQUE KEY `Unique_account_side_name` (`side_id`,`name`,`account_id`),
+  UNIQUE KEY `Unique_account_side_name` (`side_id`,`account_id`,`name`) USING BTREE,
   KEY `FK_player_account_id` (`account_id`),
   CONSTRAINT `FK_player_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`) ON DELETE CASCADE,
   CONSTRAINT `FK_player_side_id` FOREIGN KEY (`side_id`) REFERENCES `side` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Listage des données de la table a3rp.player : ~0 rows (environ)
 
@@ -166,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `side` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Listage des données de la table a3rp.side : ~4 rows (environ)
 INSERT INTO `side` (`id`, `type`) VALUES
@@ -190,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `stored` int(1) NOT NULL DEFAULT 0,
   `creation_date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Listage des données de la table a3rp.vehicle : ~0 rows (environ)
 
@@ -206,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_inventory` (
   PRIMARY KEY (`id`),
   KEY `FK_vehicle_inventory_vehicle_id` (`vehicle_id`),
   CONSTRAINT `FK_vehicle_inventory_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Listage des données de la table a3rp.vehicle_inventory : ~0 rows (environ)
 
@@ -221,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_key` (
   KEY `FK_vehicle_key_player_id` (`player_id`),
   CONSTRAINT `FK_vehicle_key_player_id` FOREIGN KEY (`player_id`) REFERENCES `player` (`id`) ON DELETE CASCADE,
   CONSTRAINT `FK_vehicle_key_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Listage des données de la table a3rp.vehicle_key : ~0 rows (environ)
 
