@@ -74,4 +74,10 @@ class CfgDebriefing
 		description = "$STR_end_mission_bad_side";
 		picture = "KIA";
 	};
+	class something_went_wrong
+	{
+		title = "$STR_end_mission_something_went_wrong_title";
+		description = "Oops";
+		picture = "KIA";
+	};
 };

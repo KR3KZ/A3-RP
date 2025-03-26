@@ -111,5 +111,9 @@
             <Original>You have been kicked because you're not allowed to play this side.</Original>
             <French>Vous avez été kické pour car vous n'êtes pas autorisé à jouer ce side.</French>
         </Key>
+        <Key ID="STR_end_mission_something_went_wrong_title">
+            <Original>Something went wrong.</Original>
+            <French>Une erreur s'est produite.</French>
+        </Key>
     </Package>
 </Project>
