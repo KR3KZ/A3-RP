@@ -30,6 +30,7 @@ if (_vehicle_classname == "" || { _vehicle_damage == "" } || { _vehicle_pos isEq
 /**
 * Get the id of the vehicle and returns it
 */
+// TODO REPLACE THIS WITH PROPER SELECT WITH LAST TIMESTAMP
 private _res = ["SELECT LAST_INSERT_ID()"] call DB_fnc_process_select;
 
 _res
