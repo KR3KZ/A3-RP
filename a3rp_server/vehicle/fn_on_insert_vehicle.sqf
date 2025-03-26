@@ -19,7 +19,7 @@ private _vehicle_dir		= getDir _vehicle;
 
 private _res 				= [_vehicle_classname, _vehicle_damage, _vehicle_pos, _vehicle_dir] call SRV_fnc_insert_vehicle;
 
-private _vehicle_id 		= _res select 0;
+private _vehicle_id 		= _res select 0 select 0;
 private _vehicle_backpacks 	= getBackpackCargo _vehicle;
 private _vehicle_items 		= getItemCargo _vehicle;
 private _vehicle_magazines 	= getMagazineCargo _vehicle;
