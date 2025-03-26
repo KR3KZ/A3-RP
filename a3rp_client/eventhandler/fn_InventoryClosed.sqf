@@ -13,5 +13,6 @@ player addEventHandler ["InventoryClosed", {
 		*/
 		[_container] remoteExec ["SRV_fnc_on_update_vehicle_inventory", 2];
 		[format["[InventoryClosed]: [%1]", _this]] call client_fnc_log_me;
+		[player] remoteExec ["SRV_fnc_save_player", 2];
 	};
 }];

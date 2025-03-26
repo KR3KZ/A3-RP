@@ -122,6 +122,7 @@ class CfgFunctions {
 		class Save
 		{
 			file = "\a3rp_server\save";
+			class save_player {};
 			class save_players {};
 			class save_vehicles {};
 			class save_world {};

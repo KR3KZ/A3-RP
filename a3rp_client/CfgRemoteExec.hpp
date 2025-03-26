@@ -25,6 +25,7 @@ class CfgRemoteExec
 		class SRV_fnc_on_ask_buildings_owned_by_player {allowedTargets = 2;};
 		class SRV_fnc_on_player_killed {allowedTargets = 2;};
 		class SRV_fnc_on_player_alive {allowedTargets = 2;};
+		class SRV_fnc_save_player {allowedTargets = 2;};
 
 		//CLIENT
 		class auth_fnc_on_client_account_id {allowedTargets = 1;};
