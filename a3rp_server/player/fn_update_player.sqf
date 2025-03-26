@@ -10,7 +10,6 @@ private _players_infos 	= param [0, _defaultHashMap, [_defaultHashMap]];
 
 if (
 	_players_infos get "client_id" == 0 ||
-	{ _players_infos get "client_side" == "" } ||
 	{ _players_infos get "client_gear" == "" } ||
 	{ _players_infos get "client_pos" isEqualTo []}
 ) exitWith {};
@@ -18,7 +17,6 @@ if (
 private _res = [
 	"player",
 	[
-		format["cash = %1", _players_infos get "client_cash"],
 		format["gear = '%1'", _players_infos get "client_gear"],
 		format["pos_atl_x = %1", _players_infos get "client_pos" select 0],
 		format["pos_atl_y = %1", _players_infos get "client_pos" select 1],
@@ -28,8 +26,7 @@ private _res = [
 		format["first_login = %1", _players_infos get "client_first_login"]
 	],
 	[
-		format["id = %1", _players_infos get "client_id"],
-		format["side_id = (SELECT id FROM side WHERE type = '%1')", _players_infos get "client_side"]
+		format["id = %1", _players_infos get "client_id"]
 	]
 ] call DB_fnc_update;
 

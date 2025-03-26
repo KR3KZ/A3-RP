@@ -18,7 +18,6 @@ if (!(_player_spawned)) exitWith {};
 
 private _player_side 	= format["%1", side _player];
 
-private _player_cash 	= _player getVariable ["client_cash", 0];
 private _player_gear 	= format ["%1", getUnitLoadout _player];
 private _player_pos 	= getPosATL _player;
 private _player_dir		= getDir _player;
@@ -30,8 +29,6 @@ private _player_first_l = 0;
 private _defaultHashMap = createHashMap;
 
 _defaultHashMap set ["client_id", _player_id];
-_defaultHashMap set ["client_side", _player_side];
-_defaultHashMap set ["client_cash", _player_cash];
 _defaultHashMap set ["client_gear", _player_gear];
 _defaultHashMap set ["client_pos", _player_pos];
 _defaultHashMap set ["client_dir", _player_dir];
