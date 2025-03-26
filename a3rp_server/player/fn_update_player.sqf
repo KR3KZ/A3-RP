@@ -24,7 +24,8 @@ private _res = [
 		format["pos_atl_y = %1", _players_infos get "client_pos" select 1],
 		format["pos_atl_z = %1", _players_infos get "client_pos" select 2],
 		format["state = '%1'", _players_infos get "client_state"],
-		format["dir = %1", _players_infos get "client_dir"]
+		format["dir = %1", _players_infos get "client_dir"],
+		format["first_login = %1", _players_infos get "client_first_login"]
 	],
 	[
 		format["id = %1", _players_infos get "client_id"],

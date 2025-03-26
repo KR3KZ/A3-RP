@@ -32,7 +32,8 @@ private _res = [
 		"player.pos_atl_x",
 		"player.pos_atl_y",
 		"player.pos_atl_z",
-		"player.dir"
+		"player.dir",
+		"player.first_login"
 	],
 	[
 		"player.account_id = account.id",

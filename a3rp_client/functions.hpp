@@ -27,8 +27,9 @@ class General {
 		file = "general\functions";
 		class bad_name {};
 		class bad_side {};
-		class log_me {};
 		class cam_intro {};
+		class log_me {};
+		class something_went_wrong {};
 	};
 	class Gear {
 		file = "general\gear";
