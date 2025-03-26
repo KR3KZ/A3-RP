@@ -47,8 +47,11 @@ class CfgFunctions {
 		class Account {
 			file = "\a3rp_server\account";
 			class insert_account {};
-			class on_ask_account {};
 			class select_account {};
+		};
+		class Auth {
+			file = "\a3rp_server\auth";
+			class on_auth {};
 		};
 		class EventHandler
 		{
@@ -107,7 +110,6 @@ class CfgFunctions {
 			file = "\a3rp_server\player";
 			class create_player {};
 			class insert_player {};
-			class on_ask_players {};
 			class on_create_player {};
 			class on_player_alive {};
 			class on_player_killed {};

@@ -2,8 +2,6 @@ class Authentification {
 	tag = "auth";
 	class Functions {
 		file = "auth";
-		class ask_account {};
-		class ask_players {};
 		class on_client_account_id {};
 		class on_players_list {};
 		class on_player_created {};
@@ -13,6 +11,10 @@ class Authentification {
 
 class General {
 	tag = "client";
+	class Authentification {
+		file = "auth";
+		class auth {};
+	};
 	class EventHandler {
 		file = "eventhandler";
 		class init_eventhandler {};

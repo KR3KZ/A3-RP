@@ -7,6 +7,8 @@
 
 if (!isMultiplayer) exitWith {};
 
+[] call client_fnc_auth;
+
 /**
 * Black screen
 */
@@ -30,19 +32,16 @@ waitUntil {SRV_is_ready};
 waitUntil {!isNull player};
 
 /**
-* Ask database if account exist, if not, create it, then send back client ID
+* Wait until client account is ready
 */
-["Asking account to the server..."] call client_fnc_log_me;
-call auth_fnc_ask_account;
 waitUntil {client_account_id_received};
 ["The account is ready"] call client_fnc_log_me;
 
 /**
-* Ask database if account has existing players in database
+* Wait until players list is ready
 */
-["Asking the list of player of this account to the server..."] call client_fnc_log_me;
-call auth_fnc_ask_players;
 waitUntil {client_players_list_received};
+["Players list is ready"] call client_fnc_log_me;
 
 /**
 * Display cam sequence, then character selection, spawn

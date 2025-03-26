@@ -6,8 +6,7 @@ class CfgRemoteExec
 		jip = 0;
 
 		//SRV
-		class SRV_fnc_on_ask_account {allowedTargets = 2;};
-		class SRV_fnc_on_ask_players {allowedTargets = 2;};
+		class SRV_fnc_on_auth {allowedTargets = 2;};
 		class SRV_fnc_on_create_player {allowedTargets = 2;};
 		class SRV_fnc_on_update_player {allowedTargets = 2;};
 		class SRV_fnc_teleport_me {allowedTargets = 2;};
@@ -33,6 +32,7 @@ class CfgRemoteExec
 		class auth_fnc_on_player_created {allowedTargets = 1;};
 		class client_fnc_bad_name {allowedTargets = 1;};
 		class client_fnc_bad_side {allowedTargets = 1;};
+		class client_fnc_something_went_wrong {allowedTargets = 1;};
 		class client_fnc_spawn_menu_set_buildings {allowedTargets = 1;};
 		
 		//REMOVE ON PROD
